@@ -14,7 +14,7 @@ import java.util.UUID;
 
 public class PlayerInteractEntity implements Listener {
 
-    @EventHandler
+    @EventHandler(ignoreCancelled = true)
     public void playerInteraction(PlayerInteractEntityEvent event) {
 
         RocketFunctions rocketFunctions = new RocketFunctions();

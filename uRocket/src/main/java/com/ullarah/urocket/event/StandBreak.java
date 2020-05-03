@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 
 public class StandBreak implements Listener {
 
-    @EventHandler
+    @EventHandler(ignoreCancelled = true)
     public void RocketArmourStandBreak(EntityDamageByEntityEvent event) {
 
         if (event.getEntityType().equals(EntityType.ARMOR_STAND)) {

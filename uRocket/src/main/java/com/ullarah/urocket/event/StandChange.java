@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 
 public class StandChange implements Listener {
 
-    @EventHandler
+    @EventHandler(ignoreCancelled = true)
     public void RocketArmourStandChange(PlayerArmorStandManipulateEvent event) {
 
         CommonString commonString = new CommonString();

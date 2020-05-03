@@ -28,7 +28,7 @@ import java.util.List;
 
 public class PlayerInteract implements Listener {
 
-    @EventHandler
+    @EventHandler(ignoreCancelled = true)
     public void playerInteraction(PlayerInteractEvent event) {
 
         Player player = event.getPlayer();
