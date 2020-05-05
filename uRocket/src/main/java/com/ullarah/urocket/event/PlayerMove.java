@@ -24,13 +24,18 @@ import java.util.stream.Collectors;
 
 public class PlayerMove implements Listener {
 
+    private static final String OVERWORLD = "world";
+    private static final String NETHER = "world_nether";
+
+    private static Random random = new Random();
+    private static CommonString commonString = new CommonString();
+    private static AreaCheck areaCheck = new AreaCheck();
+
     @EventHandler
     public void playerMovement(PlayerMoveEvent event) {
 
         RocketFunctions rocketFunctions = new RocketFunctions();
-        CommonString commonString = new CommonString();
         TitleSubtitle titleSubtitle = new TitleSubtitle();
-        AreaCheck areaCheck = new AreaCheck();
         GroundFire groundFire = new GroundFire();
 
         final Player player = event.getPlayer();
@@ -61,15 +66,12 @@ public class PlayerMove implements Listener {
             player.setSprinting(false);
 
             Bukkit.getScheduler().runTaskLater(RocketInit.getPlugin(), () -> {
-
                 player.setWalkSpeed(0.2f);
                 locks.setSprintLock(FlyLockout.Sprint.NONE);
-
-            }, 0);
+            }, 5);
 
         }
 
-        World world = player.getWorld();
         if (rp.getBootData() != null) {
 
             Location bTank = new Location(player.getWorld(), location.getX(), location.getY() - 2, location.getZ());
@@ -155,25 +157,33 @@ public class PlayerMove implements Listener {
             }
 
             if (variant == RocketVariant.Variant.ORIGINAL)
-                if (player.isFlying() && player.getWorld().getName().equals("world_nether"))
+                if (player.isFlying() && player.getWorld().getName().equals(NETHER))
                     RocketInit.rocketFire.add(groundFire.setFire(player, "SINGLE", Material.NETHERRACK));
 
-            if (world.getName().equals("world") && (world.hasStorm()))
-                if (new Random().nextInt(500) == 1) {
-                    if (!player.getInventory().getBoots().getType().equals(Material.LEATHER_BOOTS)) {
-                        if (player.isFlying()) {
-                            if (!areaCheck.above(location, Material.AIR)) {
-                                world.strikeLightning(location);
-                                player.getWorld().playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_BLAST, 1.5f, 0.75f);
-                                locks.setSprintLock(FlyLockout.Sprint.AIR);
-                                commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.RB_STRIKE);
-                            }
-                        }
-                    }
-                }
-
+            lightningCheck(rp);
         }
 
+    }
+
+    private static void lightningCheck(final RocketPlayer rp) {
+        if (random.nextInt(500) != 0) return;
+
+        final Player player = rp.getPlayer();
+        final World world = player.getWorld();
+        final Location location = player.getLocation();
+
+        if (world.getName().equals(OVERWORLD) && (world.hasStorm())) {
+            if (!player.getInventory().getBoots().getType().equals(Material.LEATHER_BOOTS)) {
+                if (player.isFlying()) {
+                    if (areaCheck.aboveHighestBlock(location)) {
+                        world.strikeLightning(location);
+                        world.playSound(location, Sound.ENTITY_FIREWORK_ROCKET_BLAST, 1.5f, 0.75f);
+                        rp.getLockouts().setSprintLock(FlyLockout.Sprint.AIR);
+                        commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.RB_STRIKE);
+                    }
+                }
+            }
+        }
     }
 
 }
