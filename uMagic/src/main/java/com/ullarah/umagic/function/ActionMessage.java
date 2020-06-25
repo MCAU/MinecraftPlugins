@@ -1,9 +1,7 @@
 package com.ullarah.umagic.function;
 
-import net.minecraft.server.v1_15_R1.ChatMessageType;
-import net.minecraft.server.v1_15_R1.IChatBaseComponent;
-import net.minecraft.server.v1_15_R1.PacketPlayOutChat;
-import org.bukkit.craftbukkit.v1_15_R1.entity.CraftPlayer;
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;
 
 public class ActionMessage {
@@ -15,15 +13,6 @@ public class ActionMessage {
      * @param message the text of the message
      */
     public void message(Player player, String message) {
-
-        CraftPlayer craftPlayer = (CraftPlayer) player;
-
-        IChatBaseComponent component = IChatBaseComponent.ChatSerializer.a("{\"text\": \"" + message + "\"}");
-
-        PacketPlayOutChat packetChat = new PacketPlayOutChat(component, ChatMessageType.GAME_INFO);
-
-        craftPlayer.getHandle().playerConnection.sendPacket(packetChat);
-
+        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
     }
-
 }
