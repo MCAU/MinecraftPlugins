@@ -1,17 +1,12 @@
 package com.ullarah.utab;
 
-import net.minecraft.server.v1_16_R1.IChatBaseComponent;
-import net.minecraft.server.v1_16_R1.PacketPlayOutPlayerListHeaderFooter;
-import net.minecraft.server.v1_16_R1.PlayerConnection;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.craftbukkit.v1_16_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitTask;
 
-import java.lang.reflect.Field;
 import java.util.List;
 
 class TabFunctions {
@@ -21,7 +16,6 @@ class TabFunctions {
     private BukkitTask tabTask;
     private List headerMessages, footerMessages;
     private int tabTimer;
-    private Field tabHeaderField, tabFooterField;
 
     TabFunctions(Plugin instance) {
         plugin = instance;
@@ -64,67 +58,31 @@ class TabFunctions {
     }
 
     void sendHeaderFooter(Player player, String header, String footer) {
-
         header = header.replaceAll("\\{player\\}", player.getPlayerListName());
         footer = footer.replaceAll("\\{player\\}", player.getPlayerListName());
 
-        CraftPlayer craftPlayer = (CraftPlayer) player;
-        PlayerConnection playerConnection = craftPlayer.getHandle().playerConnection;
-
-        try {
-
-            IChatBaseComponent headerMessage = IChatBaseComponent.ChatSerializer.a("{\"text\":\" " + header + " \"}"),
-                    footerMessage = IChatBaseComponent.ChatSerializer.a("{\"text\":\" " + footer + " \"}");
-
-            PacketPlayOutPlayerListHeaderFooter packet = new PacketPlayOutPlayerListHeaderFooter();
-
-            if (tabHeaderField == null) {
-                tabHeaderField = packet.getClass().getDeclaredField("header");
-                tabHeaderField.setAccessible(true);
-            }
-
-            if (tabFooterField == null) {
-                tabFooterField = packet.getClass().getDeclaredField("footer");
-                tabFooterField.setAccessible(true);
-            }
-
-            tabHeaderField.set(packet, headerMessage);
-            tabFooterField.set(packet, footerMessage);
-
-            playerConnection.sendPacket(packet);
-
-        } catch (Exception e) {
-
-            e.printStackTrace();
-
-        }
-
+        player.setPlayerListHeaderFooter(header, footer);
     }
 
     String getCurrentHeader() {
-
         try {
             return ChatColor.translateAlternateColorCodes('&',
                     (String) getHeaderMessages().get(headerMessageCurrent));
         } catch (Exception e) {
             return "";
         }
-
     }
 
     String getCurrentFooter() {
-
         try {
             return ChatColor.translateAlternateColorCodes('&',
                     (String) getFooterMessages().get(footerMessageCurrent));
         } catch (Exception e) {
             return "";
         }
-
     }
 
     boolean reloadTabConfig() {
-
         try {
 
             for (Player player : Bukkit.getOnlinePlayers()) sendHeaderFooter(player, "", "");
@@ -145,14 +103,11 @@ class TabFunctions {
             footerMessageTotal = getFooterMessages().size() - 1;
 
         } catch (Exception e) {
-
             e.printStackTrace();
             return false;
-
         }
 
         return true;
-
     }
 
 }

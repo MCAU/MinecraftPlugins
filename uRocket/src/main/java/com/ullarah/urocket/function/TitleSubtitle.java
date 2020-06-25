@@ -1,8 +1,5 @@
 package com.ullarah.urocket.function;
 
-import net.minecraft.server.v1_16_R1.IChatBaseComponent;
-import net.minecraft.server.v1_16_R1.PacketPlayOutTitle;
-import org.bukkit.craftbukkit.v1_16_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 public class TitleSubtitle {
@@ -15,9 +12,7 @@ public class TitleSubtitle {
      * @param title   the text of the title
      */
     public void title(Player player, int seconds, String title) {
-
         both(player, seconds, title, "");
-
     }
 
     /**
@@ -28,9 +23,7 @@ public class TitleSubtitle {
      * @param subtitle the text of the subtitle
      */
     public void subtitle(Player player, int seconds, String subtitle) {
-
         both(player, seconds, "", subtitle);
-
     }
 
     /**
@@ -42,20 +35,6 @@ public class TitleSubtitle {
      * @param subtitle the text of the subtitle
      */
     public void both(Player player, int seconds, String title, String subtitle) {
-
-        CraftPlayer craftPlayer = (CraftPlayer) player;
-
-        IChatBaseComponent chatTitle = IChatBaseComponent.ChatSerializer.a("{\"text\": \"" + title + "\"}");
-        IChatBaseComponent chatSubTitle = IChatBaseComponent.ChatSerializer.a("{\"text\": \"" + subtitle + "\"}");
-
-        PacketPlayOutTitle packetTitle = new PacketPlayOutTitle(PacketPlayOutTitle.EnumTitleAction.TITLE, chatTitle);
-        PacketPlayOutTitle packetSubTitle = new PacketPlayOutTitle(PacketPlayOutTitle.EnumTitleAction.SUBTITLE, chatSubTitle);
-        PacketPlayOutTitle packetLength = new PacketPlayOutTitle(20, seconds * 20, 20);
-
-        craftPlayer.getHandle().playerConnection.sendPacket(packetTitle);
-        craftPlayer.getHandle().playerConnection.sendPacket(packetSubTitle);
-        craftPlayer.getHandle().playerConnection.sendPacket(packetLength);
-
+        player.sendTitle(title, subtitle, 20, 20 * seconds, 20);
     }
-
 }

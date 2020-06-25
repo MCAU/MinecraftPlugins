@@ -106,7 +106,7 @@ public class Update {
                             PostalInit.inboxChanged.put(receiver, new PostalReminder().task(receiver));
                             String message = ChatColor.YELLOW + "You have new items in your inbox!";
                             commonString.messageSend(PostalInit.getPlugin(), receiverPlayer, message);
-                            titleSubtitle.subtitle(receiverPlayer, message);
+                            titleSubtitle.subtitle(receiverPlayer, 5, message);
                             break;
 
                         }
