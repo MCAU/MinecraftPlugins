@@ -36,7 +36,7 @@ public class PlayerMove implements Listener {
 
         RocketFunctions rocketFunctions = new RocketFunctions();
         TitleSubtitle titleSubtitle = new TitleSubtitle();
-        GroundFire groundFire = new GroundFire();
+        //GroundFire groundFire = new GroundFire();
 
         final Player player = event.getPlayer();
         final RocketPlayer rp = RocketInit.getPlayer(player);
@@ -156,9 +156,9 @@ public class PlayerMove implements Listener {
 
             }
 
-            if (variant == RocketVariant.Variant.ORIGINAL)
-                if (player.isFlying() && player.getWorld().getName().equals(NETHER))
-                    RocketInit.rocketFire.add(groundFire.setFire(player, "SINGLE", Material.NETHERRACK));
+            //if (variant == RocketVariant.Variant.ORIGINAL)
+            //    if (player.isFlying() && player.getWorld().getName().equals(NETHER))
+            //        RocketInit.rocketFire.add(groundFire.setFire(player, "SINGLE", Material.NETHERRACK));
 
             lightningCheck(rp);
         }

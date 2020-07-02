@@ -33,7 +33,7 @@ public class ToggleFlight implements Listener {
         CommonString commonString = new CommonString();
         TitleSubtitle titleSubtitle = new TitleSubtitle();
         GamemodeCheck gamemodeCheck = new GamemodeCheck();
-        GroundFire groundFire = new GroundFire();
+        //GroundFire groundFire = new GroundFire();
 
         Player player = event.getPlayer();
         RocketPlayer rp = RocketInit.getPlayer(player);
@@ -137,7 +137,7 @@ public class ToggleFlight implements Listener {
 
             if (variant == RocketVariant.Variant.ORIGINAL) {
 
-                RocketInit.rocketFire.add(groundFire.setFire(player, "BOOST", Material.NETHERRACK));
+                //RocketInit.rocketFire.add(groundFire.setFire(player, "BOOST", Material.NETHERRACK));
 
                 player.getWorld().playSound(player.getEyeLocation(), Sound.ENTITY_GENERIC_EXPLODE, 0.8f, 0.8f);
                 player.setFlying(true);
