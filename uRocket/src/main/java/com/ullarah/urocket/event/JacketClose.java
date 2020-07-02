@@ -55,6 +55,10 @@ public class JacketClose implements Listener {
                         fuelConfig.set("diamond", fuelInventory.getContents());
                         break;
 
+                    case 45:
+                        fuelConfig.set("netherite", fuelInventory.getContents());
+                        break;
+
                 }
 
                 try {

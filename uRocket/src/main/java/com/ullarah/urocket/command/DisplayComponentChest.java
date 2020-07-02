@@ -37,10 +37,10 @@ public class DisplayComponentChest {
                     add(RocketBooster.booster("III")),
                     add(RocketBooster.booster("IV")),
                     add(RocketBooster.booster("V")),
+                    add(new ItemStack(Material.AIR)),
                     add(RocketFuelJacket.jacket(Material.LEATHER_CHESTPLATE)),
                     add(RocketFuelJacket.jacket(Material.IRON_CHESTPLATE)),
                     add(RocketFuelJacket.jacket(Material.GOLDEN_CHESTPLATE)),
-                    add(RocketFuelJacket.jacket(Material.DIAMOND_CHESTPLATE)),
 
                     add(new RocketControls().control()),
                     add(new RepairTank().tank()),
@@ -49,13 +49,16 @@ public class DisplayComponentChest {
                     add(new RocketFlyZone().zone()),
                     add(new ItemStack(Material.AIR)),
                     add(new ItemStack(Material.AIR)),
-                    add(new ItemStack(Material.AIR))
-            );
+                    add(RocketFuelJacket.jacket(Material.DIAMOND_CHESTPLATE)),
+                    add(RocketFuelJacket.jacket(Material.NETHERITE_CHESTPLATE))
+
+                    );
         }};
 
         for (RocketVariant.Variant variant : RocketVariant.Variant.values())
             rocketStack.add(RocketVariants.variant(variant.getName()));
 
+        rocketStack.add(new ItemStack(Material.AIR));
         for (RocketEnhancement.Enhancement enhancement : RocketEnhancement.Enhancement.values())
             rocketStack.add(RocketEnhance.enhancement(enhancement.getName()));
 

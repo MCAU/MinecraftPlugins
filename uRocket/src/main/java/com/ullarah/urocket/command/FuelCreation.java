@@ -49,6 +49,7 @@ public class FuelCreation {
                 fuelConfig.set("iron", new ArrayList<>());
                 fuelConfig.set("gold", new ArrayList<>());
                 fuelConfig.set("diamond", new ArrayList<>());
+                fuelConfig.set("netherite", new ArrayList<>());
 
                 try {
                     fuelConfig.save(fuelFileNew);
