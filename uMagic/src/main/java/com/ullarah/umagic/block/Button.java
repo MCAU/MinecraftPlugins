@@ -12,18 +12,18 @@ public class Button extends BaseBlock {
 
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
-
         Powerable data = (Powerable) block.getBlockData();
-        data.setPowered(!data.isPowered());
-        block.setBlockData(data);
 
+        data.setPowered(!data.isPowered());
+        block.setBlockData(data, true);
     }
 
     public List<Material> getPermittedBlocks() {
         return Arrays.asList(
                 Material.STONE_BUTTON,
                 Material.ACACIA_BUTTON, Material.BIRCH_BUTTON, Material.DARK_OAK_BUTTON,
-                Material.JUNGLE_BUTTON, Material.OAK_BUTTON, Material.SPRUCE_BUTTON);
+                Material.JUNGLE_BUTTON, Material.OAK_BUTTON, Material.SPRUCE_BUTTON,
+                Material.CRIMSON_BUTTON, Material.WARPED_BUTTON, Material.POLISHED_BLACKSTONE_BUTTON);
     }
 
 }

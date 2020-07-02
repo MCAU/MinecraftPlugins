@@ -5,7 +5,6 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.data.Directional;
-import org.bukkit.metadata.FixedMetadataValue;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,14 +19,12 @@ public class Torch extends BaseBlock {
         int index = (facing.getOppositeFace().ordinal() + 1) % 4;
         data.setFacing(BlockFace.values()[index]);
 
-        block.setMetadata(metaTrch, new FixedMetadataValue(getPlugin(), true));
         saveMetadata(block.getLocation(), metaTrch);
-
-        block.setBlockData(data);
+        block.setBlockData(data, false);
     }
 
     public List<Material> getPermittedBlocks() {
-        return Arrays.asList(Material.WALL_TORCH);
+        return Arrays.asList(Material.WALL_TORCH, Material.SOUL_WALL_TORCH, Material.REDSTONE_WALL_TORCH);
     }
 
 }

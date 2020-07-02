@@ -1,7 +1,6 @@
 package com.ullarah.umagic.block;
 
 import com.ullarah.umagic.InteractMeta;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -23,10 +22,11 @@ public class Spawner extends BaseBlock {
         int originalEntityDelay = originalSpawner.getDelay();
         Block newSpawn = block.getRelative(face.getOppositeFace());
         Material destination = newSpawn.getType();
+
         if (destination == Material.AIR || destination == Material.CAVE_AIR) {
 
-            block.setType(destination);
-            newSpawn.setType(Material.SPAWNER);
+            block.setType(destination, false);
+            newSpawn.setType(Material.SPAWNER, false);
 
             BlockState blockState = newSpawn.getState();
 
@@ -34,9 +34,7 @@ public class Spawner extends BaseBlock {
             ((CreatureSpawner) blockState).setDelay(originalEntityDelay);
 
             blockState.update(true);
-
         }
-
     }
 
     public List<Material> getPermittedBlocks() {

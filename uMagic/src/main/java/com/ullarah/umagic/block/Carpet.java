@@ -1,6 +1,7 @@
 package com.ullarah.umagic.block;
 
 import com.ullarah.umagic.InteractMeta;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 
@@ -11,17 +12,13 @@ public class Carpet extends BaseBlock {
 
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
+        Location location = block.getLocation();
 
-        if (block.hasMetadata(metaWool)) {
-
+        if (magicLocations.containsKey(location) && magicLocations.get(location).equals(metaWool)) {
             String type = block.getType().name().replaceAll("CARPET", "WOOL");
-            block.setType(Material.valueOf(type));
-
-            block.removeMetadata(metaWool, getPlugin());
+            block.setType(Material.valueOf(type), false);
             removeMetadata(block.getLocation());
-
         }
-
     }
 
     public List<Material> getPermittedBlocks() {

@@ -12,11 +12,9 @@ public class StructureVoid extends BaseBlock {
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
 
-        block.setType(Material.LAPIS_BLOCK, true);
+        block.setType(Material.LAPIS_BLOCK, false);
 
-        block.removeMetadata(metaVoid, getPlugin());
         removeMetadata(block.getLocation());
-
     }
 
     public List<Material> getPermittedBlocks() {

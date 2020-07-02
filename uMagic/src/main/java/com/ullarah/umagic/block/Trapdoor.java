@@ -15,15 +15,15 @@ public class Trapdoor extends BaseBlock {
 
         TrapDoor data = (TrapDoor) block.getBlockData();
         data.setOpen(!data.isOpen());
-        block.setBlockData(data);
 
+        block.setBlockData(data,true);
     }
 
     public List<Material> getPermittedBlocks() {
         return Arrays.asList(
                 Material.ACACIA_TRAPDOOR, Material.BIRCH_TRAPDOOR, Material.DARK_OAK_TRAPDOOR,
                 Material.JUNGLE_TRAPDOOR, Material.OAK_TRAPDOOR, Material.SPRUCE_TRAPDOOR,
-                Material.IRON_TRAPDOOR);
+                Material.IRON_TRAPDOOR, Material.CRIMSON_TRAPDOOR, Material.WARPED_TRAPDOOR);
     }
 
 }

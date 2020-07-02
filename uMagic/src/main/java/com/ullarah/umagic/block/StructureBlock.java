@@ -12,8 +12,7 @@ public class StructureBlock extends BaseBlock {
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
 
-        block.setType(Material.OBSIDIAN, true);
-
+        block.setType(Material.OBSIDIAN, false);
     }
 
     public List<Material> getPermittedBlocks() {

@@ -4,7 +4,6 @@ import com.ullarah.umagic.InteractMeta;
 import com.ullarah.umagic.blockdata.DirectionalData;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.metadata.FixedMetadataValue;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,10 +14,7 @@ public class BannerWall extends BaseBlock {
         Block block = meta.getBlock();
 
         new DirectionalData().process(block);
-
-        block.setMetadata(metaBanr, new FixedMetadataValue(getPlugin(), true));
         saveMetadata(block.getLocation(), metaBanr);
-
     }
 
     public List<Material> getPermittedBlocks() {

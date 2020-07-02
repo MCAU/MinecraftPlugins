@@ -54,6 +54,10 @@ class MagicExecutor extends MagicFunctions implements CommandExecutor {
                         giveMagicHoe(player, new MagicHoeCosmic().hoe());
                         break;
 
+                    case "debug":
+                        dumpMagicLocations();
+                        break;
+
                     default:
                         getCommonString().messageSend(player, hoeType);
                         break;

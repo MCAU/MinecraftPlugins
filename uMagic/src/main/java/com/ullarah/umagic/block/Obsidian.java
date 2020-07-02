@@ -12,8 +12,7 @@ public class Obsidian extends BaseBlock {
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
 
-        block.setType(Material.STRUCTURE_BLOCK, true);
-
+        block.setType(Material.STRUCTURE_BLOCK, false);
     }
 
     public List<Material> getPermittedBlocks() {

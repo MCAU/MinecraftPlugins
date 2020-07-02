@@ -1,10 +1,10 @@
 package com.ullarah.umagic.block;
 
 import com.ullarah.umagic.InteractMeta;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Lightable;
-import org.bukkit.metadata.FixedMetadataValue;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,14 +13,18 @@ public class Lamp extends BaseBlock {
 
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
-
+        Location location = block.getLocation();
         Lightable data = (Lightable) block.getBlockData();
-        data.setLit(!data.isLit());
 
-        block.setMetadata(metaLamp, new FixedMetadataValue(getPlugin(), true));
-        saveMetadata(block.getLocation(), metaLamp);
+        if (magicLocations.containsKey(location) && magicLocations.get(location).equals(metaLamp)) {
+            data.setLit(false);
+            removeMetadata(location);
+        } else {
+            data.setLit(true);
+            saveMetadata(location, metaLamp);
+        }
 
-        block.setBlockData(data);
+        block.setBlockData(data, false);
 
     }
 

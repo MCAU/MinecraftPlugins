@@ -1,10 +1,10 @@
 package com.ullarah.umagic.block;
 
 import com.ullarah.umagic.InteractMeta;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
-import org.bukkit.metadata.FixedMetadataValue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,40 +21,36 @@ public class Bed extends BaseBlock {
 
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
+        Location location = block.getLocation();
 
         if (block.getType() == Material.HAY_BLOCK) {
-
-            block.setType(Material.RED_BED);
-
-            block.setMetadata(metaBeds, new FixedMetadataValue(getPlugin(), true));
-            saveMetadata(block.getLocation(), metaBeds);
+            block.setType(Material.RED_BED, false);
+            saveMetadata(location, metaBeds);
             return;
         }
 
-        if (!block.hasMetadata(metaBeds)) {
-            return;
-        }
+        if (magicLocations.containsKey(location) && magicLocations.get(location).equals(metaBeds)) {
+            org.bukkit.block.data.type.Bed data = (org.bukkit.block.data.type.Bed) block.getBlockData();
+            BlockFace facing = data.getFacing();
+            org.bukkit.block.data.type.Bed.Part part = data.getPart();
 
-        org.bukkit.block.data.type.Bed data = (org.bukkit.block.data.type.Bed) block.getBlockData();
-        BlockFace facing = data.getFacing();
-        org.bukkit.block.data.type.Bed.Part part = data.getPart();
+            facing = BlockFace.values()[(facing.ordinal() + 1) % 4];
+            if (facing == BlockFace.NORTH) {
+                part = part == org.bukkit.block.data.type.Bed.Part.HEAD ?
+                        org.bukkit.block.data.type.Bed.Part.FOOT : org.bukkit.block.data.type.Bed.Part.HEAD;
 
-        facing = BlockFace.values()[(facing.ordinal() + 1) % 4];
-        if (facing == BlockFace.NORTH) {
-            part = part == org.bukkit.block.data.type.Bed.Part.HEAD ?
-            org.bukkit.block.data.type.Bed.Part.FOOT : org.bukkit.block.data.type.Bed.Part.HEAD;
-
-            if (part == org.bukkit.block.data.type.Bed.Part.FOOT) {
-                Material next = beds.get((beds.indexOf(block.getType()) + 1) % beds.size());
-                block.setType(next);
+                if (part == org.bukkit.block.data.type.Bed.Part.FOOT) {
+                    Material next = beds.get((beds.indexOf(block.getType()) + 1) % beds.size());
+                    block.setType(next, false);
+                }
             }
+
+            data = (org.bukkit.block.data.type.Bed) block.getBlockData();
+            data.setFacing(facing);
+            data.setPart(part);
+
+            block.setBlockData(data, false);
         }
-
-        data = (org.bukkit.block.data.type.Bed) block.getBlockData();
-        data.setFacing(facing);
-        data.setPart(part);
-
-        block.setBlockData(data);
     }
 
     @Override

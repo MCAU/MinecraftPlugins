@@ -4,7 +4,6 @@ import com.ullarah.umagic.InteractMeta;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
-import org.bukkit.metadata.FixedMetadataValue;
 
 import java.util.Arrays;
 import java.util.List;
@@ -26,15 +25,14 @@ public class Wood extends BaseBlock {
             Block blockNext = block.getRelative(face);
 
             if (backingBlocks.contains(blockNext.getType())) {
-                block.setType(Material.LADDER);
+                block.setType(Material.LADDER, false);
 
                 org.bukkit.block.data.type.Ladder data = (org.bukkit.block.data.type.Ladder) block.getBlockData();
                 data.setFacing(face.getOppositeFace());
 
-                block.setMetadata(metaLadd, new FixedMetadataValue(getPlugin(), true));
                 saveMetadata(block.getLocation(), metaLadd);
 
-                block.setBlockData(data);
+                block.setBlockData(data,false);
                 return;
 
             }

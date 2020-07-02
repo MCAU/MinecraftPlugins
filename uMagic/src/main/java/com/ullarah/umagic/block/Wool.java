@@ -3,7 +3,6 @@ package com.ullarah.umagic.block;
 import com.ullarah.umagic.InteractMeta;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.metadata.FixedMetadataValue;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,11 +13,9 @@ public class Wool extends BaseBlock {
         Block block = meta.getBlock();
 
         String type = block.getType().name().replaceAll("WOOL", "CARPET");
-        block.setType(Material.valueOf(type));
+        block.setType(Material.valueOf(type), false);
 
-        block.setMetadata(metaWool, new FixedMetadataValue(getPlugin(), true));
         saveMetadata(block.getLocation(), metaWool);
-
     }
 
     public List<Material> getPermittedBlocks() {

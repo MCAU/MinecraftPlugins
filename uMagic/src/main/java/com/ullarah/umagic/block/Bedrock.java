@@ -1,6 +1,7 @@
 package com.ullarah.umagic.block;
 
 import com.ullarah.umagic.InteractMeta;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -13,13 +14,11 @@ public class Bedrock extends BaseBlock {
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
         Player player = meta.getPlayer();
+        Location location = block.getLocation();
 
-        if (block.hasMetadata(metaEmBr)) {
-
+        if (magicLocations.containsKey(location) && magicLocations.get(location).equals(metaEmBr)) {
             getCommonString().messageSend(player, "Block converted to Barrier. Be careful!");
-
-            block.setType(Material.BARRIER);
-
+            block.setType(Material.BARRIER, false);
         }
 
     }

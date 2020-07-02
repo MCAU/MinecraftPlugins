@@ -1,6 +1,7 @@
 package com.ullarah.umagic.event;
 
 import com.ullarah.umagic.MagicFunctions;
+import org.bukkit.Location;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -14,9 +15,10 @@ public class BlockRedstone extends MagicFunctions implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void event(BlockRedstoneEvent event) {
-
-        if (event.getBlock().hasMetadata(metaLamp)) event.setNewCurrent(15);
-
+        Location location = event.getBlock().getLocation();
+        if (magicLocations.containsKey(location) && magicLocations.get(location).equals(metaLamp)) {
+            event.setNewCurrent(15);
+        }
     }
 
 }

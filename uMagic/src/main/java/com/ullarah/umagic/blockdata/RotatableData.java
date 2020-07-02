@@ -2,7 +2,6 @@ package com.ullarah.umagic.blockdata;
 
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
-import org.bukkit.block.data.Directional;
 import org.bukkit.block.data.Rotatable;
 
 import java.util.Arrays;
@@ -24,6 +23,6 @@ public class RotatableData {
         int index = (directions.indexOf(facing) + 1) % directions.size();
         data.setRotation(directions.get(index));
 
-        block.setBlockData(data);
+        block.setBlockData(data, false);
     }
 }

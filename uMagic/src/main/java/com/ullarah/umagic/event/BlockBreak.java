@@ -1,6 +1,7 @@
 package com.ullarah.umagic.event;
 
 import com.ullarah.umagic.MagicFunctions;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -10,7 +11,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class BlockBreak extends MagicFunctions implements Listener {
 
@@ -21,6 +24,9 @@ public class BlockBreak extends MagicFunctions implements Listener {
             Material.PURPLE_STAINED_GLASS, Material.RED_STAINED_GLASS, Material.WHITE_STAINED_GLASS, Material.YELLOW_STAINED_GLASS,
             Material.GLASS
     );
+
+    private final Set<String> metas = new HashSet<>(Arrays.asList(metaSand, metaLamp, metaWool, metaEmBr, metaVine, metaFurn,
+            metaReds, metaLadd, metaRail, metaSign, metaTrch, metaBanr, metaBeds, metaFire, metaSnow, metaCice));
 
     public BlockBreak() {
         super(false);
@@ -35,33 +41,31 @@ public class BlockBreak extends MagicFunctions implements Listener {
         }
 
         Block block = event.getBlock();
+        Location location = block.getLocation();
 
-        for (String meta : new String[]{metaSand, metaLamp, metaWool, metaEmBr, metaVine, metaFurn, metaReds,
-                metaLadd, metaRail, metaSign, metaTrch, metaBanr, metaBeds, metaFire, metaSnow, metaCice,})
-            if (block.hasMetadata(meta)) {
+        if (magicLocations.containsKey(location)) {
 
-                if (block.hasMetadata(metaBeds)) block.setType(Material.HAY_BLOCK);
-
-                block.removeMetadata(meta, getPlugin());
+            if (metas.contains(magicLocations.get(location))) {
+                if (magicLocations.get(location).equalsIgnoreCase(metaBeds)) {
+                    block.setType(Material.HAY_BLOCK);
+                }
                 removeMetadata(block.getLocation());
-
             }
+
+        }
 
         if (backingBlocks.contains(block.getType())) {
             for (BlockFace face : new BlockFace[]{BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST}) {
 
                 Block blockNext = block.getRelative(face);
+                Location blockNextLocation = blockNext.getLocation();
 
-                if (blockNext.hasMetadata(metaLadd)) {
-
+                if (magicLocations.containsKey(blockNextLocation)
+                        && magicLocations.get(blockNextLocation).contains(metaLadd)) {
                     blockNext.setType(Material.OAK_PLANKS);
-                    blockNext.removeMetadata(metaLadd, getPlugin());
-                    removeMetadata(blockNext.getLocation());
-
+                    removeMetadata(blockNextLocation);
                 }
             }
         }
-
     }
-
 }

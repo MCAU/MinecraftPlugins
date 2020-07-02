@@ -2,13 +2,10 @@ package com.ullarah.umagic.blockdata;
 
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
-import org.bukkit.block.data.Directional;
 import org.bukkit.block.data.MultipleFacing;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.List;
 
 public class MultipleFacingData {
 
@@ -48,6 +45,6 @@ public class MultipleFacingData {
             sum /= 2;
         }
 
-        block.setBlockData(data);
+        block.setBlockData(data, false);
     }
 }
