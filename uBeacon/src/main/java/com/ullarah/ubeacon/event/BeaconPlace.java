@@ -9,51 +9,40 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
 
 public class BeaconPlace implements Listener {
 
-    @EventHandler
+    @EventHandler(ignoreCancelled = true)
     public void event(BlockPlaceEvent event) {
-
         Player player = event.getPlayer();
         Block block = event.getBlock();
         Location blockLocation = block.getLocation();
 
         if (block.getType() == Material.BEACON) {
+            ItemMeta meta = event.getItemInHand().getItemMeta();
 
-            if (event.getItemInHand().hasItemMeta()) {
+            if (meta != null && meta.hasDisplayName()) {
+                String customBeacon = meta.getDisplayName();
 
-                if (event.getItemInHand().getItemMeta().hasDisplayName()) {
+                if (customBeacon.matches(ChatColor.LIGHT_PURPLE + "Rainbow Beacon")) {
+                    List<String> beaconList = BeaconInit.getPlugin().getConfig().getStringList("beacons");
 
-                    String customBeacon = event.getItemInHand().getItemMeta().getDisplayName();
+                    beaconList.add(player.getUniqueId().toString()
+                            + "|" + player.getWorld().getName()
+                            + "|" + blockLocation.getBlockX()
+                            + "|" + blockLocation.getBlockY()
+                            + "|" + blockLocation.getBlockZ()
+                    );
 
-                    if (customBeacon.matches(ChatColor.LIGHT_PURPLE + "Rainbow Beacon")) {
+                    BeaconInit.getPlugin().getConfig().set("beacons", beaconList);
+                    BeaconInit.getPlugin().saveConfig();
 
-                        List<String> beaconList = BeaconInit.getPlugin().getConfig().getStringList("beacons");
-
-                        beaconList.add(player.getUniqueId().toString()
-                                + "|" + player.getWorld().getName()
-                                + "|" + blockLocation.getBlockX()
-                                + "|" + blockLocation.getBlockY()
-                                + "|" + blockLocation.getBlockZ()
-                        );
-
-                        BeaconInit.getPlugin().getConfig().set("beacons", beaconList);
-
-                        BeaconInit.getPlugin().saveConfig();
-
-                        player.sendMessage(BeaconInit.getMsgPrefix() + "Beacon successfully created!");
-
-                    }
-
+                    player.sendMessage(BeaconInit.getMsgPrefix() + "Beacon successfully created!");
                 }
-
             }
-
         }
-
     }
-
 }

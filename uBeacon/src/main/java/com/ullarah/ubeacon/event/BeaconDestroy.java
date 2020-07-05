@@ -15,9 +15,8 @@ import java.util.List;
 
 public class BeaconDestroy implements Listener {
 
-    @EventHandler
+    @EventHandler(ignoreCancelled = true)
     public void event(BlockBreakEvent event) {
-
         Player player = event.getPlayer();
         Block block = event.getBlock();
 
@@ -35,16 +34,13 @@ public class BeaconDestroy implements Listener {
                     + blockLocation.getBlockZ();
 
             if (beaconList.contains(beacon)) {
-
                 player.sendMessage(BeaconInit.getMsgPrefix() + "Destroy the beacon first.");
                 event.setCancelled(true);
-
             }
 
         }
 
         if (block.getType() == Material.BEACON) {
-
             String beacon = player.getUniqueId().toString() + "|"
                     + world.getName() + "|"
                     + blockLocation.getBlockX() + "|"
@@ -52,7 +48,6 @@ public class BeaconDestroy implements Listener {
                     + blockLocation.getBlockZ();
 
             if (beaconList.contains(beacon)) {
-
                 beaconList.remove(beacon);
                 world.getBlockAt(blockLocation).setType(Material.AIR);
                 BeaconInit.getPlugin().getConfig().set("beacons", beaconList);
@@ -65,11 +60,8 @@ public class BeaconDestroy implements Listener {
 
                 world.dropItemNaturally(blockLocation, new ItemStack(Material.NETHER_STAR));
                 world.createExplosion(blockLocation, 0.0f, false);
-
             }
 
         }
-
     }
-
 }
