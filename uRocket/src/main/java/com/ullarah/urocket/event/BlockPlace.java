@@ -31,11 +31,12 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class BlockPlace implements Listener {
 
+    private static final CommonString commonString = new CommonString();
+
     @EventHandler(priority = EventPriority.LOWEST)
     public void repairTankStationPlacement(BlockPlaceEvent event) {
 
         RocketFunctions rocketFunctions = new RocketFunctions();
-        CommonString commonString = new CommonString();
         AreaCheck areaCheck = new AreaCheck();
 
         if (!event.getItemInHand().hasItemMeta())
@@ -49,13 +50,17 @@ public class BlockPlace implements Listener {
         Player player = event.getPlayer();
         Block block = event.getBlock();
 
+        if (checkGlobalPlacement(player, block, rocketItemName)) {
+            event.setCancelled(true);
+            return;
+        }
+
         if (player.getWorld().getName().equals("world")) {
 
             Location blockLocation = block.getLocation();
             Location belowLocation = new LocationShift().add(blockLocation, 0, -1, 0);
 
             switch (block.getType()) {
-
                 case BEACON:
                     if (rocketItemName.equals(ChatColor.RED + "Rocket Boot Repair Station")) {
 
@@ -143,27 +148,10 @@ public class BlockPlace implements Listener {
 
                     }
                     break;
-
-                case NOTE_BLOCK:
-                    if (rocketItemName.equals("Rocket Boot Variant")) {
-                        event.setCancelled(true);
-                        commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.PlacementDeny("Variants"));
-                    }
-                    break;
-
-                case TNT:
-                    if (rocketItemName.equals(ChatColor.RED + "Rocket Boot Booster")) {
-                        event.setCancelled(true);
-                        commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.PlacementDeny("Boosters"));
-                    }
-                    break;
-
             }
 
         } else {
-
             switch (block.getType()) {
-
                 case BEACON:
                     if (rocketItemName.equals(ChatColor.RED + "Rocket Boot Repair Station")) {
                         commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.WorldPlacementDeny("Repair Stations"));
@@ -184,25 +172,27 @@ public class BlockPlace implements Listener {
                         event.setCancelled(true);
                     }
                     break;
-
-                case NOTE_BLOCK:
-                    if (rocketItemName.equals(ChatColor.AQUA + "Rocket Boot Variant")) {
-                        commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.PlacementDeny("Variants"));
-                        event.setCancelled(true);
-                    }
-                    break;
-
-                case TNT:
-                    if (rocketItemName.equals(ChatColor.RED + "Rocket Boot Booster")) {
-                        commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.PlacementDeny("Boosters"));
-                        event.setCancelled(true);
-                    }
-                    break;
-
             }
 
         }
 
     }
 
+    private boolean checkGlobalPlacement(Player player, Block block, String rocketItemName) {
+        switch (block.getType()) {
+            case NOTE_BLOCK:
+                if (rocketItemName.equals(ChatColor.AQUA + "Rocket Boot Variant")) {
+                    commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.PlacementDeny("Variants"));
+                    return true;
+                }
+                break;
+            case TNT:
+                if (rocketItemName.equals(ChatColor.RED + "Rocket Boot Booster")) {
+                    commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.PlacementDeny("Boosters"));
+                    return true;
+                }
+                break;
+        }
+        return false;
+    }
 }
