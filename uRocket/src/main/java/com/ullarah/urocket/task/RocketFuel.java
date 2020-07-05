@@ -110,6 +110,16 @@ public class RocketFuel {
                 if (isSolarPowered) itemFuelCost -= 4;
                 break;
 
+            case NETHERITE_BOOTS:
+                malfunctionRate = 2500;
+                itemFuelCost = 5 + rocketFunctions.getBootPowerLevel(rocketBoots);
+                getHealthFromBoots = (player.getHealth() - 0.25);
+                getFoodLevelFromBoots = (player.getFoodLevel() - 1);
+
+                if (isFuelEfficient) itemFuelCost -= 4;
+                if (isSolarPowered) itemFuelCost -= 5;
+                break;
+
         }
 
         switch (variant) {

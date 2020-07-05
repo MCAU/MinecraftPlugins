@@ -12,11 +12,8 @@ public class Cactus extends BaseBlock {
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
 
-        block.setType(Material.MELON, true);
-
-        block.removeMetadata(metaCact, getPlugin());
+        block.setType(Material.MELON, false);
         removeMetadata(block.getLocation());
-
     }
 
     public List<Material> getPermittedBlocks() {

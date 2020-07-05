@@ -22,7 +22,7 @@ public class Triphook extends BaseBlock {
             data.setPowered(!connected);
         }
 
-        block.setBlockData(data);
+        block.setBlockData(data,false);
     }
 
     public List<Material> getPermittedBlocks() {

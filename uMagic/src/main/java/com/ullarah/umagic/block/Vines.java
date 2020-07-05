@@ -5,12 +5,8 @@ import com.ullarah.umagic.blockdata.MultipleFacingData;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
-import org.bukkit.block.data.MultipleFacing;
-import org.bukkit.metadata.FixedMetadataValue;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 public class Vines extends BaseBlock {
@@ -24,7 +20,6 @@ public class Vines extends BaseBlock {
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
 
-        block.setMetadata(metaVine, new FixedMetadataValue(getPlugin(), true));
         saveMetadata(block.getLocation(), metaVine);
 
         multipleFacingData.process(block);

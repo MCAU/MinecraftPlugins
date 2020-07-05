@@ -330,6 +330,9 @@ public class RocketFunctions {
                 fuelCost = 4 + getBootPowerLevel(rocketBoots);
                 break;
 
+            case NETHERITE_BOOTS:
+                fuelCost = 5 + getBootPowerLevel(rocketBoots);
+                break;
         }
 
         if (fuelInventory.containsAtLeast(new ItemStack(block), fuelCost)) return true;
@@ -414,6 +417,9 @@ public class RocketFunctions {
             case DIAMOND_CHESTPLATE:
                 return "diamond";
 
+            case NETHERITE_CHESTPLATE:
+                return "netherite";
+
         }
 
         return null;
@@ -435,6 +441,9 @@ public class RocketFunctions {
 
             case DIAMOND_CHESTPLATE:
                 return 36;
+
+            case NETHERITE_CHESTPLATE:
+                return 45;
 
         }
 
@@ -514,6 +523,9 @@ public class RocketFunctions {
             case DIAMOND_BOOTS:
                 return 2;
 
+            case NETHERITE_BOOTS:
+                return 1;
+
         }
 
         return 0;
@@ -536,6 +548,8 @@ public class RocketFunctions {
             case DIAMOND_BOOTS:
                 return 429;
 
+            case NETHERITE_BOOTS:
+                return 481;
         }
 
         return 0;

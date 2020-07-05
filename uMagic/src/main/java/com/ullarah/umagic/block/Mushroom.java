@@ -5,7 +5,6 @@ import com.ullarah.umagic.blockdata.MultipleFacingData;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
-import org.bukkit.material.types.MushroomBlockTexture;
 
 import java.util.Arrays;
 import java.util.List;

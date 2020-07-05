@@ -24,7 +24,7 @@ public class Stairs extends BaseBlock {
             data.setFacing(BlockFace.values()[(facing.ordinal() + 1) % 4]);
         }
 
-        block.setBlockData(data);
+        block.setBlockData(data, false);
     }
 
     public List<Material> getPermittedBlocks() {
@@ -39,7 +39,8 @@ public class Stairs extends BaseBlock {
                 Material.QUARTZ_STAIRS, Material.RED_NETHER_BRICK_STAIRS, Material.RED_SANDSTONE_STAIRS,
                 Material.SANDSTONE_STAIRS, Material.SMOOTH_QUARTZ_STAIRS, Material.SMOOTH_RED_SANDSTONE_STAIRS,
                 Material.SMOOTH_SANDSTONE_STAIRS, Material.SPRUCE_STAIRS, Material.STONE_BRICK_STAIRS,
-                Material.STONE_STAIRS);
+                Material.STONE_STAIRS, Material.BLACKSTONE_STAIRS, Material.POLISHED_BLACKSTONE_STAIRS,
+                Material.POLISHED_BLACKSTONE_BRICK_STAIRS, Material.CRIMSON_STAIRS);
     }
 
 }

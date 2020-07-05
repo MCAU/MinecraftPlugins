@@ -20,22 +20,21 @@ import com.ullarah.umagic.recipe.MagicHoeUber;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.craftbukkit.libs.org.apache.commons.lang3.StringUtils;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.ItemFrame;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.plugin.Plugin;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 
 public class MagicFunctions {
@@ -49,6 +48,7 @@ public class MagicFunctions {
             metaReds = "uMagic.rd";
 
     private static final HashMap<Material, BaseBlock> blockRegister = new HashMap<>();
+    protected static HashMap<Location, String> magicLocations = new HashMap<>();
 
     private final Material[] pressurePlates = new Material[] {
             Material.ACACIA_PRESSURE_PLATE, Material.BIRCH_PRESSURE_PLATE, Material.DARK_OAK_PRESSURE_PLATE,
@@ -92,7 +92,7 @@ public class MagicFunctions {
                         new Sign(), new SignWall(), new Snow(), new Spawner(),
                         new Stairs(), new StructureBlock(), new StructureVoid(), new Terracotta(),
                         new Torch(), new Trapdoor(), new Triphook(), new Vines(),
-                        new Wood(), new Wool());
+                        new Wood(), new Wool(), new SoulSand(), new Grass());
             }
         }
     }
@@ -165,26 +165,11 @@ public class MagicFunctions {
                 World world = getPlugin().getServer().getWorld(resultSet.getString("world"));
 
                 Double x = Double.parseDouble(resultSet.getString("locX")),
-                        y = Double.parseDouble(resultSet.getString("locY")),
-                        z = Double.parseDouble(resultSet.getString("locZ"));
+                       y = Double.parseDouble(resultSet.getString("locY")),
+                       z = Double.parseDouble(resultSet.getString("locZ"));
 
                 Location location = new Location(world, x, y, z);
-
-                Chunk chunk = location.getChunk();
-                if (!chunk.isLoaded()) world.getChunkAt(location);
-
-                for (Entity entity : world.getNearbyEntities(location, 3.0, 3.0, 3.0)) {
-                    if (entity instanceof ItemFrame) {
-                        World eW = entity.getLocation().getWorld();
-                        Double eX = (double) entity.getLocation().getBlockX(),
-                                eY = (double) entity.getLocation().getBlockY(),
-                                eZ = (double) entity.getLocation().getBlockZ();
-                        if (new Location(eW, eX, eY, eZ).equals(location))
-                            entity.setMetadata(data, new FixedMetadataValue(getPlugin(), true));
-                    }
-                }
-
-                world.getBlockAt(location).setMetadata(data, new FixedMetadataValue(getPlugin(), true));
+                magicLocations.put(location, data);
 
             }
 
@@ -201,6 +186,8 @@ public class MagicFunctions {
     }
 
     protected void saveMetadata(Location location, String metadata) {
+        // add to our hashmap, then deal with sql.
+        magicLocations.put(location, metadata);
 
         try {
 
@@ -229,6 +216,8 @@ public class MagicFunctions {
     }
 
     protected void removeMetadata(Location location) {
+        //remove from our hashmap, then deal with sql
+        magicLocations.remove(location);
 
         String statement = "DELETE FROM " + database + " WHERE "
                 + StringUtils.join(new String[]{
@@ -238,6 +227,7 @@ public class MagicFunctions {
                         "locZ=" + location.getBlockZ()},
                 " AND ");
         getSqlConnection().runStatement(statement);
+
 
     }
 
@@ -285,7 +275,7 @@ public class MagicFunctions {
         MagicHoeNormal recipe = new MagicHoeNormal();
         ItemStack inMainHand = player.getInventory().getItemInMainHand();
 
-        if (inMainHand.getType() == Material.DIAMOND_HOE)
+        if (inMainHand.getType() == Material.DIAMOND_HOE || inMainHand.getType() == Material.NETHERITE_HOE)
             if (inMainHand.hasItemMeta()) if (inMainHand.getItemMeta().hasDisplayName())
                 if (inMainHand.getItemMeta().getDisplayName().equals(recipe.getHoeDisplayName())) return true;
 
@@ -385,8 +375,8 @@ public class MagicFunctions {
     private void displayParticles(Block block, int hoeType) {
 
         double bX = block.getLocation().getX() + 0.5,
-                bY = block.getLocation().getY() + 0.5,
-                bZ = block.getLocation().getZ() + 0.5;
+               bY = block.getLocation().getY() + 0.5,
+               bZ = block.getLocation().getZ() + 0.5;
 
         Particle particle;
         switch (hoeType) {
@@ -427,29 +417,6 @@ public class MagicFunctions {
 
     }
 
-    protected ItemStack getFurnaceFuel() {
-
-        ItemStack fuel = new ItemStack(Material.COAL);
-        ItemMeta meta = fuel.getItemMeta();
-
-        meta.setDisplayName(this.furnaceFuel);
-        fuel.setItemMeta(meta);
-
-        return fuel;
-    }
-
-    protected ItemStack getFurnaceSmelt() {
-
-        ItemStack smelt = new ItemStack(Material.OAK_LOG);
-        ItemMeta meta = smelt.getItemMeta();
-
-        meta.setDisplayName(this.furnaceSmelt);
-        smelt.setItemMeta(meta);
-
-        return smelt;
-
-    }
-
     protected BaseBlock getBlock(Material material) {
         return blockRegister.get(material);
     }
@@ -458,6 +425,20 @@ public class MagicFunctions {
         for (BaseBlock block : blocks)
             for (Material material : block.getPermittedBlocks())
                 blockRegister.put(material, block);
+    }
+
+    void dumpMagicLocations() {
+        int magicCount = 0;
+        for (Map.Entry<Location, String> entry : magicLocations.entrySet()) {
+            magicCount++;
+            Location location = entry.getKey();
+            String meta = entry.getValue();
+            String world = location.getWorld().getName();
+            int x = location.getBlockX();
+            int y = location.getBlockY();
+            int z = location.getBlockZ();
+            System.out.println("[" + magicCount + "/" + magicLocations.size() + "] " + world + "(" + x + "," + y + "," + z + ") " + meta);
+        }
     }
 
 }

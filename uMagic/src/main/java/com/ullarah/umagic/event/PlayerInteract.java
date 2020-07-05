@@ -2,14 +2,18 @@ package com.ullarah.umagic.event;
 
 import com.ullarah.umagic.InteractMeta;
 import com.ullarah.umagic.MagicFunctions;
-import com.ullarah.umagic.block.*;
 import org.bukkit.ChatColor;
+import org.bukkit.Particle;
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.ItemFrame;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 
@@ -50,6 +54,39 @@ public class PlayerInteract extends MagicFunctions implements Listener {
             event.setCancelled(true);
 
         }
+    }
+
+    @EventHandler(priority = EventPriority.HIGHEST)
+    public void event(PlayerInteractEntityEvent event) {
+
+        Player player = event.getPlayer();
+        Entity entity = event.getRightClicked();
+
+        if (!usingMagicHoe(player))
+            return;
+
+        /* eh its kinda hacked on and doesn't work with existing checks yet, just check for admin perms for now */
+        if (player.hasPermission("umagic.danger")) {
+
+            //if (!checkHoeInteract(event, player, block))
+            //    return;
+
+            if (entity instanceof ItemFrame) {
+                ItemFrame itemframe = (ItemFrame) entity;
+                Block block = itemframe.getLocation().getBlock();
+
+                itemframe.setVisible(!itemframe.isVisible());
+                double bX = block.getX();
+                double bY = block.getY();
+                double bZ = block.getZ();
+
+                block.getWorld().spawnParticle(Particle.DRAGON_BREATH, bX, bY, bZ, 30);
+                block.getWorld().playSound(block.getLocation(), Sound.ENTITY_SHULKER_TELEPORT, 0.5f, 0.5f);
+
+                event.setCancelled(true);
+            }
+        }
+
 
     }
 

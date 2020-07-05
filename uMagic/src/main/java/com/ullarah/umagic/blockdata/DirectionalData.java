@@ -20,6 +20,6 @@ public class DirectionalData {
         int index = (directions.indexOf(facing) + 1) % directions.size();
         data.setFacing(directions.get(index));
 
-        block.setBlockData(data);
+        block.setBlockData(data, false);
     }
 }
