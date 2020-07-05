@@ -162,33 +162,41 @@ public class BlockPlace implements Listener {
 
         } else {
 
-            event.setCancelled(true);
-
             switch (block.getType()) {
 
                 case BEACON:
-                    if (rocketItemName.equals(ChatColor.RED + "Rocket Boot Repair Station"))
+                    if (rocketItemName.equals(ChatColor.RED + "Rocket Boot Repair Station")) {
                         commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.WorldPlacementDeny("Repair Stations"));
+                        event.setCancelled(true);
+                    }
                     break;
 
                 case FURNACE:
-                    if (rocketItemName.equals(ChatColor.RED + "Rocket Boot Repair Tank"))
+                    if (rocketItemName.equals(ChatColor.RED + "Rocket Boot Repair Tank")) {
                         commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.WorldPlacementDeny("Repair Tanks"));
+                        event.setCancelled(true);
+                    }
                     break;
 
                 case END_PORTAL_FRAME:
-                    if (rocketItemName.equals(ChatColor.RED + "Rocket Boot Fly Zone Controller"))
+                    if (rocketItemName.equals(ChatColor.RED + "Rocket Boot Fly Zone Controller")) {
                         commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.WorldPlacementDeny("Fly Zone Controllers"));
+                        event.setCancelled(true);
+                    }
                     break;
 
                 case NOTE_BLOCK:
-                    if (rocketItemName.equals(ChatColor.AQUA + "Rocket Boot Variant"))
+                    if (rocketItemName.equals(ChatColor.AQUA + "Rocket Boot Variant")) {
                         commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.PlacementDeny("Variants"));
+                        event.setCancelled(true);
+                    }
                     break;
 
                 case TNT:
-                    if (rocketItemName.equals(ChatColor.RED + "Rocket Boot Booster"))
+                    if (rocketItemName.equals(ChatColor.RED + "Rocket Boot Booster")) {
                         commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.PlacementDeny("Boosters"));
+                        event.setCancelled(true);
+                    }
                     break;
 
             }
