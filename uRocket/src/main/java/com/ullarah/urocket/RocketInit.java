@@ -188,10 +188,8 @@ public class RocketInit extends JavaPlugin {
     }
 
     public void onDisable() {
-
-        for (Player player : getPlayers())
+        for (Player player : getPlayers()) {
             new RocketFunctions().disableRocketBoots(player, false);
-
+        }
     }
-
 }

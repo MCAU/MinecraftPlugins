@@ -21,37 +21,29 @@ public class PluginRegisters {
      * @return the number of valid registrations
      */
     public int register(Plugin plugin, RegisterType type, Object... objects) {
-
         int amount = 0;
 
         for (Object object : objects) {
-
             try {
-
                 switch (type) {
-
                     case RECIPE:
                         ShapedRecipe newRecipe = ((NewRecipe) object).recipe();
-                        plugin.getServer().addRecipe(newRecipe);
+                        Bukkit.removeRecipe(newRecipe.getKey());
+                        Bukkit.addRecipe(newRecipe);
                         break;
-
                 }
 
                 amount++;
 
             } catch (Exception e) {
-
                 Bukkit.getLogger().log(Level.SEVERE, "[" + plugin.getName() + "] Register Error: "
                         + "[" + type.toString().toUpperCase() + "] " + object.getClass().getCanonicalName());
 
                 e.printStackTrace();
-
             }
-
         }
 
         return amount;
-
     }
 
     /**
@@ -65,11 +57,9 @@ public class PluginRegisters {
      * @return the number of valid registrations
      */
     public int registerAll(Plugin plugin, RegisterType type) {
-
         int amount = 0;
 
         try {
-
             CodeSource codeSource = plugin.getClass().getProtectionDomain().getCodeSource();
 
             if (codeSource != null) {
@@ -77,7 +67,6 @@ public class PluginRegisters {
                 ZipInputStream stream = new ZipInputStream(codeSource.getLocation().openStream());
 
                 while (true) {
-
                     String pluginPackage = plugin.getClass().getPackage().getName().toLowerCase();
                     String classPackage = pluginPackage + "." + type.toString().toLowerCase();
 
@@ -96,7 +85,6 @@ public class PluginRegisters {
                         Object classInstance = Class.forName(classPackage + "." + className).newInstance();
 
                         switch (type) {
-
                             case EVENT:
                                 plugin.getServer().getPluginManager().registerEvents((Listener) classInstance, plugin);
                                 break;
@@ -104,11 +92,9 @@ public class PluginRegisters {
                             case TASK:
                                 classInstance.getClass().getMethod(type.toString()).invoke(classInstance);
                                 break;
-
                         }
 
                         amount++;
-
                     }
 
                 }
@@ -120,11 +106,9 @@ public class PluginRegisters {
         }
 
         return amount;
-
     }
 
     public enum RegisterType {
-
         EVENT("event"), RECIPE("recipe"), TASK("task");
 
         private final String type;
@@ -136,7 +120,5 @@ public class PluginRegisters {
         public String toString() {
             return type;
         }
-
     }
-
 }
