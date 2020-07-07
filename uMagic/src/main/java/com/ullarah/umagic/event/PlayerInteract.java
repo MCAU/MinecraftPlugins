@@ -75,18 +75,25 @@ public class PlayerInteract extends MagicFunctions implements Listener {
                 ItemFrame itemframe = (ItemFrame) entity;
                 Block block = itemframe.getLocation().getBlock();
 
-                itemframe.setVisible(!itemframe.isVisible());
+                if (player.isSneaking()) {
+                    itemframe.setFixed(!itemframe.isFixed());
+                    getActionMessage().message(player, "" + ChatColor.RED + ChatColor.BOLD
+                            + "Item Frame Fixed: " + itemframe.isFixed());
+                } else {
+                    itemframe.setVisible(!itemframe.isVisible());
+                    getActionMessage().message(player, "" + ChatColor.RED + ChatColor.BOLD
+                            + "Item Frame Visible: " + itemframe.isVisible());
+                }
+
                 double bX = block.getX();
                 double bY = block.getY();
                 double bZ = block.getZ();
 
                 block.getWorld().spawnParticle(Particle.DRAGON_BREATH, bX, bY, bZ, 30);
                 block.getWorld().playSound(block.getLocation(), Sound.ENTITY_SHULKER_TELEPORT, 0.5f, 0.5f);
-
                 event.setCancelled(true);
             }
         }
-
 
     }
 
