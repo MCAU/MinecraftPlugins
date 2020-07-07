@@ -231,7 +231,7 @@ public class MagicFunctions {
 
     }
 
-    private boolean checkBlock(Player player, Block block) {
+    protected boolean checkBlock(Player player, Block block) {
 
         if (player.hasPermission("umagic.bypass")) return true;
 
