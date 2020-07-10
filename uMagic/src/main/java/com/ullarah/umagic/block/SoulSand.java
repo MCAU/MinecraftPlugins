@@ -22,7 +22,7 @@ public class SoulSand extends BaseBlock {
     }
 
     public List<Material> getPermittedBlocks() {
-        return Arrays.asList(Material.SOUL_SAND);
+        return Arrays.asList(Material.SOUL_SAND, Material.SOUL_SOIL);
     }
 
 }

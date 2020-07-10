@@ -86,7 +86,7 @@ public class MagicFunctions {
                         new Banner(), new BannerWall(), new Barrier(), new Bed(),
                         new Bedrock(), new Button(), new Cactus(), new Carpet(),
                         new Emerald(), new Furnace(), new Ice(), new Ladder(),
-                        new Lamp(), new Lapis(), new Magma(), new Melon(),
+                        new Lamp(), new Lantern(), new Lapis(), new Magma(), new Melon(),
                         new Mushroom(), new Netherrack(), new Obsidian(), new PackedIce(),
                         new Plate(), new Rails(), new Redstone(), new Sand(),
                         new Sign(), new SignWall(), new Snow(), new Spawner(),
