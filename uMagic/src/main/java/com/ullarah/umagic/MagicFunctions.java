@@ -186,9 +186,6 @@ public class MagicFunctions {
     }
 
     protected void saveMetadata(Location location, String metadata) {
-        // add to our hashmap, then deal with sql.
-        magicLocations.put(location, metadata);
-
         try {
 
             String statement = "SELECT data FROM " + database + " WHERE "
@@ -207,6 +204,9 @@ public class MagicFunctions {
         } finally {
             getSqlConnection().closeSQLConnection();
         }
+
+        // add to our hashmap, then deal with sql.
+        magicLocations.put(location, metadata);
 
         getSqlConnection().runStatement("INSERT INTO " + database + " VALUES ("
                 + StringUtils.join(new String[]{"NULL", "'" + metadata + "'", "'" + location.getWorld().getName()
