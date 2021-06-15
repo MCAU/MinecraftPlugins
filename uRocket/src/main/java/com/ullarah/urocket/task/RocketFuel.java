@@ -202,12 +202,12 @@ public class RocketFuel {
         if (!isUnlimited && fuelBlock != null && fuelSingle != null)
             rocketFunctions.fuelRemove(player, fuelBlock, fuelSingle, itemFuelCost);
 
-        if (player.getLocation().getY() >= 250) {
+        if (player.getLocation().getY() >= 320) {
 
             rocketFunctions.disableRocketBoots(player, true);
             commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.RB_HIGH);
 
-        } else if (player.getLocation().getY() <= 0) {
+        } else if (player.getLocation().getY() <= -64) {
 
             rocketFunctions.disableRocketBoots(player, true);
             commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.RB_LOW);
