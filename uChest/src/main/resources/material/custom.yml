@@ -25,6 +25,7 @@ NETHERITE_BLOCK:                        { m: NETHERITE_BLOCK,                   
 REPEATING_COMMAND_BLOCK:                { m: REPEATING_COMMAND_BLOCK,                s: false, d: false, r: false, e: 0.0, x: 0.0 }
 SCULK_SENSOR:                           { m: SCULK_SENSOR,                           s: false, d: false, r: false, e: 0.0, x: 0.0 }
 SPAWNER:                                { m: SPAWNER,                                s: false, d: false, r: false, e: 0.0, x: 0.0 }
+SPORE_BLOSSOM:                          { m: SPORE_BLOSSOM,                          s: false, d: false, r: false, e: 0.0, x: 0.0 }
 STRUCTURE_BLOCK:                        { m: STRUCTURE_BLOCK,                        s: false, d: false, r: false, e: 0.0, x: 0.0 }
 STRUCTURE_VOID:                         { m: STRUCTURE_VOID,                         s: false, d: false, r: false, e: 0.0, x: 0.0 }
 WRITTEN_BOOK:                           { m: WRITTEN_BOOK,                           s: false, d: false, r: false, e: 0.0, x: 0.0 }
@@ -198,7 +199,6 @@ SOUL_CAMPFIRE:                          { m: SOUL_CAMPFIRE,                     
 SOUL_LANTERN:                           { m: SOUL_LANTERN,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
 SOUL_SOIL:                              { m: SOUL_SOIL,                              s: true, d: true, r: true, e: 0.0, x: 0.0 }
 SOUL_TORCH:                             { m: SOUL_TORCH,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
-SPORE_BLOSSOM:                          { m: SPORE_BLOSSOM,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
 SPYGLASS:                               { m: SPYGLASS,                               s: true, d: true, r: true, e: 0.0, x: 0.0 }
 STRIPPED_CRIMSON_HYPHAE:                { m: STRIPPED_CRIMSON_HYPHAE,                s: true, d: true, r: true, e: 0.0, x: 0.0 }
 STRIPPED_CRIMSON_STEM:                  { m: STRIPPED_CRIMSON_STEM,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
