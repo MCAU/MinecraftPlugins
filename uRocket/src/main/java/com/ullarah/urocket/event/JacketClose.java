@@ -38,7 +38,6 @@ public class JacketClose implements Listener {
                 FileConfiguration fuelConfig = YamlConfiguration.loadConfiguration(fuelFile);
 
                 switch (fuelInventory.getSize()) {
-
                     case 9:
                         fuelConfig.set("leather", fuelInventory.getContents());
                         break;
@@ -58,18 +57,13 @@ public class JacketClose implements Listener {
                     case 45:
                         fuelConfig.set("netherite", fuelInventory.getContents());
                         break;
-
                 }
 
                 try {
-
                     fuelConfig.save(fuelFile);
-
                 } catch (IOException e) {
-
                     commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.RB_JACKET_SAVE_ERROR);
                     e.printStackTrace();
-
                 }
 
             } else commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.RB_JACKET_SAVE_ERROR);

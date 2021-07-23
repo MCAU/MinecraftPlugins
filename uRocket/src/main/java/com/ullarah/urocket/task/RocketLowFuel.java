@@ -59,14 +59,12 @@ public class RocketLowFuel {
         String fuelType;
         RocketVariant.Variant variant = rp.getBootData().getVariant();
 
-        File fuelFile = new File(RocketInit.getPlugin().getDataFolder() + File.separator + "fuel", player.getUniqueId().toString() + ".yml");
-        FileConfiguration fuelConfig = YamlConfiguration.loadConfiguration(fuelFile);
-
         Inventory fuelInventory = null;
 
         if (variant.getFuelSingle() != null && variant.getFuelBlock() != null) {
 
-            if (fuelFile.exists()) {
+            FileConfiguration fuelConfig = new RocketFunctions().getFuelConfig(player);
+            if (fuelConfig != null) {
 
                 Material jacket = player.getInventory().getChestplate().getType();
 

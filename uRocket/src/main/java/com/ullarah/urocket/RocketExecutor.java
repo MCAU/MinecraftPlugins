@@ -3,6 +3,7 @@ package com.ullarah.urocket;
 import com.ullarah.urocket.command.DisplayComponentChest;
 import com.ullarah.urocket.command.DisplayHelp;
 import com.ullarah.urocket.function.CommonString;
+import com.ullarah.urocket.init.RocketLanguage;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -102,11 +103,12 @@ class RocketExecutor implements CommandExecutor {
                             return;
                         }
 
-                        File fuelFile = new File(RocketInit.getPlugin().getDataFolder() + File.separator + "fuel", player.getUniqueId().toString() + ".yml");
-                        FileConfiguration fuelConfig = YamlConfiguration.loadConfiguration(fuelFile);
+                        FileConfiguration fuelConfig = new RocketFunctions().getFuelConfig(player);
 
-                        if (fuelFile.exists()) {
-
+                        if (fuelConfig == null) {
+                            commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.RB_JACKET_FILE_404);
+                            return;
+                        } else {
                             Material jacket = player.getInventory().getChestplate().getType();
 
                             int jacketSize = rocketFunctions.getFuelJacketSize(jacket);
@@ -126,17 +128,13 @@ class RocketExecutor implements CommandExecutor {
                                 player.openInventory(fuelInventory);
 
                                 return;
-
                             }
-
                         }
-
                     }
                 }
             }
 
             commonString.messageSend(RocketInit.getPlugin(), player, true, ChatColor.RED + "Fuel Jacket not found!");
-
         }
 
     }

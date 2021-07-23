@@ -58,6 +58,7 @@ public final class RocketLanguage {
     public static final String RB_FZ_ENTRY = ChatColor.RED + "You have entered a No-Fly Zone!";
     public static final String RB_FZ_CURRENT = ChatColor.RED + "You are currently in a No-Fly Zone!";
 
+    public static final String RB_JACKET_FILE_404 = ChatColor.RED + "Fuel Jacket file not found...";
     public static final String RB_JACKET_CREATE_ERROR = ChatColor.RED + "Error creating fuel contents.";
     public static final String RB_JACKET_SAVE_ERROR = ChatColor.RED + "Error saving fuel contents.";
 

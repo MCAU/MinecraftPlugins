@@ -257,20 +257,16 @@ public class RocketFunctions {
     }
 
     public File getFuelFile(Player player) {
-
         return new File(RocketInit.getPlugin().getDataFolder() + File.separator + "fuel", player.getUniqueId().toString() + ".yml");
-
     }
 
-    private FileConfiguration getFuelConfig(Player player) {
-
+    public FileConfiguration getFuelConfig(Player player) {
         File fuelFile = getFuelFile(player);
         FileConfiguration fuelConfig = YamlConfiguration.loadConfiguration(fuelFile);
 
         if (fuelFile.exists()) return fuelConfig;
 
         return null;
-
     }
 
     private Inventory getFuelInventory(Player player) {
