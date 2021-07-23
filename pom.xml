@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-
         <module>uBeacon</module>
         <module>uBroadcast</module>
         <module>uChest</module>
@@ -22,11 +21,9 @@
         <module>uTab</module>
         <module>uTeleport</module>
         <module>uWild</module>
-
     </modules>
 
     <build>
-
         <defaultGoal>clean package</defaultGoal>
 
         <directory>${basedir}/target</directory>
@@ -42,9 +39,7 @@
         </resources>
 
         <pluginManagement>
-
             <plugins>
-
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
@@ -73,15 +68,11 @@
                         <skipTests>true</skipTests>
                     </configuration>
                 </plugin>
-
             </plugins>
-
         </pluginManagement>
-
     </build>
 
     <repositories>
-
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
@@ -96,21 +87,19 @@
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
-
     </repositories>
 
     <dependencies>
-
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.17-R0.1-SNAPSHOT</version>
+            <version>1.17.1-R0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
-            <version>1.17-R0.1-SNAPSHOT</version>
+            <version>1.17.1-R0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -131,14 +120,10 @@
             <version>1.7</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
 
     <properties>
-
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
     </properties>
-
 </project>
