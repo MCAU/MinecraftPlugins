@@ -33,10 +33,8 @@ public class PlayerMove implements Listener {
 
     @EventHandler
     public void playerMovement(PlayerMoveEvent event) {
-
         RocketFunctions rocketFunctions = new RocketFunctions();
         TitleSubtitle titleSubtitle = new TitleSubtitle();
-        //GroundFire groundFire = new GroundFire();
 
         final Player player = event.getPlayer();
         final RocketPlayer rp = RocketInit.getPlayer(player);
@@ -73,10 +71,9 @@ public class PlayerMove implements Listener {
         }
 
         if (rp.getBootData() != null) {
-
-            Location bTank = new Location(player.getWorld(), location.getX(), location.getY() - 2, location.getZ());
-            Location bStation = new Location(player.getWorld(), location.getX(), location.getY() - 1, location.getZ());
-            Location bStand = new Location(player.getWorld(), location.getX(), location.getY(), location.getZ());
+            Location bTank = new LocationShift().add(location, 0, -2, 0);
+            Location bStation = new LocationShift().add(location, 0, -1, 0);
+            Location bStand = location;
 
             BlockState tankBlock = bTank.getBlock().getState();
             Material stationMaterial = bStation.getBlock().getType();
@@ -155,10 +152,6 @@ public class PlayerMove implements Listener {
                 }
 
             }
-
-            //if (variant == RocketVariant.Variant.ORIGINAL)
-            //    if (player.isFlying() && player.getWorld().getName().equals(NETHER))
-            //        RocketInit.rocketFire.add(groundFire.setFire(player, "SINGLE", Material.NETHERRACK));
 
             lightningCheck(rp);
         }
