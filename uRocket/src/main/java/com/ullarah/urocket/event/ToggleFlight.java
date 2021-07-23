@@ -132,14 +132,12 @@ public class ToggleFlight implements Listener {
                 return;
             }
 
-        if (player.getWorld().getName().equals("world_nether")) {
+        if (player.getWorld().getName().equals(RocketInit.NETHER)) {
 
             if (variant == RocketVariant.Variant.ORIGINAL) {
-
                 player.getWorld().playSound(player.getEyeLocation(), Sound.ENTITY_GENERIC_EXPLODE, 0.8f, 0.8f);
                 player.setFlying(true);
                 player.setFlySpeed(power * 0.03f);
-
             }
 
         } else if (rocketFunctions.getBootPowerLevel(rocketBoots) == 10) {

@@ -24,9 +24,6 @@ import java.util.stream.Collectors;
 
 public class PlayerMove implements Listener {
 
-    private static final String OVERWORLD = "world";
-    private static final String NETHER = "world_nether";
-
     private static Random random = new Random();
     private static CommonString commonString = new CommonString();
     private static AreaCheck areaCheck = new AreaCheck();
@@ -165,7 +162,7 @@ public class PlayerMove implements Listener {
         final World world = player.getWorld();
         final Location location = player.getLocation();
 
-        if (world.getName().equals(OVERWORLD) && (world.hasStorm())) {
+        if (world.getName().equals(RocketInit.OVERWORLD) && (world.hasStorm())) {
             if (!player.getInventory().getBoots().getType().equals(Material.LEATHER_BOOTS)) {
                 if (player.isFlying()) {
                     if (areaCheck.aboveHighestBlock(location)) {

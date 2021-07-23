@@ -92,7 +92,7 @@ public class PlayerInteract implements Listener {
         Player player = rp.getPlayer();
 
         // Only place in the overworld
-        if (!player.getWorld().getName().equals("world")) {
+        if (!player.getWorld().getName().equals(RocketInit.OVERWORLD)) {
             event.setCancelled(true);
             commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.PlacementDeny("Repair Stands"));
             return;

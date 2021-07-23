@@ -27,6 +27,9 @@ public class RocketInit extends JavaPlugin {
 
     public static final String pluginName = "uRocket";
 
+    public static final String OVERWORLD = "world";
+    public static final String NETHER = "world_nether";
+
     /** Temporary set for blocks turned into fire in the nether */
     public static final HashSet<HashSet<Location>> rocketFire = new HashSet<>();
     /** Temporary map for blocks turned to glowstone */

@@ -55,7 +55,7 @@ public class BlockPlace implements Listener {
             return;
         }
 
-        if (player.getWorld().getName().equals("world")) {
+        if (player.getWorld().getName().equals(RocketInit.OVERWORLD)) {
 
             Location blockLocation = block.getLocation();
             Location belowLocation = new LocationShift().add(blockLocation, 0, -1, 0);

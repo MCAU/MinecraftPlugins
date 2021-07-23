@@ -25,7 +25,7 @@ public class ZoneDamage implements Listener {
     @EventHandler
     public void zoneCrystalDamage(EntityDamageByEntityEvent event) {
 
-        if (event.getEntity().getWorld().getName().equals("world")) {
+        if (event.getEntity().getWorld().getName().equals(RocketInit.OVERWORLD)) {
 
             if (event.getEntity() instanceof Entity)
                 if (event.getDamager() instanceof EnderCrystal)
@@ -78,13 +78,13 @@ public class ZoneDamage implements Listener {
 
     @EventHandler
     public void zoneCrystalExplosionEntity(EntityExplodeEvent event) {
-        if (event.getLocation().getWorld().getName().equals("world"))
+        if (event.getLocation().getWorld().getName().equals(RocketInit.OVERWORLD))
             if (event.getEntity() instanceof EnderCrystal) event.setCancelled(true);
     }
 
     @EventHandler
     public void zoneCrystalExplosionFrame(HangingBreakEvent event) {
-        if (event.getEntity().getWorld().getName().equals("world"))
+        if (event.getEntity().getWorld().getName().equals(RocketInit.OVERWORLD))
             if (event.getCause() == HangingBreakEvent.RemoveCause.EXPLOSION) event.setCancelled(true);
     }
 

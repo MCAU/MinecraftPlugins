@@ -236,7 +236,7 @@ public class RocketFunctions {
             return;
         }
 
-        if (variant != Variant.ORIGINAL && player.getWorld().getName().equals("world_nether")) {
+        if (variant != Variant.ORIGINAL && player.getWorld().getName().equals(RocketInit.NETHER)) {
             commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.RB_NETHER);
             disableRocketBoots(player, false);
             return;
