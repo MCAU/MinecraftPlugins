@@ -123,7 +123,6 @@ EGG_WITHER_SKELETON:  { m: WITHER_SKELETON_SPAWN_EGG,  s: false, d: false, r: fa
 EGG_WOLF:             { m: WOLF_SPAWN_EGG,             s: false, d: false, r: false, e: 0.0, x: 0.0 }
 EGG_ZOMBIE:           { m: ZOMBIE_SPAWN_EGG,           s: false, d: false, r: false, e: 0.0, x: 0.0 }
 EGG_ZOMBIE_HORSE:     { m: ZOMBIE_HORSE_SPAWN_EGG,     s: false, d: false, r: false, e: 0.0, x: 0.0 }
-EGG_ZOMBIE_PIGMAN:    { m: ZOMBIE_PIGMAN_SPAWN_EGG,    s: false, d: false, r: false, e: 0.0, x: 0.0 }
 EGG_ZOMBIE_VILLAGER:  { m: ZOMBIE_VILLAGER_SPAWN_EGG,  s: false, d: false, r: false, e: 0.0, x: 0.0 }
 EGG_CAT:              { m: CAT_SPAWN_EGG,              s: false, d: false, r: false, e: 0.0, x: 0.0 }
 EGG_FOX:              { m: FOX_SPAWN_EGG,              s: false, d: false, r: false, e: 0.0, x: 0.0 }

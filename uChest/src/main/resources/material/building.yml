@@ -24,7 +24,6 @@ CRSTONE_BRICK: { m: CRACKED_STONE_BRICKS,  s: true, d: true, r: true, e: 0.5,  x
 CHSTONE_BRICK: { m: CHISELED_STONE_BRICKS, s: true, d: true, r: true, e: 0.05, x: 0.06 }
 
 GRASS:   { m: GRASS_BLOCK, s: true, d: true, r: true, e: 0.5, x: 0.75 }
-PGRASS:  { m: GRASS_PATH,  s: true, d: true, r: true, e: 0.5, x: 0.75 }
 DIRT:    { m: DIRT,        s: true, d: true, r: true, e: 0.1, x: 0.15 }
 DCOARSE: { m: COARSE_DIRT, s: true, d: true, r: true, e: 0.2, x: 0.25 }
 DFARM:   { m: FARMLAND,    s: true, d: true, r: true, e: 0.1, x: 0.15 }

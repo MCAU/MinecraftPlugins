@@ -81,13 +81,13 @@ public class ToggleFlight implements Listener {
         }
 
         // Height checks
-        if (player.getLocation().getY() >= 250) {
+        if (player.getLocation().getY() >= 320) {
             rocketFunctions.disableRocketBoots(player, true);
             commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.RB_HIGH);
             event.setCancelled(true);
             return;
         }
-        if (player.getLocation().getY() <= 2) {
+        if (player.getLocation().getY() <= -64) {
             rocketFunctions.disableRocketBoots(player, true);
             commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.RB_LOW);
             event.setCancelled(true);

@@ -23,8 +23,8 @@ public class Lamp extends BaseBlock {
             data.setLit(true);
             saveMetadata(location, metaLamp);
         }
-
-        block.setBlockData(data, false);
+        // allow physics updates to update light level
+        block.setBlockData(data, true);
 
     }
 
