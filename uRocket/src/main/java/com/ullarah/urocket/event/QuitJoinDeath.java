@@ -1,7 +1,7 @@
 package com.ullarah.urocket.event;
 
 import com.ullarah.urocket.RocketFunctions;
-import com.ullarah.urocket.command.FuelCreation;
+import com.ullarah.urocket.function.FuelJacket;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
@@ -19,7 +19,7 @@ public class QuitJoinDeath implements Listener {
 
     @EventHandler
     public void rocketRemoveOnJoin(PlayerJoinEvent event) {
-        FuelCreation.create(event.getPlayer());
+        FuelJacket.create(event.getPlayer());
         rocketFunctions.disableRocketBoots(event.getPlayer(), false);
     }
 

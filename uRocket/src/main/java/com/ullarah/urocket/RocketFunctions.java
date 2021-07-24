@@ -261,11 +261,10 @@ public class RocketFunctions {
     }
 
     public FileConfiguration getFuelConfig(Player player) {
+        FuelJacket.create(player);
         File fuelFile = getFuelFile(player);
-        FileConfiguration fuelConfig = YamlConfiguration.loadConfiguration(fuelFile);
 
-        if (fuelFile.exists()) return fuelConfig;
-
+        if (fuelFile.exists()) return YamlConfiguration.loadConfiguration(fuelFile);
         return null;
     }
 

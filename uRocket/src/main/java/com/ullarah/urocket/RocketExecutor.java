@@ -3,6 +3,7 @@ package com.ullarah.urocket;
 import com.ullarah.urocket.command.DisplayComponentChest;
 import com.ullarah.urocket.command.DisplayHelp;
 import com.ullarah.urocket.function.CommonString;
+import com.ullarah.urocket.function.FuelJacket;
 import com.ullarah.urocket.init.RocketLanguage;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
