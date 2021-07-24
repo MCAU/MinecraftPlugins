@@ -28,7 +28,7 @@ import java.util.List;
 
 public class PlayerInteract implements Listener {
 
-    @EventHandler(ignoreCancelled = true)
+    @EventHandler // This event will fire as cancelled if the vanilla behavior is to do nothing (e.g interacting with air).
     public void playerInteraction(PlayerInteractEvent event) {
 
         Player player = event.getPlayer();
@@ -37,26 +37,9 @@ public class PlayerInteract implements Listener {
         ItemStack inHand = player.getInventory().getItemInMainHand();
 
         if (action.equals(Action.RIGHT_CLICK_AIR) && inHand.getType().equals(Material.CARROT_ON_A_STICK)) {
-
             if (player.getVehicle() instanceof Pig) {
-
-                Pig pig = (Pig) player.getVehicle();
-                Vector pigVelocity = pig.getVelocity();
-
-                double min = -0.045;
-                double max = 0.045;
-
-                if (pigVelocity.getX() > max) pigVelocity.setX(max);
-                if (pigVelocity.getX() < min) pigVelocity.setX(min);
-
-                if (pigVelocity.getY() > max) pigVelocity.setY(max);
-
-                if (pigVelocity.getZ() > max) pigVelocity.setZ(max);
-                if (pigVelocity.getZ() < min) pigVelocity.setZ(min);
-
-                if (RocketInit.rocketEntity.containsKey(pig.getUniqueId()))
-                    pig.setVelocity(new Vector(pigVelocity.getX() * 3, 0.5, pigVelocity.getZ() * 3));
-
+                // TODO: Pig doesn't work too well, saddle gets broken on return (unnamed)
+                triggerPig((Pig) player.getVehicle());
             }
             return;
         }
@@ -65,7 +48,6 @@ public class PlayerInteract implements Listener {
             ItemMeta rocketMeta = inHand.getItemMeta();
 
             if (rocketMeta.hasDisplayName()) {
-
                 String rocketItem = rocketMeta.getDisplayName();
                 if (rocketItem.equals(ChatColor.RED + "Rocket Boot Repair Stand")) {
                     placeRepairStand(event, rp, action);
@@ -76,10 +58,27 @@ public class PlayerInteract implements Listener {
                 else if (rocketItem.equals(ChatColor.RED + "Rocket Boot Fuel Jacket")) {
                     equipJacket(event, rp, action);
                 }
-
             }
         }
+    }
 
+    private void triggerPig(Pig pig) {
+        Vector pigVelocity = pig.getVelocity();
+
+        double min = -0.045;
+        double max = 0.045;
+
+        if (pigVelocity.getX() > max) { pigVelocity.setX(max); }
+        if (pigVelocity.getX() < min) { pigVelocity.setX(min); }
+
+        if (pigVelocity.getY() > max) { pigVelocity.setY(max); }
+
+        if (pigVelocity.getZ() > max) { pigVelocity.setZ(max); }
+        if (pigVelocity.getZ() < min) { pigVelocity.setZ(min); }
+
+        if (RocketInit.rocketEntity.containsKey(pig.getUniqueId())) {
+            pig.setVelocity(new Vector(pigVelocity.getX() * 3, 0.5, pigVelocity.getZ() * 3));
+        }
     }
 
     private void placeRepairStand(PlayerInteractEvent event, RocketPlayer rp, Action action) {
