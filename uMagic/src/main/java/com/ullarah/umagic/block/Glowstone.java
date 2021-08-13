@@ -4,6 +4,7 @@ import com.ullarah.umagic.InteractMeta;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Levelled;
+import org.bukkit.entity.Player;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,10 +13,16 @@ public class Glowstone extends BaseBlock {
 
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
+        Player player = meta.getPlayer();
+
         block.setType(Material.LIGHT, false);
 
         Levelled data = (Levelled) block.getBlockData();
-        data.setLevel(15);
+        if (player.isSneaking()) {
+            data.setLevel(7);
+        } else {
+            data.setLevel(15);
+        }
         block.setBlockData(data,false);
     }
 
