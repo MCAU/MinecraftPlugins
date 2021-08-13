@@ -21,6 +21,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.logging.Level;
 
 public class RocketInit extends JavaPlugin {
@@ -30,19 +31,17 @@ public class RocketInit extends JavaPlugin {
     public static final String OVERWORLD = "world";
     public static final String NETHER = "world_nether";
 
-    /** Temporary set for blocks turned into fire in the nether */
-    public static final HashSet<HashSet<Location>> rocketFire = new HashSet<>();
     /** Temporary map for blocks turned to glowstone */
-    public static final ConcurrentHashMap<Location, Material> rocketGlow = new ConcurrentHashMap<>();
+    public static final ConcurrentMap<Location, Material> rocketGlow = new ConcurrentHashMap<>();
     /** Map of pigs with rocket saddles */
-    public static final ConcurrentHashMap<UUID, EntityType> rocketEntity = new ConcurrentHashMap<>();
-    public static final ConcurrentHashMap<UUID, Location> rocketRepair = new ConcurrentHashMap<>();
-    public static final ConcurrentHashMap<UUID, RepairStandData> rocketRepairStand = new ConcurrentHashMap<>();
-    public static final ConcurrentHashMap<UUID, ConcurrentHashMap<Location, Location>> rocketZoneLocations = new ConcurrentHashMap<>();
+    public static final ConcurrentMap<UUID, EntityType> rocketEntity = new ConcurrentHashMap<>();
+    public static final ConcurrentMap<UUID, Location> rocketRepair = new ConcurrentHashMap<>();
+    public static final ConcurrentMap<UUID, RepairStandData> rocketRepairStand = new ConcurrentHashMap<>();
+    public static final ConcurrentMap<UUID, ConcurrentHashMap<Location, Location>> rocketZoneLocations = new ConcurrentHashMap<>();
 
-    public static final HashMap<String, Integer> registerMap = new HashMap<>();
+    public static final Map<String, Integer> registerMap = new HashMap<>();
 
-    private static final HashMap<Player, RocketPlayer> playerMap = new HashMap<>();
+    private static final Map<Player, RocketPlayer> playerMap = new HashMap<>();
 
     private static Plugin plugin;
     private static PluginManager pluginManager;
@@ -92,8 +91,8 @@ public class RocketInit extends JavaPlugin {
         return playerMap.keySet();
     }
 
+    @Override
     public void onEnable() {
-
         setPluginManager(Bukkit.getPluginManager());
         setPlugin(getPluginManager().getPlugin(pluginName));
 
@@ -190,6 +189,7 @@ public class RocketInit extends JavaPlugin {
 
     }
 
+    @Override
     public void onDisable() {
         for (Player player : getPlayers()) {
             new RocketFunctions().disableRocketBoots(player, false);

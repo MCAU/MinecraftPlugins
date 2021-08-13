@@ -23,6 +23,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 public class PlayerMove implements Listener {
+    private static final int LIGHTNING_CHANCE = 2000;
 
     private static Random random = new Random();
     private static CommonString commonString = new CommonString();
@@ -156,15 +157,16 @@ public class PlayerMove implements Listener {
     }
 
     private static void lightningCheck(final RocketPlayer rp) {
-        if (random.nextInt(500) != 0) return;
+        if (random.nextInt(LIGHTNING_CHANCE) != 0) return;
 
         final Player player = rp.getPlayer();
         final World world = player.getWorld();
-        final Location location = player.getLocation();
 
         if (world.getName().equals(RocketInit.OVERWORLD) && (world.hasStorm())) {
             if (!player.getInventory().getBoots().getType().equals(Material.LEATHER_BOOTS)) {
                 if (player.isFlying()) {
+                    final Location location = player.getLocation();
+
                     if (areaCheck.aboveHighestBlock(location)) {
                         world.strikeLightning(location);
                         world.playSound(location, Sound.ENTITY_FIREWORK_ROCKET_BLAST, 1.5f, 0.75f);
