@@ -92,7 +92,8 @@ public class MagicFunctions {
                         new Sign(), new SignWall(), new Snow(), new Spawner(),
                         new Stairs(), new StructureBlock(), new StructureVoid(), new Terracotta(),
                         new Torch(), new Trapdoor(), new Triphook(), new Vines(),
-                        new WeightedPlate(), new Wood(), new Wool(), new SoulSand(), new Grass());
+                        new WeightedPlate(), new Wood(), new Wool(), new SoulSand(), new Grass(),
+                        new Glowstone());
             }
         }
     }
