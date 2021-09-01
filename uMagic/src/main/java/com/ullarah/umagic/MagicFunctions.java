@@ -84,7 +84,7 @@ public class MagicFunctions {
             if (blockRegister.isEmpty()) {
                 addToRegister(
                         new Banner(), new BannerWall(), new Barrier(), new Bed(),
-                        new Bedrock(), new Button(), new Cactus(), new Carpet(),
+                        new Bedrock(), new BuddingAmethyst(), new Button(), new Cactus(), new Carpet(),
                         new Emerald(), new Furnace(), new Ice(), new Ladder(),
                         new Lamp(), new Lantern(), new Lapis(), new Magma(), new Melon(),
                         new Mushroom(), new Netherrack(), new Obsidian(), new PackedIce(),
@@ -157,7 +157,6 @@ public class MagicFunctions {
     private void initMetadata() {
 
         try {
-
             ResultSet resultSet = getSqlConnection().getResult("SELECT * FROM " + database);
 
             while (resultSet.next()) {
@@ -175,20 +174,15 @@ public class MagicFunctions {
             }
 
         } catch (SQLException e) {
-
             getPlugin().getLogger().log(Level.SEVERE, getSqlMessage().sqlConnectionFailure(), e);
-
         } finally {
-
             getSqlConnection().closeSQLConnection();
-
         }
 
     }
 
     protected void saveMetadata(Location location, String metadata) {
         try {
-
             String statement = "SELECT data FROM " + database + " WHERE "
                     + StringUtils.join(new String[]{
                             "world='" + location.getWorld().getName() + "'",
@@ -213,7 +207,6 @@ public class MagicFunctions {
                 + StringUtils.join(new String[]{"NULL", "'" + metadata + "'", "'" + location.getWorld().getName()
                 + "'", String.valueOf(location.getBlockX()), String.valueOf(location.getBlockY()),
                 String.valueOf(location.getBlockZ())}, ",") + ");");
-
     }
 
     protected void removeMetadata(Location location) {
@@ -228,8 +221,6 @@ public class MagicFunctions {
                         "locZ=" + location.getBlockZ()},
                 " AND ");
         getSqlConnection().runStatement(statement);
-
-
     }
 
     protected boolean checkBlock(Player player, Block block) {
@@ -272,7 +263,6 @@ public class MagicFunctions {
     }
 
     protected boolean usingMagicHoe(Player player) {
-
         MagicHoeNormal recipe = new MagicHoeNormal();
         ItemStack inMainHand = player.getInventory().getItemInMainHand();
 
@@ -281,7 +271,6 @@ public class MagicFunctions {
                 if (inMainHand.getItemMeta().getDisplayName().equals(recipe.getHoeDisplayName())) return true;
 
         return false;
-
     }
 
     protected boolean checkHoeInteract(PlayerInteractEvent event, Player player, Block block) {
@@ -325,20 +314,17 @@ public class MagicFunctions {
 
             int hoeType = 0;
 
-            if (inMainHand.hasItemMeta()) if (inMainHand.getItemMeta().hasLore()) {
-
+            if (inMainHand.hasItemMeta() && inMainHand.getItemMeta().hasLore()) {
                 String loreLine = inMainHand.getItemMeta().getLore().get(0);
 
                 if (loreLine.equals(new MagicHoeSuper().getHoeTypeLore())) hoeType = 1;
                 if (loreLine.equals(new MagicHoeUber().getHoeTypeLore())) hoeType = 2;
                 if (loreLine.equals(new MagicHoeCosmic().getHoeTypeLore())) hoeType = 3;
-
             }
 
             displayParticles(block, hoeType);
 
             switch (hoeType) {
-
                 case 0:
                     inMainHand.setDurability((short) (inMainHand.getDurability() + 75));
                     break;
@@ -354,7 +340,6 @@ public class MagicFunctions {
                 case 3:
                     inMainHand.setDurability((short) (inMainHand.getDurability() - 1));
                     break;
-
             }
 
             if (inMainHand.getDurability() >= inMainHand.getType().getMaxDurability()) {
@@ -365,12 +350,10 @@ public class MagicFunctions {
             }
 
             return true;
-
         }
 
         event.setCancelled(true);
         return false;
-
     }
 
     private void displayParticles(Block block, int hoeType) {
@@ -402,7 +385,6 @@ public class MagicFunctions {
     }
 
     void giveMagicHoe(Player player, ItemStack hoe) {
-
         if (player.hasPermission("umagic.gethoe")) {
 
             PlayerInventory playerInventory = player.getInventory();
@@ -415,7 +397,6 @@ public class MagicFunctions {
                     + "Your inventory is full!");
 
         }
-
     }
 
     protected BaseBlock getBlock(Material material) {
@@ -441,5 +422,4 @@ public class MagicFunctions {
             System.out.println("[" + magicCount + "/" + magicLocations.size() + "] " + world + "(" + x + "," + y + "," + z + ") " + meta);
         }
     }
-
 }

@@ -8,11 +8,10 @@ import org.bukkit.block.BlockState;
 import org.bukkit.block.CreatureSpawner;
 import org.bukkit.entity.EntityType;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Spawner extends BaseBlock {
-
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
         BlockFace face = meta.getFace();
@@ -21,11 +20,10 @@ public class Spawner extends BaseBlock {
         EntityType originalEntityType = originalSpawner.getSpawnedType();
         int originalEntityDelay = originalSpawner.getDelay();
         Block newSpawn = block.getRelative(face.getOppositeFace());
-        Material destination = newSpawn.getType();
+        Material newType = newSpawn.getType();
 
-        if (destination == Material.AIR || destination == Material.CAVE_AIR) {
-
-            block.setType(destination, false);
+        if (newType.isAir()) {
+            block.setType(newType, false);
             newSpawn.setType(Material.SPAWNER, false);
 
             BlockState blockState = newSpawn.getState();
@@ -38,7 +36,6 @@ public class Spawner extends BaseBlock {
     }
 
     public List<Material> getPermittedBlocks() {
-        return Arrays.asList(Material.SPAWNER);
+        return Collections.singletonList(Material.SPAWNER);
     }
-
 }
