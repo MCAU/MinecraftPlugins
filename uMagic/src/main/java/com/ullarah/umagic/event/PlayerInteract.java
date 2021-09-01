@@ -26,10 +26,8 @@ public class PlayerInteract extends MagicFunctions implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void event(PlayerInteractEvent event) {
-
         Player player = event.getPlayer();
         Block block = event.getClickedBlock();
-        BlockFace face = event.getBlockFace();
 
         if (!usingMagicHoe(player))
             return;
@@ -39,21 +37,18 @@ public class PlayerInteract extends MagicFunctions implements Listener {
 
         event.setCancelled(true);
 
+        BlockFace face = event.getBlockFace();
         InteractMeta meta = new InteractMeta(block, face, player);
         getBlock(block.getType()).process(meta);
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void event(PlayerSwapHandItemsEvent event) {
-
         Player player = event.getPlayer();
 
         if (usingMagicHoe(player)) {
-
-            getActionMessage().message(player, "" + ChatColor.RED + ChatColor.BOLD
-                    + "Cannot be used in off-hand slot!");
+            getActionMessage().message(player, ChatColor.RED, "Cannot be used in off-hand slot!");
             event.setCancelled(true);
-
         }
     }
 
@@ -78,12 +73,10 @@ public class PlayerInteract extends MagicFunctions implements Listener {
             if (player.hasPermission("umagic.usage") && checkBlock(player, block) && player.getGameMode().equals(GameMode.SURVIVAL)) {
                 if (player.isSneaking()) {
                     itemframe.setFixed(!itemframe.isFixed());
-                    getActionMessage().message(player, "" + ChatColor.RED + ChatColor.BOLD
-                            + "Item Frame Fixed: " + itemframe.isFixed());
+                    getActionMessage().message(player, ChatColor.RED, "Item Frame Fixed: " + itemframe.isFixed());
                 } else {
                     itemframe.setVisible(!itemframe.isVisible());
-                    getActionMessage().message(player, "" + ChatColor.RED + ChatColor.BOLD
-                            + "Item Frame Visible: " + itemframe.isVisible());
+                    getActionMessage().message(player, ChatColor.RED, "Item Frame Visible: " + itemframe.isVisible());
                 }
 
                 // then just make our own particles
