@@ -21,7 +21,6 @@ public class Vines extends BaseBlock {
         Block block = meta.getBlock();
 
         saveMetadata(block.getLocation(), metaVine);
-
         multipleFacingData.process(block);
     }
 

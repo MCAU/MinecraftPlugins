@@ -45,7 +45,9 @@ public class MagicFunctions {
             metaReds = "uMagic.rd";
 
     private static final HashMap<Material, BaseBlock> blockRegister = new HashMap<>();
-    protected static HashMap<Location, String> magicLocations = new HashMap<>();
+
+    protected static Map<Location, String> magicLocations = new HashMap<>();
+    protected static Map<Player, Block> scrollMap = new HashMap<>();
 
     private final String furnaceFuel = "" + ChatColor.DARK_RED + ChatColor.ITALIC + ChatColor.GREEN + ChatColor.BOLD,
             furnaceSmelt = "" + ChatColor.BOLD + ChatColor.ITALIC + ChatColor.YELLOW;
@@ -74,7 +76,7 @@ public class MagicFunctions {
 
             if (blockRegister.isEmpty()) {
                 addToRegister(
-                        new Banner(), new BannerWall(), new Barrier(), new Bed(),
+                        new Banner(), new BannerWall(), new Barrier(), new BedHalf(),
                         new Bedrock(), new BuddingAmethyst(), new Button(), new Cactus(), new Carpet(),
                         new Emerald(), new Furnace(), new Ice(), new Ladder(),
                         new Lamp(), new Lantern(), new Lapis(), new Magma(), new Melon(),
@@ -278,6 +280,13 @@ public class MagicFunctions {
         if (!player.getGameMode().equals(GameMode.SURVIVAL)) {
             event.setCancelled(true);
             return false; // Only works in Survival
+        }
+
+        if (scrollMap.containsKey(player) && (event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR)) {
+            scrollMap.remove(player);
+            getActionMessage().message(player, ChatColor.GREEN, "Block state locked");
+            event.setCancelled(true);
+            return false; // Lock block state if scrolling is enabled, must be above other Action checks
         }
 
         if (event.getAction() != Action.RIGHT_CLICK_BLOCK) {

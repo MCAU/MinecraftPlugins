@@ -14,7 +14,6 @@ public class Sign extends BaseBlock {
         Block block = meta.getBlock();
 
         new RotatableData().process(block);
-
         saveMetadata(block.getLocation(), metaSign);
     }
 

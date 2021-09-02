@@ -1,18 +1,17 @@
 package com.ullarah.umagic;
 
 import org.bukkit.block.Block;
-import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
 
-public class InteractMeta {
+public class ScrollMeta {
 
     private final Block block;
-    private final BlockFace face;
+    private final boolean forward;
     private final Player player;
 
-    public InteractMeta(Block block, BlockFace face, Player player) {
+    public ScrollMeta(Block block, boolean forward, Player player) {
         this.block = block;
-        this.face = face;
+        this.forward = forward;
         this.player = player;
     }
 
@@ -20,8 +19,8 @@ public class InteractMeta {
         return block;
     }
 
-    public BlockFace getFace() {
-        return face;
+    public boolean isForward() {
+        return forward;
     }
 
     public Player getPlayer() {
