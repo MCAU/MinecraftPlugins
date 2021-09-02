@@ -26,4 +26,8 @@ public class ScrollMeta {
     public Player getPlayer() {
         return player;
     }
+
+    public int delta() {
+        return isForward() ? 1 : -1;
+    }
 }

@@ -1,6 +1,8 @@
 package com.ullarah.umagic.block;
 
 import com.ullarah.umagic.InteractMeta;
+import com.ullarah.umagic.ScrollMeta;
+import com.ullarah.umagic.blockdata.ScrollElement;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -8,22 +10,32 @@ import org.bukkit.block.BlockFace;
 import java.util.Arrays;
 import java.util.List;
 
-public class Stairs extends BaseBlock {
+public class Stairs extends ScrollBlock {
+
+    private static final ScrollElement<org.bukkit.block.data.type.Stairs.Shape> shapes = new ScrollElement<>(Arrays.asList(
+            org.bukkit.block.data.type.Stairs.Shape.values()));
+
+    private static final ScrollElement<BlockFace> faces = new ScrollElement<>(Arrays.asList(
+            BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST));
 
     public void process(InteractMeta meta) {
+        enableScroll(meta);
+    }
+
+    public void process(ScrollMeta meta) {
         Block block = meta.getBlock();
 
         org.bukkit.block.data.type.Stairs data = (org.bukkit.block.data.type.Stairs) block.getBlockData();
         BlockFace facing = data.getFacing();
         org.bukkit.block.data.type.Stairs.Shape shape = data.getShape();
 
-        org.bukkit.block.data.type.Stairs.Shape[] shapes = org.bukkit.block.data.type.Stairs.Shape.values();
-
-        data.setShape(shapes[(shape.ordinal() + 1) % shapes.length]);
-        if (shape == org.bukkit.block.data.type.Stairs.Shape.OUTER_RIGHT) {
-            data.setFacing(BlockFace.values()[(facing.ordinal() + 1) % 4]);
+        shape = shapes.scrollItem(shape, meta.delta());
+        if (shape == shapes.terminalItem(meta.isForward())) {
+            facing = faces.scrollItem(facing, meta.delta());
         }
 
+        data.setShape(shape);
+        data.setFacing(facing);
         block.setBlockData(data, false);
     }
 

@@ -2,7 +2,7 @@ package com.ullarah.umagic.block;
 
 import com.ullarah.umagic.InteractMeta;
 import com.ullarah.umagic.ScrollMeta;
-import org.bukkit.ChatColor;
+import com.ullarah.umagic.blockdata.ScrollElement;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -15,14 +15,17 @@ import java.util.List;
 
 public class BedHalf extends ScrollBlock {
 
-    private static final List<Material> beds = Arrays.asList(
+    private static final ScrollElement<BlockFace> faces = new ScrollElement<>(Arrays.asList(
+            BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST));
+
+    private static final ScrollElement<Bed.Part> parts = new ScrollElement<>(Arrays.asList(
+            Bed.Part.FOOT, Bed.Part.HEAD));
+
+    private static final ScrollElement<Material> beds = new ScrollElement<>(Arrays.asList(
             Material.RED_BED, Material.ORANGE_BED, Material.YELLOW_BED, Material.LIME_BED,
             Material.GREEN_BED, Material.BLUE_BED, Material.LIGHT_BLUE_BED, Material.CYAN_BED,
             Material.LIGHT_GRAY_BED, Material.GRAY_BED, Material.BLACK_BED, Material.BROWN_BED,
-            Material.MAGENTA_BED, Material.PURPLE_BED, Material.PINK_BED, Material.WHITE_BED
-    );
-
-    private static final List<BlockFace> faces = Arrays.asList(BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST);
+            Material.MAGENTA_BED, Material.PURPLE_BED, Material.PINK_BED, Material.WHITE_BED));
 
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
@@ -43,19 +46,14 @@ public class BedHalf extends ScrollBlock {
         Block block = meta.getBlock();
         Bed data = (Bed) block.getBlockData();
 
-        int delta = meta.isForward() ? 1 : -1;
-        BlockFace terminalFacing = meta.isForward() ? BlockFace.NORTH : BlockFace.WEST;
-        Bed.Part terminalPart = meta.isForward() ? Bed.Part.FOOT : Bed.Part.HEAD;
-
         BlockFace facing = data.getFacing();
         Bed.Part part = data.getPart();
 
-        facing = scrollFacing(facing, delta);
-        if (facing == terminalFacing) {
-            part = scrollPart(part);
-
-            if (part == terminalPart) {
-                Material next = scrollMaterial(block.getType(), delta);
+        facing = faces.scrollItem(facing, meta.delta());
+        if (facing == faces.terminalItem(meta.isForward())) {
+            part = parts.scrollItem(part, meta.delta());
+            if (part == parts.terminalItem(meta.isForward())) {
+                Material next = beds.scrollItem(block.getType(), meta.delta());
                 block.setType(next, false);
             }
         }
@@ -67,22 +65,8 @@ public class BedHalf extends ScrollBlock {
         block.setBlockData(data, false);
     }
 
-    private BlockFace scrollFacing(BlockFace facing, int delta) {
-        int size = faces.size();
-        return faces.get((faces.indexOf(facing) + delta + size) % size);
-    }
-
-    private Bed.Part scrollPart(Bed.Part part) {
-        return (part == Bed.Part.HEAD) ? Bed.Part.FOOT : Bed.Part.HEAD;
-    }
-
-    private Material scrollMaterial(Material type, int delta) {
-        int size = beds.size();
-        return beds.get((beds.indexOf(type) + delta + size) % size);
-    }
-
     public List<Material> getPermittedBlocks() {
-        List<Material> list = new ArrayList<>(beds);
+        List<Material> list = new ArrayList<>(beds.getList());
         list.add(Material.HAY_BLOCK);
         return list;
     }
