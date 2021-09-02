@@ -1,15 +1,14 @@
 package com.ullarah.umagic.block;
 
-import com.ullarah.umagic.InteractMeta;
+import com.ullarah.umagic.ScrollMeta;
 import com.ullarah.umagic.blockdata.MultipleFacingData;
 import org.bukkit.Material;
-import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class Mushroom extends BaseBlock {
+public class Mushroom extends ScrollBlock {
 
     private static final MultipleFacingData multipleFacingData;
 
@@ -17,9 +16,8 @@ public class Mushroom extends BaseBlock {
         multipleFacingData = new MultipleFacingData(true, BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST, BlockFace.UP, BlockFace.DOWN);
     }
 
-    public void process(InteractMeta meta) {
-        Block block = meta.getBlock();
-        multipleFacingData.process(block);
+    public void process(ScrollMeta meta) {
+        multipleFacingData.process(meta);
     }
 
     public List<Material> getPermittedBlocks() {

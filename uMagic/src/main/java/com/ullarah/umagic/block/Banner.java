@@ -1,6 +1,6 @@
 package com.ullarah.umagic.block;
 
-import com.ullarah.umagic.InteractMeta;
+import com.ullarah.umagic.ScrollMeta;
 import com.ullarah.umagic.blockdata.RotatableData;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -8,12 +8,11 @@ import org.bukkit.block.Block;
 import java.util.Arrays;
 import java.util.List;
 
-public class Banner extends BaseBlock {
+public class Banner extends ScrollBlock {
 
-    public void process(InteractMeta meta) {
+    public void process(ScrollMeta meta) {
         Block block = meta.getBlock();
-
-        new RotatableData().process(block);
+        new RotatableData().process(meta);
         saveMetadata(block.getLocation(), metaBanr);
     }
 
