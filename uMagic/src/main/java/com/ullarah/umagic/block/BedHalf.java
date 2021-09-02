@@ -27,6 +27,7 @@ public class BedHalf extends ScrollBlock {
             Material.LIGHT_GRAY_BED, Material.GRAY_BED, Material.BLACK_BED, Material.BROWN_BED,
             Material.MAGENTA_BED, Material.PURPLE_BED, Material.PINK_BED, Material.WHITE_BED));
 
+    @Override
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
         Location location = block.getLocation();
@@ -49,11 +50,11 @@ public class BedHalf extends ScrollBlock {
         BlockFace facing = data.getFacing();
         Bed.Part part = data.getPart();
 
-        facing = faces.scrollItem(facing, meta.delta());
-        if (facing == faces.terminalItem(meta.isForward())) {
-            part = parts.scrollItem(part, meta.delta());
-            if (part == parts.terminalItem(meta.isForward())) {
-                Material next = beds.scrollItem(block.getType(), meta.delta());
+        facing = faces.scrollItem(facing, meta);
+        if (facing == faces.terminalItem(meta)) {
+            part = parts.scrollItem(part, meta);
+            if (part == parts.terminalItem(meta)) {
+                Material next = beds.scrollItem(block.getType(), meta);
                 block.setType(next, false);
             }
         }

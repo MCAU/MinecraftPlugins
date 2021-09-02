@@ -1,6 +1,5 @@
 package com.ullarah.umagic.block;
 
-import com.ullarah.umagic.InteractMeta;
 import com.ullarah.umagic.ScrollMeta;
 import com.ullarah.umagic.blockdata.ScrollElement;
 import org.bukkit.Material;
@@ -18,10 +17,6 @@ public class Stairs extends ScrollBlock {
     private static final ScrollElement<BlockFace> faces = new ScrollElement<>(Arrays.asList(
             BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST));
 
-    public void process(InteractMeta meta) {
-        enableScroll(meta);
-    }
-
     public void process(ScrollMeta meta) {
         Block block = meta.getBlock();
 
@@ -29,9 +24,9 @@ public class Stairs extends ScrollBlock {
         BlockFace facing = data.getFacing();
         org.bukkit.block.data.type.Stairs.Shape shape = data.getShape();
 
-        shape = shapes.scrollItem(shape, meta.delta());
-        if (shape == shapes.terminalItem(meta.isForward())) {
-            facing = faces.scrollItem(facing, meta.delta());
+        shape = shapes.scrollItem(shape, meta);
+        if (shape == shapes.terminalItem(meta)) {
+            facing = faces.scrollItem(facing, meta);
         }
 
         data.setShape(shape);

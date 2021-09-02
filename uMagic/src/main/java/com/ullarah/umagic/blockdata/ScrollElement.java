@@ -1,5 +1,7 @@
 package com.ullarah.umagic.blockdata;
 
+import com.ullarah.umagic.ScrollMeta;
+
 import java.util.List;
 
 public class ScrollElement<N> {
@@ -12,13 +14,13 @@ public class ScrollElement<N> {
         this.size = list.size();
     }
 
-    public N scrollItem(N current, int delta) {
+    public N scrollItem(N current, ScrollMeta meta) {
         int idx = list.indexOf(current);
-        return list.get((idx + delta + size) % size);
+        return list.get((idx + meta.delta() + size) % size);
     }
 
-    public N terminalItem(boolean forward) {
-        return forward ? list.get(0) : list.get(size - 1);
+    public N terminalItem(ScrollMeta meta) {
+        return meta.isForward() ? list.get(0) : list.get(size - 1);
     }
 
     public List<N> getList() {

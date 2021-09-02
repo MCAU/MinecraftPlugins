@@ -19,6 +19,7 @@ import com.ullarah.umagic.recipe.MagicHoeSuper;
 import com.ullarah.umagic.recipe.MagicHoeUber;
 import org.bukkit.*;
 import org.bukkit.block.Block;
+import org.bukkit.block.data.type.Wall;
 import org.bukkit.craftbukkit.libs.org.apache.commons.lang3.StringUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.Action;
@@ -84,7 +85,7 @@ public class MagicFunctions {
                         new Plate(), new Rails(), new Redstone(), new Sand(),
                         new Sign(), new SignWall(), new Snow(), new Spawner(),
                         new Stairs(), new StructureBlock(), new StructureVoid(), new Terracotta(),
-                        new Torch(), new Trapdoor(), new Triphook(), new Vines(),
+                        new Torch(), new Trapdoor(), new Triphook(), new Vines(), new Walls(),
                         new WeightedPlate(), new Wood(), new Wool(), new SoulSand(), new Grass(),
                         new Glowstone());
             }
