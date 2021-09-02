@@ -39,14 +39,11 @@ public class Walls extends ScrollBlock {
             }
         }
 
-
-
-        boolean allNone = true;
+        // Wall may turn invisible, but can be recovered by triggering a block update
         for (BlockFace face : faces) {
             data.setHeight(face, heightMap.get(face));
-            allNone = allNone && heightMap.get(face) == Wall.Height.NONE;
         }
-        data.setUp(up || allNone); // Cannot have all walls as NONE and up as false
+        data.setUp(up);
         block.setBlockData(data, false);
     }
 
@@ -61,5 +58,4 @@ public class Walls extends ScrollBlock {
                 Material.RED_SANDSTONE_WALL, Material.SANDSTONE_WALL, Material.STONE_BRICK_WALL
         );
     }
-
 }

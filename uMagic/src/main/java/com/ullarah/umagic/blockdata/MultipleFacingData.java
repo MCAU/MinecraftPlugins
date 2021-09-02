@@ -1,5 +1,6 @@
 package com.ullarah.umagic.blockdata;
 
+import com.ullarah.umagic.ScrollMeta;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.data.MultipleFacing;
@@ -9,11 +10,11 @@ import java.util.LinkedHashMap;
 
 public class MultipleFacingData {
 
-    private final boolean allowNone;
+    private final int minimum;
     private final HashMap<BlockFace, Integer> faces;
 
     public MultipleFacingData(boolean allowNone, BlockFace... permitted) {
-        this.allowNone = allowNone;
+        this.minimum = allowNone ? 0 : 1;
         this.faces = new LinkedHashMap<>();
 
         int val = 1;
@@ -24,7 +25,8 @@ public class MultipleFacingData {
         }
     }
 
-    public void process(Block block) {
+    public void process(ScrollMeta meta) {
+        Block block = meta.getBlock();
         MultipleFacing data = (MultipleFacing) block.getBlockData();
 
         int sum = 0;
@@ -35,9 +37,11 @@ public class MultipleFacingData {
 
         // Increment, wrap-around 2^n - 1
         int max = (int) Math.pow(2, faces.size()) - 1;
-        sum += 1;
+        sum += meta.delta();
         if (sum > max) {
-            sum = allowNone ? 0 : 1;
+            sum = minimum;
+        } else if (sum < minimum) {
+            sum = max;
         }
 
         for (BlockFace face : faces.keySet()) {

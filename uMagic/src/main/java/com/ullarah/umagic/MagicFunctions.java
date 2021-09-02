@@ -19,7 +19,6 @@ import com.ullarah.umagic.recipe.MagicHoeSuper;
 import com.ullarah.umagic.recipe.MagicHoeUber;
 import org.bukkit.*;
 import org.bukkit.block.Block;
-import org.bukkit.block.data.type.Wall;
 import org.bukkit.craftbukkit.libs.org.apache.commons.lang3.StringUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.Action;

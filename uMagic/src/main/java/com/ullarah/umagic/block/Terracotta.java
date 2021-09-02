@@ -1,18 +1,16 @@
 package com.ullarah.umagic.block;
 
-import com.ullarah.umagic.InteractMeta;
+import com.ullarah.umagic.ScrollMeta;
 import com.ullarah.umagic.blockdata.DirectionalData;
 import org.bukkit.Material;
-import org.bukkit.block.Block;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class Terracotta extends BaseBlock {
+public class Terracotta extends ScrollBlock {
 
-    public void process(InteractMeta meta) {
-        Block block = meta.getBlock();
-        new DirectionalData().process(block);
+    public void process(ScrollMeta meta) {
+        new DirectionalData().process(meta);
     }
 
     public List<Material> getPermittedBlocks() {

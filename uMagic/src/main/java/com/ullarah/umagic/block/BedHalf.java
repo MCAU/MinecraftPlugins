@@ -38,7 +38,7 @@ public class BedHalf extends ScrollBlock {
             return;
         }
 
-        if (magicLocations.get(location).equals(metaBeds)) {
+        if (magicLocations.containsKey(location) && magicLocations.get(location).equals(metaBeds)) {
             enableScroll(meta);
         }
     }
