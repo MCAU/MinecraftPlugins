@@ -78,7 +78,7 @@ public class MagicFunctions {
                 addToRegister(
                         new Banner(), new BannerWall(), new Barrier(), new BedHalf(),
                         new Bedrock(), new BuddingAmethyst(), new Button(), new Cactus(), new Carpet(),
-                        new Emerald(), new Furnace(), new Ice(), new Ladder(),
+                        new Emerald(), new Fence(), new Furnace(), new Ice(), new Ladder(),
                         new Lamp(), new Lantern(), new Lapis(), new Magma(), new Melon(),
                         new Mushroom(), new Netherrack(), new Obsidian(), new PackedIce(),
                         new Plate(), new Rails(), new Redstone(), new Sand(),
