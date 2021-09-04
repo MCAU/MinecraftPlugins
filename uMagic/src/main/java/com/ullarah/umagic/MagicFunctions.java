@@ -77,16 +77,17 @@ public class MagicFunctions {
             if (blockRegister.isEmpty()) {
                 addToRegister(
                         new Banner(), new BannerWall(), new Barrier(), new BedHalf(),
-                        new Bedrock(), new BuddingAmethyst(), new Button(), new Cactus(), new Carpet(),
-                        new Emerald(), new Fence(), new Furnace(), new Ice(), new Ladder(),
+                        new Bedrock(), new BuddingAmethyst(), new Button(), new Cactus(),
+                        new Carpet(), new Emerald(), new Fence(), new Furnace(),
+                        new Glowstone(), new Grass(), new Hopper(), new Ice(), new Ladder(),
                         new Lamp(), new Lantern(), new Lapis(), new Magma(), new Melon(),
                         new Mushroom(), new Netherrack(), new Noteblock(), new Obsidian(),
                         new PackedIce(), new Plate(), new Rails(), new Redstone(), new Sand(),
                         new Sign(), new SignWall(), new Snow(), new Spawner(),
                         new Stairs(), new StructureBlock(), new StructureVoid(), new Terracotta(),
                         new Torch(), new Trapdoor(), new Triphook(), new Vines(), new Walls(),
-                        new WeightedPlate(), new Wood(), new Wool(), new SoulSand(), new Grass(),
-                        new Glowstone());
+                        new WeightedPlate(), new Wood(), new Wool(), new SoulSand()
+                );
             }
         }
     }

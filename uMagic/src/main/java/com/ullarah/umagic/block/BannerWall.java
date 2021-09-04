@@ -10,9 +10,11 @@ import java.util.List;
 
 public class BannerWall extends ScrollBlock {
 
+    private static final DirectionalData DATA = new DirectionalData();
+
     public void process(ScrollMeta meta) {
         Block block = meta.getBlock();
-        new DirectionalData().process(meta);
+        DATA.process(meta);
         saveMetadata(block.getLocation(), metaBanr);
     }
 

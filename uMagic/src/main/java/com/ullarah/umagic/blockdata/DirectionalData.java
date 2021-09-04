@@ -6,12 +6,20 @@ import org.bukkit.block.BlockFace;
 import org.bukkit.block.data.Directional;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class DirectionalData {
 
-    private static final ScrollElement<BlockFace> directions = new ScrollElement<>(Arrays.asList(
-            BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST));
+    private static final BlockFace[] DEFAULT = new BlockFace[] { BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST };
+
+    private final ScrollElement<BlockFace> directions;
+
+    public DirectionalData() {
+        this(DEFAULT);
+    }
+
+    public DirectionalData(BlockFace... faces) {
+        directions = new ScrollElement<>(Arrays.asList(faces));
+    }
 
     public void process(ScrollMeta meta) {
         Block block = meta.getBlock();
