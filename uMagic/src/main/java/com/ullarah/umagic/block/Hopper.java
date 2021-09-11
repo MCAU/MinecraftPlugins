@@ -4,13 +4,14 @@ import com.ullarah.umagic.ScrollMeta;
 import com.ullarah.umagic.blockdata.DirectionalData;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.block.BlockFace;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
-public class SignWall extends ScrollBlock {
+public class Hopper extends ScrollBlock {
 
-    private static final DirectionalData DATA = new DirectionalData();
+    private static final DirectionalData DATA = new DirectionalData(BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST, BlockFace.DOWN);
 
     public void process(ScrollMeta meta) {
         Block block = meta.getBlock();
@@ -19,10 +20,6 @@ public class SignWall extends ScrollBlock {
     }
 
     public List<Material> getPermittedBlocks() {
-        return Arrays.asList(
-                Material.ACACIA_WALL_SIGN, Material.BIRCH_WALL_SIGN, Material.DARK_OAK_WALL_SIGN,
-                Material.JUNGLE_WALL_SIGN, Material.OAK_WALL_SIGN, Material.SPRUCE_WALL_SIGN,
-                Material.CRIMSON_WALL_SIGN, Material.WARPED_WALL_SIGN);
+        return Collections.singletonList(Material.HOPPER);
     }
-
 }

@@ -9,8 +9,10 @@ import java.util.List;
 
 public class Terracotta extends ScrollBlock {
 
+    private static final DirectionalData DATA = new DirectionalData();
+
     public void process(ScrollMeta meta) {
-        new DirectionalData().process(meta);
+        DATA.process(meta);
     }
 
     public List<Material> getPermittedBlocks() {
