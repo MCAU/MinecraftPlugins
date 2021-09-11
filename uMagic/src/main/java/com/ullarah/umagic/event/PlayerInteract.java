@@ -17,6 +17,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
+import org.bukkit.inventory.EquipmentSlot;
 
 public class PlayerInteract extends MagicFunctions implements Listener {
 
@@ -26,8 +27,15 @@ public class PlayerInteract extends MagicFunctions implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void event(PlayerInteractEvent event) {
+        if (event.getHand() == EquipmentSlot.OFF_HAND) {
+            return; // Don't trigger any events for off-hand, too much trouble.
+        }
+
         Player player = event.getPlayer();
         Block block = event.getClickedBlock();
+
+        // Have to be able to lock state even if not using a magic hoe, as it can break or be dropped
+        if (tryLockState(event, player)) { return; }
 
         if (!usingMagicHoe(player))
             return;

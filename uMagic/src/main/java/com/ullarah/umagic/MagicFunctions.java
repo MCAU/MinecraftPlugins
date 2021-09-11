@@ -23,7 +23,6 @@ import org.bukkit.craftbukkit.libs.org.apache.commons.lang3.StringUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.plugin.Plugin;
@@ -267,12 +266,6 @@ public class MagicFunctions {
      * @return true if action is permissible
      */
     protected boolean checkHoeInteract(PlayerInteractEvent event, Player player, Block block) {
-
-        if (event.getHand() == EquipmentSlot.OFF_HAND) {
-            event.setCancelled(true);
-            return false; // Can only be used in main hand
-        }
-
         if (!player.hasPermission("umagic.usage")) {
             event.setCancelled(true);
             return false; // Permission required
@@ -281,13 +274,6 @@ public class MagicFunctions {
         if (!player.getGameMode().equals(GameMode.SURVIVAL)) {
             event.setCancelled(true);
             return false; // Only works in Survival
-        }
-
-        if (scrollMap.containsKey(player) && (event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR)) {
-            scrollMap.remove(player);
-            getActionMessage().message(player, ChatColor.GREEN, "Block state locked");
-            event.setCancelled(true);
-            return false; // Lock block state if scrolling is enabled, must be above other Action checks
         }
 
         if (event.getAction() != Action.RIGHT_CLICK_BLOCK) {
@@ -345,6 +331,20 @@ public class MagicFunctions {
         }
 
         return true;
+    }
+
+    /**
+     * Attempt to lock the block state, cancel event & remove player from scrollMap if successful
+     * @return true if state was locked
+     */
+    protected boolean tryLockState(PlayerInteractEvent event, Player player) {
+        if (scrollMap.containsKey(player) && (event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR)) {
+            scrollMap.remove(player);
+            getActionMessage().message(player, ChatColor.GREEN, "Block state locked");
+            event.setCancelled(true);
+            return true; // Lock block state if scrolling is enabled, must be above other Action checks
+        }
+        return false;
     }
 
     private void displayParticles(Block block, int hoeType) {
