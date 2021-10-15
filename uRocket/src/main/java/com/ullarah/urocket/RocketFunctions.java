@@ -447,7 +447,6 @@ public class RocketFunctions {
     }
 
     public boolean isValidRocketBoots(ItemStack boots) {
-
         if (boots != null && boots.hasItemMeta()) {
             ItemMeta bootMeta = boots.getItemMeta();
 
@@ -459,18 +458,14 @@ public class RocketFunctions {
         }
 
         return false;
-
     }
 
     public int getBootPowerLevel(ItemStack boots) {
-
         String text = boots.getItemMeta().getLore().get(0);
         return romanNumeralToInteger.decode(text.replaceFirst(RocketLanguage.RB_LEVEL, ""));
-
     }
 
     public int getBootRepairRate(ItemStack boots) {
-
         boolean fastRepair = false;
 
         if (isValidRocketBoots(boots)) if (boots.getItemMeta().getLore().size() == 3) {
@@ -480,7 +475,6 @@ public class RocketFunctions {
         }
 
         switch (getBootPowerLevel(boots)) {
-
             case 1:
                 return fastRepair ? 20 : 5;
 
@@ -499,13 +493,10 @@ public class RocketFunctions {
         }
 
         return 0;
-
     }
 
     public int getBootRepairRate(Material boots) {
-
         switch (boots) {
-
             case LEATHER_BOOTS:
                 return 5;
 
@@ -524,13 +515,10 @@ public class RocketFunctions {
         }
 
         return 0;
-
     }
 
     public int getBootDurability(ItemStack boots) {
-
         switch (boots.getType()) {
-
             case LEATHER_BOOTS:
                 return 65;
 

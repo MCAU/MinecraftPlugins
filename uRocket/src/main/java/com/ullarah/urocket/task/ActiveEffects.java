@@ -26,7 +26,7 @@ public class ActiveEffects {
                         processEffectCheck(player);
                     }
 
-                }), 0, 0);
+                }), 10, 10);
 
     }
 
@@ -39,15 +39,10 @@ public class ActiveEffects {
         if (rp.getBootData() == null)
             return;
 
+        RocketVariant.Variant variant = rp.getBootData().getVariant();
+        PotionEffect[] effects = variant.getPotionEffects();
+
         if (player.isFlying()) {
-
-            RocketVariant.Variant variant = rp.getBootData().getVariant();
-            PotionEffect[] effects = variant.getPotionEffects();
-
-            for (PotionEffect effect : player.getActivePotionEffects()) {
-                player.removePotionEffect(effect.getType());
-            }
-
             if (effects != null && effects.length != 0) {
                 rp.setEffected(true);
                 for (PotionEffect effect : effects) {
@@ -65,18 +60,15 @@ public class ActiveEffects {
         }
         // Not flying, remove effects if required
         else if (rp.isEffected()) {
-
-            for (PotionEffect effect : player.getActivePotionEffects()) {
+            for (PotionEffect effect : effects) {
                 player.removePotionEffect(effect.getType());
             }
+            rp.setEffected(false);
 
             Plugin plugin = RocketInit.getPlugin();
             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
                 onlinePlayer.showPlayer(plugin, player);
             }
-
-            rp.setEffected(false);
-
         }
     }
 

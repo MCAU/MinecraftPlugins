@@ -16,9 +16,10 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
 
 import java.util.Random;
-import java.util.UUID;
+import java.util.logging.Level;
 
 public class RocketFuel {
+    private static final Random RANDOM = new Random();
 
     public void task() {
 
@@ -58,8 +59,6 @@ public class RocketFuel {
         boolean isUnlimited = (enhancement == RocketEnhancement.Enhancement.UNLIMITED);
         boolean isStable = (enhancement == RocketEnhancement.Enhancement.STABLE);
 
-        Random random = new Random();
-
         ItemStack rocketBoots = player.getInventory().getBoots();
         Material bootMaterial = rocketBoots.getType();
 
@@ -68,11 +67,20 @@ public class RocketFuel {
         int itemFuelCost = 0;
         int malfunctionRate = 0;
 
+        int powerLevel; // TODO: Find out how to handle this use-case (when a loadout is equipped)
+        try {
+            powerLevel = rocketFunctions.getBootPowerLevel(rocketBoots);
+        } catch (Exception ex) {
+            rocketFunctions.disableRocketBoots(player, true);
+            Bukkit.getLogger().log(Level.SEVERE, "Player unequipped their rocket boots somehow",  ex);
+            return;
+        }
+
         switch (bootMaterial) {
 
             case LEATHER_BOOTS:
                 malfunctionRate = 500;
-                itemFuelCost = 1 + rocketFunctions.getBootPowerLevel(rocketBoots);
+                itemFuelCost = 1 + powerLevel;
                 getHealthFromBoots = (player.getHealth() - 3.5);
                 getFoodLevelFromBoots = (player.getFoodLevel() - 4);
 
@@ -82,7 +90,7 @@ public class RocketFuel {
 
             case IRON_BOOTS:
                 malfunctionRate = 1000;
-                itemFuelCost = 2 + rocketFunctions.getBootPowerLevel(rocketBoots);
+                itemFuelCost = 2 + powerLevel;
                 getHealthFromBoots = (player.getHealth() - 2.5);
                 getFoodLevelFromBoots = (player.getFoodLevel() - 3);
 
@@ -92,7 +100,7 @@ public class RocketFuel {
 
             case GOLDEN_BOOTS:
                 malfunctionRate = 1500;
-                itemFuelCost = 3 + rocketFunctions.getBootPowerLevel(rocketBoots);
+                itemFuelCost = 3 + powerLevel;
                 getHealthFromBoots = (player.getHealth() - 1.5);
                 getFoodLevelFromBoots = (player.getFoodLevel() - 2);
 
@@ -102,7 +110,7 @@ public class RocketFuel {
 
             case DIAMOND_BOOTS:
                 malfunctionRate = 2000;
-                itemFuelCost = 4 + rocketFunctions.getBootPowerLevel(rocketBoots);
+                itemFuelCost = 4 + powerLevel;
                 getHealthFromBoots = (player.getHealth() - 0.5);
                 getFoodLevelFromBoots = (player.getFoodLevel() - 1);
 
@@ -112,7 +120,7 @@ public class RocketFuel {
 
             case NETHERITE_BOOTS:
                 malfunctionRate = 2500;
-                itemFuelCost = 5 + rocketFunctions.getBootPowerLevel(rocketBoots);
+                itemFuelCost = 5 + powerLevel;
                 getHealthFromBoots = (player.getHealth() - 0.25);
                 getFoodLevelFromBoots = (player.getFoodLevel() - 1);
 
@@ -161,8 +169,8 @@ public class RocketFuel {
                 break;
 
             case DRUNK:
-                int vectorSelect = random.nextInt(3);
-                double v = (random.nextInt(41) - 30) / 10.0;
+                int vectorSelect = RANDOM.nextInt(3);
+                double v = (RANDOM.nextInt(41) - 30) / 10.0;
 
                 switch (vectorSelect) {
 
@@ -187,7 +195,7 @@ public class RocketFuel {
         }
 
         if (!isUnlimited) if (!isStable) {
-            if (random.nextInt(malfunctionRate) == 1) {
+            if (RANDOM.nextInt(malfunctionRate) == 1) {
 
                 player.getWorld().playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_BLAST, 0.6f, 0.65f);
                 commonString.messageSend(RocketInit.getPlugin(), player, true, RocketLanguage.RB_MALFUNCTION);
