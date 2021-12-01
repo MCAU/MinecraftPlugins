@@ -6,26 +6,26 @@ import org.bukkit.command.CommandSender;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
+import java.util.Map;
 
 class ChestExecutor implements CommandExecutor {
 
+    private static final Map<String, String> CHEST_COMMANDS = new HashMap<String, String>() {{
+        put("Menu", "");
+        put("Donation", "d");
+        put("Enchantment", "e");
+        put("Hold", "h");
+        put("Money", "m");
+        put("Random", "r");
+        put("Shuffle", "s");
+        put("Vault", "v");
+        put("Swap", "w");
+        put("Experience", "x");
+    }};
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
-
-        HashMap<String, String> chestCommands = new HashMap<String, String>() {{
-            put("Menu", "");
-            put("Donation", "d");
-            put("Enchantment", "e");
-            put("Hold", "h");
-            put("Money", "m");
-            put("Random", "r");
-            put("Shuffle", "s");
-            put("Vault", "v");
-            put("Swap", "w");
-            put("Experience", "x");
-        }};
-
-        chestCommands.entrySet().stream().filter(
+        CHEST_COMMANDS.entrySet().stream().filter(
                 newCommand -> command.getName().equalsIgnoreCase(
                         newCommand.getValue() + "chest")).forEach(newCommand -> {
 
@@ -45,5 +45,4 @@ class ChestExecutor implements CommandExecutor {
         return true;
 
     }
-
 }

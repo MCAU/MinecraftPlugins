@@ -133,8 +133,8 @@ public class ChestInit extends JavaPlugin {
         chestShuffleInventory = inventory;
     }
 
+    @Override
     public void onEnable() {
-
         setPlugin(this);
 
         PluginManager pluginManager = getServer().getPluginManager();
@@ -208,7 +208,9 @@ public class ChestInit extends JavaPlugin {
 
     }
 
+    @Override
     public void onDisable() {
+        // Do nothing
     }
 
     private void initMaterials() {
@@ -252,7 +254,6 @@ public class ChestInit extends JavaPlugin {
         for (String m : new ArrayList<>(materialConfig.getKeys(false))) {
 
             try {
-
                 Material material = Material.getMaterial(materialConfig.getString(m + ".m"));
 
                 Set<Material> itemEffected = new HashSet<Material>() {{
@@ -264,11 +265,8 @@ public class ChestInit extends JavaPlugin {
 
                 MaterialData data = new MaterialData(materialConfig, m);
 
-
                 if (itemEffected.contains(material)) {
-
                     for (PotionType potion : PotionType.values()) {
-
                         ItemStack newItemStack = new ItemStack(material, 1);
 
                         PotionMeta itemPotionMeta = (PotionMeta) newItemStack.getItemMeta();
@@ -276,25 +274,18 @@ public class ChestInit extends JavaPlugin {
                         newItemStack.setItemMeta(itemPotionMeta);
 
                         addMaterial(newItemStack, data, material, f);
-
                     }
-
                 } else {
                     addMaterial(new ItemStack(material, 1), data, material, f);
                 }
-
             } catch (Exception e) {
-
                 ChestInit.getPlugin().getLogger().log(Level.WARNING, "[" + plugin.getName() + "] "
                         + "Material Load Error: " + m + " (" + f + ")");
-
             }
-
         }
     }
 
     private void addMaterial(ItemStack materialItem, MaterialData data, Material materialType, String materialFile) {
-
         if (materialMap.containsKey(materialItem)) {
             ChestInit.getPlugin().getLogger().log(Level.WARNING, "[" + plugin.getName() + "] "
                     + "Material Duplicate: " + materialType + " (" + materialFile + ")");
@@ -302,7 +293,6 @@ public class ChestInit extends JavaPlugin {
             materialMap.put(materialItem, data);
             materialCount++;
         }
-
     }
 
 }
