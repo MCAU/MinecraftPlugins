@@ -2,6 +2,7 @@ package com.ullarah.urocket.function;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
+import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.Plugin;
 
@@ -28,8 +29,7 @@ public class PluginRegisters {
                 switch (type) {
                     case RECIPE:
                         ShapedRecipe newRecipe = ((NewRecipe) object).recipe();
-                        Bukkit.removeRecipe(newRecipe.getKey());
-                        Bukkit.addRecipe(newRecipe);
+                        addRecipe(newRecipe);
                         break;
                 }
 
@@ -44,6 +44,16 @@ public class PluginRegisters {
         }
 
         return amount;
+    }
+
+    private void addRecipe(Recipe recipe) {
+        try {
+            Bukkit.addRecipe(recipe);
+        } catch (IllegalStateException e) {
+            if (!e.getMessage().startsWith("Duplicate recipe ignored")) {
+                throw e;
+            }
+        }
     }
 
     /**
