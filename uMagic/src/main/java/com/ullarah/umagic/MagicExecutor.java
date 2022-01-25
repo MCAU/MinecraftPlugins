@@ -28,7 +28,7 @@ class MagicExecutor extends MagicFunctions implements CommandExecutor {
 
         String hoeType = "What type? " + ChatColor.YELLOW + "/hoe (n)ormal | (s)uper | (u)ber | (c)osmic";
 
-        if (command.getName().toLowerCase().equals("hoe")) {
+        if (command.getName().equalsIgnoreCase("hoe")) {
 
             if (args.length >= 1) {
 
@@ -69,7 +69,6 @@ class MagicExecutor extends MagicFunctions implements CommandExecutor {
         }
 
         return true;
-
     }
 
 }
