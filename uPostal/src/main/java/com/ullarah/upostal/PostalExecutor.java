@@ -23,49 +23,43 @@ class PostalExecutor implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
-
         Prepare prepare = new Prepare();
         Upgrade upgrade = new Upgrade();
 
         switch (command.getName().toUpperCase()) {
-
             case "POSTAL":
                 postalCommands(sender, args);
                 break;
 
             case "POST":
                 if (sender instanceof Player) {
-                    if (args.length >= 1) {
-                        if (args[0].matches("[\\w\\d_]{1,16}")) {
-
-                            try {
-                                UUID playerID = new PlayerProfile().lookup(args[0]).getId();
-                                if (playerID != null) prepare.run((Player) sender, playerID);
-                            } catch (Exception e) {
-                                commonString.messageSend(PostalInit.getPlugin(), sender, ChatColor.YELLOW + "That player does not have an inbox!");
-                            }
-
-                        } else
-                            commonString.messageSend(PostalInit.getPlugin(), sender, ChatColor.RED + "Not a valid player name!");
-                    } else
+                    if (args.length < 1) {
                         commonString.messageSend(PostalInit.getPlugin(), sender, ChatColor.YELLOW + "Usage: /post <player>");
-                } else commonString.messageNoConsole(PostalInit.getPlugin(), sender);
+                        return true;
+                    }
+                    try {
+                        UUID playerID = new PlayerProfile().lookup(args[0]).getId();
+                        if (playerID != null) prepare.run((Player) sender, playerID);
+                    } catch (Exception e) {
+                        commonString.messageSend(PostalInit.getPlugin(), sender, ChatColor.YELLOW + "That player does not have an inbox!");
+                    }
+
+                } else { commonString.messageNoConsole(PostalInit.getPlugin(), sender); }
                 break;
 
             case "INBOX":
                 if (sender instanceof Player) {
-
                     if (args.length >= 1) {
-                        if (args[0].toUpperCase().equals("UPGRADE")) upgrade.run(sender);
-                    } else prepare.run((Player) sender, ((Player) sender).getUniqueId());
-
-                } else commonString.messageNoConsole(PostalInit.getPlugin(), sender);
+                        if (args[0].equalsIgnoreCase("UPGRADE")) { upgrade.run(sender); }
+                        else { commonString.messageSend(PostalInit.getPlugin(), sender, ChatColor.YELLOW + "Usage: /inbox [upgrade]"); }
+                    } else {
+                        prepare.run((Player) sender, ((Player) sender).getUniqueId());
+                    }
+                } else { commonString.messageNoConsole(PostalInit.getPlugin(), sender); }
                 break;
-
         }
 
         return true;
-
     }
 
     private void postalCommands(CommandSender sender, String[] args) {
@@ -78,7 +72,6 @@ class PostalExecutor implements CommandExecutor {
         else try {
 
             switch (args[0].toUpperCase()) {
-
                 case "BLACKLIST":
                     new Blacklist().toggle(sender, args);
                     break;
@@ -100,7 +93,6 @@ class PostalExecutor implements CommandExecutor {
                     if (!(sender instanceof Player)) commonString.messageNoConsole(PostalInit.getPlugin(), sender);
                     else new Help().display(sender);
                     break;
-
             }
 
         } catch (IllegalArgumentException e) {
@@ -109,7 +101,5 @@ class PostalExecutor implements CommandExecutor {
                 sender.sendMessage(consoleTools);
 
         }
-
     }
-
 }
