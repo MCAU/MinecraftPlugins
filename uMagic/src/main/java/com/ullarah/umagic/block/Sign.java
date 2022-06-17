@@ -18,6 +18,6 @@ public class Sign extends ScrollBlock {
 
     public List<Material> getPermittedBlocks() {
         return Arrays.asList(Material.ACACIA_SIGN, Material.BIRCH_SIGN, Material.DARK_OAK_SIGN,
-                Material.JUNGLE_SIGN, Material.OAK_SIGN, Material.SPRUCE_SIGN, Material.CRIMSON_SIGN, Material.WARPED_SIGN);
+                Material.JUNGLE_SIGN, Material.MANGROVE_SIGN, Material.OAK_SIGN, Material.SPRUCE_SIGN, Material.CRIMSON_SIGN, Material.WARPED_SIGN);
     }
 }

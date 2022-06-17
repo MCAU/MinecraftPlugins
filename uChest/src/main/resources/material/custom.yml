@@ -31,16 +31,20 @@ STRUCTURE_VOID:                         { m: STRUCTURE_VOID,                    
 WRITTEN_BOOK:                           { m: WRITTEN_BOOK,                           s: false, d: false, r: false, e: 0.0, x: 0.0 }
 
 # Spawn eggs
+ALLAY_SPAWN_EGG:                        { m: ALLAY_SPAWN_EGG,                        s: false, d: false, r: false, e: 0.0, x: 0.0 }
 AXOLOTL_SPAWN_EGG:                      { m: AXOLOTL_SPAWN_EGG,                      s: false, d: false, r: false, e: 0.0, x: 0.0 }
+FROG_SPAWN_EGG:                         { m: FROG_SPAWN_EGG,                         s: false, d: false, r: false, e: 0.0, x: 0.0 }
 GLOW_SQUID_SPAWN_EGG:                   { m: GLOW_SQUID_SPAWN_EGG,                   s: false, d: false, r: false, e: 0.0, x: 0.0 }
 GOAT_SPAWN_EGG:                         { m: GOAT_SPAWN_EGG,                         s: false, d: false, r: false, e: 0.0, x: 0.0 }
 HOGLIN_SPAWN_EGG:                       { m: HOGLIN_SPAWN_EGG,                       s: false, d: false, r: false, e: 0.0, x: 0.0 }
 PIGLIN_BRUTE_SPAWN_EGG:                 { m: PIGLIN_BRUTE_SPAWN_EGG,                 s: false, d: false, r: false, e: 0.0, x: 0.0 }
 PIGLIN_SPAWN_EGG:                       { m: PIGLIN_SPAWN_EGG,                       s: false, d: false, r: false, e: 0.0, x: 0.0 }
 RESPAWN_ANCHOR:                         { m: RESPAWN_ANCHOR,                         s: false, d: false, r: false, e: 0.0, x: 0.0 }
+STRIDER_SPAWN_EGG:                      { m: STRIDER_SPAWN_EGG,                      s: false, d: false, r: false, e: 0.0, x: 0.0 }
+TADPOLE_SPAWN_EGG:                      { m: TADPOLE_SPAWN_EGG,                      s: false, d: false, r: false, e: 0.0, x: 0.0 }
+WARDEN_SPAWN_EGG:                       { m: WARDEN_SPAWN_EGG,                       s: false, d: false, r: false, e: 0.0, x: 0.0 }
 ZOGLIN_SPAWN_EGG:                       { m: ZOGLIN_SPAWN_EGG,                       s: false, d: false, r: false, e: 0.0, x: 0.0 }
 ZOMBIFIED_PIGLIN_SPAWN_EGG:             { m: ZOMBIFIED_PIGLIN_SPAWN_EGG,             s: false, d: false, r: false, e: 0.0, x: 0.0 }
-STRIDER_SPAWN_EGG:                      { m: STRIDER_SPAWN_EGG,                      s: false, d: false, r: false, e: 0.0, x: 0.0 }
 
 # Everything else
 AMETHYST_BLOCK:                         { m: AMETHYST_BLOCK,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
@@ -248,3 +252,53 @@ WEATHERED_CUT_COPPER_STAIRS:            { m: WEATHERED_CUT_COPPER_STAIRS,       
 WEEPING_VINES:                          { m: WEEPING_VINES,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
 WHITE_CANDLE:                           { m: WHITE_CANDLE,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
 YELLOW_CANDLE:                          { m: YELLOW_CANDLE,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+
+# 1.19 items
+ACACIA_CHEST_BOAT:                      { m: ACACIA_CHEST_BOAT,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+BIRCH_CHEST_BOAT:                       { m: BIRCH_CHEST_BOAT,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
+DARK_OAK_CHEST_BOAT:                    { m: DARK_OAK_CHEST_BOAT,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+DISC_FRAGMENT_5:                        { m: DISC_FRAGMENT_5,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+ECHO_SHARD:                             { m: ECHO_SHARD,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
+FROGSPAWN:                              { m: FROGSPAWN,                              s: true, d: true, r: true, e: 0.0, x: 0.0 }
+GOAT_HORN:                              { m: GOAT_HORN,                              s: true, d: true, r: true, e: 0.0, x: 0.0 }
+JUNGLE_CHEST_BOAT:                      { m: JUNGLE_CHEST_BOAT,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_BOAT:                          { m: MANGROVE_BOAT,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_BUTTON:                        { m: MANGROVE_BUTTON,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_CHEST_BOAT:                    { m: MANGROVE_CHEST_BOAT,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_DOOR:                          { m: MANGROVE_DOOR,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_FENCE:                         { m: MANGROVE_FENCE,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_FENCE_GATE:                    { m: MANGROVE_FENCE_GATE,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_LEAVES:                        { m: MANGROVE_LEAVES,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_LOG:                           { m: MANGROVE_LOG,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_PLANKS:                        { m: MANGROVE_PLANKS,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_PRESSURE_PLATE:                { m: MANGROVE_PRESSURE_PLATE,                s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_PROPAGULE:                     { m: MANGROVE_PROPAGULE,                     s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_ROOTS:                         { m: MANGROVE_ROOTS,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_SIGN:                          { m: MANGROVE_SIGN,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_SLAB:                          { m: MANGROVE_SLAB,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_STAIRS:                        { m: MANGROVE_STAIRS,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_TRAPDOOR:                      { m: MANGROVE_TRAPDOOR,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_WOOD:                          { m: MANGROVE_WOOD,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MUD:                                    { m: MUD,                                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MUDDY_MANGROVE_ROOTS:                   { m: MUDDY_MANGROVE_ROOTS,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MUD_BRICKS:                             { m: MUD_BRICKS,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MUD_BRICK_SLAB:                         { m: MUD_BRICK_SLAB,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MUD_BRICK_STAIRS:                       { m: MUD_BRICK_STAIRS,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MUD_BRICK_WALL:                         { m: MUD_BRICK_WALL,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MUSIC_DISC_5:                           { m: MUSIC_DISC_5,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MUSIC_DISC_OTHERSIDE:                   { m: MUSIC_DISC_OTHERSIDE,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
+OAK_CHEST_BOAT:                         { m: OAK_CHEST_BOAT,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+OCHRE_FROGLIGHT:                        { m: OCHRE_FROGLIGHT,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PACKED_MUD:                             { m: PACKED_MUD,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PEARLESCENT_FROGLIGHT:                  { m: PEARLESCENT_FROGLIGHT,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+RECOVERY_COMPASS:                       { m: RECOVERY_COMPASS,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
+REINFORCED_DEEPSLATE:                   { m: REINFORCED_DEEPSLATE,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
+SCULK:                                  { m: SCULK,                                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+SCULK_CATALYST:                         { m: SCULK_CATALYST,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+SCULK_SHRIEKER:                         { m: SCULK_SHRIEKER,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+SCULK_VEIN:                             { m: SCULK_VEIN,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
+SPRUCE_CHEST_BOAT:                      { m: SPRUCE_CHEST_BOAT,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+STRIPPED_MANGROVE_LOG:                  { m: STRIPPED_MANGROVE_LOG,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+STRIPPED_MANGROVE_WOOD:                 { m: STRIPPED_MANGROVE_WOOD,                 s: true, d: true, r: true, e: 0.0, x: 0.0 }
+TADPOLE_BUCKET:                         { m: TADPOLE_BUCKET,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+VERDANT_FROGLIGHT:                      { m: VERDANT_FROGLIGHT,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }

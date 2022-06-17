@@ -21,8 +21,8 @@ public class SignWall extends ScrollBlock {
     public List<Material> getPermittedBlocks() {
         return Arrays.asList(
                 Material.ACACIA_WALL_SIGN, Material.BIRCH_WALL_SIGN, Material.DARK_OAK_WALL_SIGN,
-                Material.JUNGLE_WALL_SIGN, Material.OAK_WALL_SIGN, Material.SPRUCE_WALL_SIGN,
-                Material.CRIMSON_WALL_SIGN, Material.WARPED_WALL_SIGN);
+                Material.JUNGLE_WALL_SIGN, Material.MANGROVE_WALL_SIGN, Material.OAK_WALL_SIGN,
+	       	Material.SPRUCE_WALL_SIGN, Material.CRIMSON_WALL_SIGN, Material.WARPED_WALL_SIGN);
     }
 
 }

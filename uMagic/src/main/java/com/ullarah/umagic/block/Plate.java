@@ -21,8 +21,8 @@ public class Plate extends BaseBlock {
     public List<Material> getPermittedBlocks() {
         return Arrays.asList(
                 Material.ACACIA_PRESSURE_PLATE, Material.BIRCH_PRESSURE_PLATE, Material.DARK_OAK_PRESSURE_PLATE,
-                Material.JUNGLE_PRESSURE_PLATE, Material.OAK_PRESSURE_PLATE, Material.SPRUCE_PRESSURE_PLATE,
-                Material.STONE_PRESSURE_PLATE, Material.CRIMSON_PRESSURE_PLATE, Material.WARPED_PRESSURE_PLATE,
-                Material.POLISHED_BLACKSTONE_PRESSURE_PLATE);
+                Material.JUNGLE_PRESSURE_PLATE, Material.MANGROVE_PRESSURE_PLATE, Material.OAK_PRESSURE_PLATE,
+	       	Material.SPRUCE_PRESSURE_PLATE, Material.STONE_PRESSURE_PLATE, Material.CRIMSON_PRESSURE_PLATE,
+	       	Material.WARPED_PRESSURE_PLATE, Material.POLISHED_BLACKSTONE_PRESSURE_PLATE);
     }
 }

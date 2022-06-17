@@ -27,7 +27,9 @@ public class SignText {
                 case DARK_OAK_WALL_SIGN:
                 case JUNGLE_SIGN:
                 case JUNGLE_WALL_SIGN:
-                case OAK_SIGN:
+		case MANGROVE_SIGN:
+		case MANGROVE_WALL_SIGN:
+		case OAK_SIGN:
                 case OAK_WALL_SIGN:
                 case SPRUCE_SIGN:
                 case SPRUCE_WALL_SIGN:
