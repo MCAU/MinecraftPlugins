@@ -254,13 +254,21 @@ WHITE_CANDLE:                           { m: WHITE_CANDLE,                      
 YELLOW_CANDLE:                          { m: YELLOW_CANDLE,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
 
 # 1.19 items
+DISC_FRAGMENT_5:                        { m: DISC_FRAGMENT_5,                        s: false, d: false, r: false, e: 0.0, x: 0.0 }
+FROGSPAWN:                              { m: FROGSPAWN,                              s: false, d: false, r: false, e: 0.0, x: 0.0 }
+ECHO_SHARD:                             { m: ECHO_SHARD,                             s: false, d: false, r: false, e: 0.0, x: 0.0 }
+GOAT_HORN:                              { m: GOAT_HORN,                              s: false, d: false, r: false, e: 0.0, x: 0.0 }
+MUSIC_DISC_5:                           { m: MUSIC_DISC_5,                           s: false, d: false, r: false, e: 0.0, x: 0.0 }
+RECOVERY_COMPASS:                       { m: RECOVERY_COMPASS,                       s: false, d: false, r: false, e: 0.0, x: 0.0 }
+REINFORCED_DEEPSLATE:                   { m: REINFORCED_DEEPSLATE,                   s: false, d: false, r: false, e: 0.0, x: 0.0 }
+SCULK:                                  { m: SCULK,                                  s: false, d: false, r: false, e: 0.0, x: 0.0 }
+SCULK_CATALYST:                         { m: SCULK_CATALYST,                         s: false, d: false, r: false, e: 0.0, x: 0.0 }
+SCULK_SHRIEKER:                         { m: SCULK_SHRIEKER,                         s: false, d: false, r: false, e: 0.0, x: 0.0 }
+SCULK_VEIN:                             { m: SCULK_VEIN,                             s: false, d: false, r: false, e: 0.0, x: 0.0 }
+
 ACACIA_CHEST_BOAT:                      { m: ACACIA_CHEST_BOAT,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
 BIRCH_CHEST_BOAT:                       { m: BIRCH_CHEST_BOAT,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
 DARK_OAK_CHEST_BOAT:                    { m: DARK_OAK_CHEST_BOAT,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
-DISC_FRAGMENT_5:                        { m: DISC_FRAGMENT_5,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
-ECHO_SHARD:                             { m: ECHO_SHARD,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
-FROGSPAWN:                              { m: FROGSPAWN,                              s: true, d: true, r: true, e: 0.0, x: 0.0 }
-GOAT_HORN:                              { m: GOAT_HORN,                              s: true, d: true, r: true, e: 0.0, x: 0.0 }
 JUNGLE_CHEST_BOAT:                      { m: JUNGLE_CHEST_BOAT,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
 MANGROVE_BOAT:                          { m: MANGROVE_BOAT,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
 MANGROVE_BUTTON:                        { m: MANGROVE_BUTTON,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
@@ -285,18 +293,11 @@ MUD_BRICKS:                             { m: MUD_BRICKS,                        
 MUD_BRICK_SLAB:                         { m: MUD_BRICK_SLAB,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
 MUD_BRICK_STAIRS:                       { m: MUD_BRICK_STAIRS,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
 MUD_BRICK_WALL:                         { m: MUD_BRICK_WALL,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
-MUSIC_DISC_5:                           { m: MUSIC_DISC_5,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
 MUSIC_DISC_OTHERSIDE:                   { m: MUSIC_DISC_OTHERSIDE,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
 OAK_CHEST_BOAT:                         { m: OAK_CHEST_BOAT,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
 OCHRE_FROGLIGHT:                        { m: OCHRE_FROGLIGHT,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
 PACKED_MUD:                             { m: PACKED_MUD,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
 PEARLESCENT_FROGLIGHT:                  { m: PEARLESCENT_FROGLIGHT,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
-RECOVERY_COMPASS:                       { m: RECOVERY_COMPASS,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
-REINFORCED_DEEPSLATE:                   { m: REINFORCED_DEEPSLATE,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
-SCULK:                                  { m: SCULK,                                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
-SCULK_CATALYST:                         { m: SCULK_CATALYST,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
-SCULK_SHRIEKER:                         { m: SCULK_SHRIEKER,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
-SCULK_VEIN:                             { m: SCULK_VEIN,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
 SPRUCE_CHEST_BOAT:                      { m: SPRUCE_CHEST_BOAT,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
 STRIPPED_MANGROVE_LOG:                  { m: STRIPPED_MANGROVE_LOG,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
 STRIPPED_MANGROVE_WOOD:                 { m: STRIPPED_MANGROVE_WOOD,                 s: true, d: true, r: true, e: 0.0, x: 0.0 }
