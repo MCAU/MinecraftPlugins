@@ -36,7 +36,8 @@ class PostalExecutor implements CommandExecutor {
             case "POST":
                 if (sender instanceof Player) {
                     if (args.length >= 1) {
-                        if (args[0].matches("[\\w\\d_]{1,16}")) {
+                        // there was probably a reason for this check, but I'll come back to it later
+			//if (args[0].matches("[\\w\\d_]{1,16}")) {
 
                             try {
                                 UUID playerID = new PlayerProfile().lookup(args[0]).getId();
@@ -45,8 +46,8 @@ class PostalExecutor implements CommandExecutor {
                                 commonString.messageSend(PostalInit.getPlugin(), sender, ChatColor.YELLOW + "That player does not have an inbox!");
                             }
 
-                        } else
-                            commonString.messageSend(PostalInit.getPlugin(), sender, ChatColor.RED + "Not a valid player name!");
+                        //} else
+                            //commonString.messageSend(PostalInit.getPlugin(), sender, ChatColor.RED + "Not a valid player name!");
                     } else
                         commonString.messageSend(PostalInit.getPlugin(), sender, ChatColor.YELLOW + "Usage: /post <player>");
                 } else commonString.messageNoConsole(PostalInit.getPlugin(), sender);
