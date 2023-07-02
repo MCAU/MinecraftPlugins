@@ -7,7 +7,7 @@
 
     <name>uJoinQuit</name>
     <description>Custom Join Quit Messages</description>
-    <version>1.2.11</version>
+    <version>1.2.12</version>
 
     <parent>
         <groupId>com.ullarah</groupId>

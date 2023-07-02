@@ -5,24 +5,4 @@
 # e - Return value of money given (vault/economy)
 # x - Return value of experience given (xp)
 
-SADDLE:    { m: SADDLE,            s: true,  d: true,  r: true,  e: 2.9,  x: 3.2 }
-CARROT_ST: { m: CARROT_ON_A_STICK, s: true,  d: true,  r: true,  e: 0.5,  x: 0.6 }
-ELYTRA:    { m: ELYTRA,            s: false, d: false, r: false, e: 7.25, x: 7.5 }
-
-BOAT_OAK:     { m: OAK_BOAT,      s: true, d: true, r: true, e: 1.4, x: 1.95 }
-BOAT_SPRUCE:  { m: SPRUCE_BOAT,   s: true, d: true, r: true, e: 1.4, x: 1.95 }
-BOAT_BIRCH:   { m: BIRCH_BOAT,    s: true, d: true, r: true, e: 1.4, x: 1.95 }
-BOAT_JUNGLE:  { m: JUNGLE_BOAT,   s: true, d: true, r: true, e: 1.4, x: 1.95 }
-BOAT_ACACIA:  { m: ACACIA_BOAT,   s: true, d: true, r: true, e: 1.4, x: 1.95 }
-BOAT_DARKOAK: { m: DARK_OAK_BOAT, s: true, d: true, r: true, e: 1.4, x: 1.95 }
-
-CART:     { m: MINECART,         s: true, d: true, r: true, e: 13.2, x: 14.0 }
-CART_CHS: { m: CHEST_MINECART,   s: true, d: true, r: true, e: 15.4, x: 16.0 }
-CART_FUR: { m: FURNACE_MINECART, s: true, d: true, r: true, e: 15.4, x: 16.0 }
-CART_TNT: { m: TNT_MINECART,     s: true, d: true, r: true, e: 15.4, x: 16.0 }
-CART_HOP: { m: HOPPER_MINECART,  s: true, d: true, r: true, e: 15.4, x: 16.0 }
-
-RAIL:     { m: RAIL,           s: true, d: true, r: true, e: 0.9,  x: 1.1 }
-RAIL_POW: { m: POWERED_RAIL,   s: true, d: true, r: true, e: 1.2,  x: 1.3 }
-RAIL_DET: { m: DETECTOR_RAIL,  s: true, d: true, r: true, e: 1.7,  x: 1.9 }
-RAIL_ACT: { m: ACTIVATOR_RAIL, s: true, d: true, r: true, e: 1.95, x: 2.2 }
+# EXAMPLE: { m: MATERIALNAME, s: true, d: true, r: true, e: 0.5, x: 0.5 }

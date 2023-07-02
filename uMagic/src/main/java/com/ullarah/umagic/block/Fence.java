@@ -25,6 +25,6 @@ public class Fence extends ScrollBlock {
                 Material.OAK_FENCE, Material.SPRUCE_FENCE, Material.BIRCH_FENCE,
                 Material.JUNGLE_FENCE, Material.MANGROVE_FENCE, Material.ACACIA_FENCE,
 	       	Material.DARK_OAK_FENCE, Material.CRIMSON_FENCE, Material.WARPED_FENCE,
-	       	Material.NETHER_BRICK_FENCE, Material.IRON_BARS);
+	       	Material.NETHER_BRICK_FENCE, Material.IRON_BARS, Material.BAMBOO_FENCE, Material.CHERRY_FENCE);
     }
 }

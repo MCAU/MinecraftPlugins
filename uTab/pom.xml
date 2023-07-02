@@ -7,7 +7,7 @@
 
     <name>uTab</name>
     <description>Header and Footer Messages</description>
-    <version>0.4.0</version>
+    <version>0.4.1</version>
 
     <parent>
         <groupId>com.ullarah</groupId>

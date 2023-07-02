@@ -23,8 +23,8 @@ public class Trapdoor extends BaseBlock {
         return Arrays.asList(
                 Material.ACACIA_TRAPDOOR, Material.BIRCH_TRAPDOOR, Material.DARK_OAK_TRAPDOOR,
                 Material.JUNGLE_TRAPDOOR, Material.MANGROVE_TRAPDOOR, Material.OAK_TRAPDOOR,
-	       	Material.SPRUCE_TRAPDOOR, Material.IRON_TRAPDOOR, Material.CRIMSON_TRAPDOOR,
-	       	Material.WARPED_TRAPDOOR);
+	       	    Material.SPRUCE_TRAPDOOR, Material.IRON_TRAPDOOR, Material.CRIMSON_TRAPDOOR,
+	       	    Material.WARPED_TRAPDOOR, Material.BAMBOO_TRAPDOOR, Material.CHERRY_TRAPDOOR);
     }
 
 }

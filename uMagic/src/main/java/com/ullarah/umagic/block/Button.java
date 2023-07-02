@@ -23,7 +23,8 @@ public class Button extends BaseBlock {
                 Material.STONE_BUTTON,
                 Material.ACACIA_BUTTON, Material.BIRCH_BUTTON, Material.DARK_OAK_BUTTON,
                 Material.JUNGLE_BUTTON, Material.MANGROVE_BUTTON, Material.OAK_BUTTON, Material.SPRUCE_BUTTON,
-                Material.CRIMSON_BUTTON, Material.WARPED_BUTTON, Material.POLISHED_BLACKSTONE_BUTTON);
+                Material.CRIMSON_BUTTON, Material.WARPED_BUTTON, Material.POLISHED_BLACKSTONE_BUTTON,
+                Material.BAMBOO_BUTTON, Material.CHERRY_BUTTON);
     }
 
 }
