@@ -7,14 +7,14 @@ import org.bukkit.block.Block;
 import java.util.Arrays;
 import java.util.List;
 
-public class Emerald extends BaseBlock {
+public class ReinforcedDeepslate extends BaseBlock {
 
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
-        block.setType(Material.BARRIER, false);
+        block.setType(Material.BEDROCK, false);
     }
 
     public List<Material> getPermittedBlocks() {
-        return Arrays.asList(Material.EMERALD_BLOCK);
+        return Arrays.asList(Material.REINFORCED_DEEPSLATE);
     }
 }

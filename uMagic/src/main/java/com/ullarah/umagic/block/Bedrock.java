@@ -13,14 +13,7 @@ public class Bedrock extends BaseBlock {
 
     public void process(InteractMeta meta) {
         Block block = meta.getBlock();
-        Player player = meta.getPlayer();
-        Location location = block.getLocation();
-
-        if (magicLocations.containsKey(location) && magicLocations.get(location).equals(metaEmBr)) {
-            getCommonString().messageSend(player, "Block converted to Barrier. Be careful!");
-            block.setType(Material.BARRIER, false);
-        }
-
+        block.setType(Material.DEEPSLATE, false);
     }
 
     public List<Material> getPermittedBlocks() {
