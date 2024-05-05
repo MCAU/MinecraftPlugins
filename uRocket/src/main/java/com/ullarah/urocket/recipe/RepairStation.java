@@ -26,7 +26,7 @@ public class RepairStation implements NewRecipe {
 
         station.setItemMeta(stationMeta);
 
-        station.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        station.addUnsafeEnchantment(Enchantment.LUCK_OF_THE_SEA, 1);
 
         return station;
 

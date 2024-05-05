@@ -20,6 +20,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionData;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.potion.PotionType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
@@ -270,7 +271,7 @@ public class ChestInit extends JavaPlugin {
                         ItemStack newItemStack = new ItemStack(material, 1);
 
                         PotionMeta itemPotionMeta = (PotionMeta) newItemStack.getItemMeta();
-                        itemPotionMeta.setBasePotionData(new PotionData(potion));
+                        itemPotionMeta.setBasePotionType(potion);
                         newItemStack.setItemMeta(itemPotionMeta);
 
                         addMaterial(newItemStack, data, material, f);

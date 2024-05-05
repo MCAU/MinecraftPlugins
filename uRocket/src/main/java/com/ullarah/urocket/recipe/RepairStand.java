@@ -29,7 +29,7 @@ public class RepairStand implements NewRecipe {
         standMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         stand.setItemMeta(standMeta);
 
-        stand.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        stand.addUnsafeEnchantment(Enchantment.LUCK_OF_THE_SEA, 1);
 
         return stand;
 

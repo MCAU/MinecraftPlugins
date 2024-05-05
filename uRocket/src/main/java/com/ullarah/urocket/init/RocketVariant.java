@@ -44,35 +44,35 @@ public class RocketVariant {
         ),
         HEALTH(
                 ChatColor.GREEN + "Health Zapper", new Material[]{Material.PUMPKIN_PIE, Material.REDSTONE_TORCH, Material.TNT},
-                Particle.CRIT_MAGIC, 0, 25, null,
+                Particle.CRIT, 0, 25, null,
                 Sound.ENTITY_SLIME_JUMP, 0.8f, 0.5f, new Vector(0, 1.25, 0),
                 null, null
         ),
         KABOOM(
                 ChatColor.RED + "TNT Overload", new Material[]{Material.BLAZE_POWDER, Material.BLAZE_ROD, Material.TNT},
-                Particle.EXPLOSION_NORMAL, 0, 10, null,
+                Particle.EXPLOSION, 0, 10, null,
                 Sound.ENTITY_GENERIC_EXPLODE, 1.0f, 0.35f, new Vector(0, 0, 0),
                 Material.COAL, Material.COAL_BLOCK
         ),
         RAINBOW(
                 ChatColor.YELLOW + "Radical Rainbows", new Material[]{Material.BEACON, Material.COMPARATOR, Material.WHITE_STAINED_GLASS},
-                Particle.REDSTONE, new Random().nextInt(25), new Random().nextInt(25), null,
+                Particle.DUST, new Random().nextInt(25), new Random().nextInt(25), null,
                 Sound.ENTITY_HORSE_GALLOP, 0.8f, 0.5f, new Vector(0, 1.25, 0),
                 Material.COAL, Material.COAL_BLOCK
         ),
         WATER(
                 ChatColor.BLUE + "Water Slider", new Material[]{Material.LILY_PAD, Material.PRISMARINE_CRYSTALS, Material.WATER_BUCKET},
-                Particle.WATER_BUBBLE, 0, 25, null,
+                Particle.BUBBLE, 0, 25, null,
                 Sound.BLOCK_WATER_AMBIENT, 0.8f, 0.5f, new Vector(0, 1.25, 0),
                 Material.COAL, Material.COAL_BLOCK
         ),
         ZERO(
                 ChatColor.YELLOW + "Patient Zero", new Material[]{Material.BLAZE_POWDER, Material.EXPERIENCE_BOTTLE, Material.ENCHANTED_BOOK},
-                Particle.ENCHANTMENT_TABLE, 0, 25,
+                Particle.ENCHANT, 0, 25,
                 new PotionEffect[]{
-                        new PotionEffect(PotionEffectType.CONFUSION, Integer.MAX_VALUE, 0, false, false),
-                        new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 1, false, false),
-                        new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 1, false, false)
+                        new PotionEffect(PotionEffectType.NAUSEA, Integer.MAX_VALUE, 0, false, false),
+                        new PotionEffect(PotionEffectType.RESISTANCE, Integer.MAX_VALUE, 1, false, false),
+                        new PotionEffect(PotionEffectType.INSTANT_DAMAGE, Integer.MAX_VALUE, 1, false, false)
                 }, Sound.ENTITY_LIGHTNING_BOLT_THUNDER, 0.8f, 2.25f, new Vector(0, 1.25, 0),
                 Material.COAL, Material.COAL_BLOCK
         ),
@@ -84,54 +84,54 @@ public class RocketVariant {
         ),
         STEALTH(
                 ChatColor.WHITE + "Super Stealth", new Material[]{Material.SLIME_BALL, Material.PACKED_ICE, Material.SOUL_SAND},
-                Particle.MOB_APPEARANCE, 0, 1, null,
+                Particle.ELDER_GUARDIAN, 0, 1, null,
                 Sound.ENTITY_ENDERMAN_TELEPORT, 1.25f, 0.25f, new Vector(0, 0.5, 0),
                 Material.COAL, Material.COAL_BLOCK
         ),
         MONEY(
                 ChatColor.GREEN + "Robin Hood", new Material[]{Material.EMERALD, Material.DIAMOND, Material.GOLD_INGOT},
-                Particle.VILLAGER_HAPPY, 0, 5, null,
+                Particle.HAPPY_VILLAGER, 0, 5, null,
                 Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 0.75f, new Vector(0, 1.25, 0),
                 null, null
         ),
         DRUNK(
                 ChatColor.GRAY + "Glazed Over", new Material[]{Material.COBWEB, Material.CACTUS, Material.FISHING_ROD},
-                Particle.SPELL_MOB, 0, 1,
+                Particle.ENTITY_EFFECT, 0, 1,
                 new PotionEffect[]{
-                        new PotionEffect(PotionEffectType.CONFUSION, Integer.MAX_VALUE, 0, false, false),
-                        new PotionEffect(PotionEffectType.FAST_DIGGING, Integer.MAX_VALUE, 2, false, false)
+                        new PotionEffect(PotionEffectType.NAUSEA, Integer.MAX_VALUE, 0, false, false),
+                        new PotionEffect(PotionEffectType.HASTE, Integer.MAX_VALUE, 2, false, false)
                 }, Sound.ENTITY_PLAYER_BURP, 1.25f, 0.95f, new Vector(0, 1.25, 0),
                 Material.COAL, Material.COAL_BLOCK
         ),
         BOOST(
                 ChatColor.AQUA + "Pole Vaulter", new Material[]{Material.RABBIT_FOOT, Material.SLIME_BLOCK, Material.FIRE_CHARGE},
-                Particle.SNOWBALL, 0, 5,
+                Particle.ITEM_SNOWBALL, 0, 5,
                 new PotionEffect[]{
-                        new PotionEffect(PotionEffectType.HEAL, Integer.MAX_VALUE, 1, false, false)
+                        new PotionEffect(PotionEffectType.HEALTH_BOOST, Integer.MAX_VALUE, 1, false, false)
                 }, Sound.ENTITY_MAGMA_CUBE_JUMP, 1.25f, 0.75f, new Vector(0, 20, 0),
                 Material.COAL, Material.COAL_BLOCK
         ),
         TREE(
                 ChatColor.GRAY + "Tree Hugger", new Material[]{Material.NETHERRACK, Material.OAK_LOG, Material.FURNACE},
-                Particle.TOWN_AURA, 0, 50, null,
+                Particle.MYCELIUM, 0, 50, null,
                 Sound.ENTITY_ZOMBIE_VILLAGER_CURE, 1.25f, 0.95f, new Vector(0, 1, 0),
                 Material.OAK_WOOD, Material.OAK_LOG
         ),
         FURY(
                 ChatColor.DARK_RED + "Red Fury", new Material[]{Material.REDSTONE, Material.COMPARATOR, Material.BLAZE_POWDER},
-                Particle.REDSTONE, 0, 10, null,
+                Particle.DUST, 0, 10, null,
                 Sound.BLOCK_PISTON_EXTEND, 1.25f, 0.55f, new Vector(0, 1, 0),
                 Material.REDSTONE, Material.REDSTONE_BLOCK
         ),
         RUNNER(
                 ChatColor.GOLD + "Rocket Runner", new Material[]{Material.SUGAR, Material.SUGAR, Material.PRISMARINE_CRYSTALS},
-                Particle.EXPLOSION_NORMAL, 0, 30, null,
+                Particle.EXPLOSION, 0, 30, null,
                 Sound.ENTITY_HORSE_GALLOP, 1.25f, 0.75f, new Vector(0, 0, 0),
                 Material.COAL, Material.COAL_BLOCK
         ),
         GLOW(
                 ChatColor.YELLOW + "Shooting Star", new Material[]{Material.TORCH, Material.GLOWSTONE, Material.MAGMA_CREAM},
-                Particle.SUSPENDED_DEPTH, 0, 10, null,
+                Particle.ASH, 0, 10, null,
                 Sound.BLOCK_GLASS_BREAK, 1.0f, 0.65f, new Vector(0, 1.50, 0),
                 Material.GLOWSTONE_DUST, Material.GLOWSTONE
         ),

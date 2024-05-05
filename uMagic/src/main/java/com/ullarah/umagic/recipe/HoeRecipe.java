@@ -31,7 +31,7 @@ public abstract class HoeRecipe {
         ItemStack hoeStack = new ItemStack(Material.DIAMOND_HOE, 1);
         hoeStack.setItemMeta(getMeta(hoeStack));
 
-        hoeStack.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        hoeStack.addUnsafeEnchantment(Enchantment.LUCK_OF_THE_SEA, 1);
 
         return hoeStack;
     }

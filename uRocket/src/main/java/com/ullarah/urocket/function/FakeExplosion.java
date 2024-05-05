@@ -32,17 +32,17 @@ public class FakeExplosion {
         /**
          * Smaller white particles
          */
-        NORMAL(Particle.EXPLOSION_NORMAL),
+        NORMAL(Particle.EXPLOSION),
 
         /**
          * Normal TNT like particles
          */
-        LARGE(Particle.EXPLOSION_LARGE),
+        LARGE(Particle.EXPLOSION),
 
         /**
          * Massive particles, wither, enderdragon etc.
          */
-        HUGE(Particle.EXPLOSION_HUGE);
+        HUGE(Particle.EXPLOSION);
 
         private final Particle type;
 

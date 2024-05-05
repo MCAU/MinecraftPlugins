@@ -42,7 +42,7 @@ public class RocketEnhance implements NewRecipe {
         enhancementMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         enhancement.setItemMeta(enhancementMeta);
 
-        enhancement.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        enhancement.addUnsafeEnchantment(Enchantment.LUCK_OF_THE_SEA, 1);
 
         return enhancement;
 

@@ -31,7 +31,7 @@ public class BeaconRainbow implements NewRecipe {
         beaconMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         beacon.setItemMeta(beaconMeta);
 
-        beacon.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        beacon.addUnsafeEnchantment(Enchantment.LUCK_OF_THE_SEA, 1);
 
         return beacon;
 

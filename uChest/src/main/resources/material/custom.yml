@@ -6,6 +6,87 @@
 # x - Return value of experience given (xp)
 
 # EXAMPLE: { m: MATERIALNAME, s: true, d: true, r: true, e: 0.5, x: 0.5 }
+
+# 1.20.6 additions
+ARMADILLO_SCUTE:                        { m: ARMADILLO_SCUTE,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+ARMADILLO_SPAWN_EGG:                    { m: ARMADILLO_SPAWN_EGG,                    s: false, d: false, r: false, e: 0.0, x: 0.0 }
+BOGGED_SPAWN_EGG:                       { m: BOGGED_SPAWN_EGG,                       s: false, d: false, r: false, e: 0.0, x: 0.0 }
+BOLT_ARMOR_TRIM_SMITHING_TEMPLATE:      { m: BOLT_ARMOR_TRIM_SMITHING_TEMPLATE,      s: false, d: false, r: false, e: 0.0, x: 0.0 }
+BREEZE_ROD:                             { m: BREEZE_ROD,                             s: false, d: false, r: false, e: 0.0, x: 0.0 }
+BREEZE_SPAWN_EGG:                       { m: BREEZE_SPAWN_EGG,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
+CHISELED_COPPER:                        { m: CHISELED_COPPER,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+CHISELED_TUFF:                          { m: CHISELED_TUFF,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+CHISELED_TUFF_BRICKS:                   { m: CHISELED_TUFF_BRICKS,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_BULB:                            { m: COPPER_BULB,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_DOOR:                            { m: COPPER_DOOR,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_GRATE:                           { m: COPPER_GRATE,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_TRAPDOOR:                        { m: COPPER_TRAPDOOR,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+CRAFTER:                                { m: CRAFTER,                                s: false, d: false, r: false, e: 0.0, x: 0.0 }
+EXPOSED_CHISELED_COPPER:                { m: EXPOSED_CHISELED_COPPER,                s: true, d: true, r: true, e: 0.0, x: 0.0 }
+EXPOSED_COPPER_BULB:                    { m: EXPOSED_COPPER_BULB,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+EXPOSED_COPPER_DOOR:                    { m: EXPOSED_COPPER_DOOR,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+EXPOSED_COPPER_GRATE:                   { m: EXPOSED_COPPER_GRATE,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
+EXPOSED_COPPER_TRAPDOOR:                { m: EXPOSED_COPPER_TRAPDOOR,                s: true, d: true, r: true, e: 0.0, x: 0.0 }
+FLOW_ARMOR_TRIM_SMITHING_TEMPLATE:      { m: FLOW_ARMOR_TRIM_SMITHING_TEMPLATE,      s: false, d: false, r: false, e: 0.0, x: 0.0 }
+FLOW_BANNER_PATTERN:                    { m: FLOW_BANNER_PATTERN,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+FLOW_POTTERY_SHERD:                     { m: FLOW_POTTERY_SHERD,                     s: false, d: false, r: false, e: 0.0, x: 0.0 }
+GUSTER_BANNER_PATTERN:                  { m: GUSTER_BANNER_PATTERN,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+GUSTER_POTTERY_SHERD:                   { m: GUSTER_POTTERY_SHERD,                   s: false, d: false, r: false, e: 0.0, x: 0.0 }
+HEAVY_CORE:                             { m: HEAVY_CORE,                             s: false, d: false, r: false, e: 0.0, x: 0.0 }
+MACE:                                   { m: MACE,                                   s: false, d: false, r: false, e: 0.0, x: 0.0 }
+OMINOUS_BOTTLE:                         { m: OMINOUS_BOTTLE,                         s: false, d: false, r: false, e: 0.0, x: 0.0 }
+OMINOUS_TRIAL_KEY:                      { m: OMINOUS_TRIAL_KEY,                      s: false, d: false, r: false, e: 0.0, x: 0.0 }
+OXIDIZED_CHISELED_COPPER:               { m: OXIDIZED_CHISELED_COPPER,               s: true, d: true, r: true, e: 0.0, x: 0.0 }
+OXIDIZED_COPPER_BULB:                   { m: OXIDIZED_COPPER_BULB,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
+OXIDIZED_COPPER_DOOR:                   { m: OXIDIZED_COPPER_DOOR,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
+OXIDIZED_COPPER_GRATE:                  { m: OXIDIZED_COPPER_GRATE,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+OXIDIZED_COPPER_TRAPDOOR:               { m: OXIDIZED_COPPER_TRAPDOOR,               s: true, d: true, r: true, e: 0.0, x: 0.0 }
+POLISHED_TUFF:                          { m: POLISHED_TUFF,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+POLISHED_TUFF_SLAB:                     { m: POLISHED_TUFF_SLAB,                     s: true, d: true, r: true, e: 0.0, x: 0.0 }
+POLISHED_TUFF_STAIRS:                   { m: POLISHED_TUFF_STAIRS,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
+POLISHED_TUFF_WALL:                     { m: POLISHED_TUFF_WALL,                     s: true, d: true, r: true, e: 0.0, x: 0.0 }
+SCRAPE_POTTERY_SHERD:                   { m: SCRAPE_POTTERY_SHERD,                   s: false, d: false, r: false, e: 0.0, x: 0.0 }
+SHORT_GRASS:                            { m: SHORT_GRASS,                            s: false, d: false, r: false, e: 0.0, x: 0.0 }
+TRIAL_KEY:                              { m: TRIAL_KEY,                              s: false, d: false, r: false, e: 0.0, x: 0.0 }
+TRIAL_SPAWNER:                          { m: TRIAL_SPAWNER,                          s: false, d: false, r: false, e: 0.0, x: 0.0 }
+TUFF_BRICKS:                            { m: TUFF_BRICKS,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+TUFF_BRICK_SLAB:                        { m: TUFF_BRICK_SLAB,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+TUFF_BRICK_STAIRS:                      { m: TUFF_BRICK_STAIRS,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+TUFF_BRICK_WALL:                        { m: TUFF_BRICK_WALL,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+TUFF_SLAB:                              { m: TUFF_SLAB,                              s: true, d: true, r: true, e: 0.0, x: 0.0 }
+TUFF_STAIRS:                            { m: TUFF_STAIRS,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+TUFF_WALL:                              { m: TUFF_WALL,                              s: true, d: true, r: true, e: 0.0, x: 0.0 }
+TURTLE_SCUTE:                           { m: TURTLE_SCUTE,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+VAULT:                                  { m: VAULT,                                  s: false, d: false, r: false, e: 0.0, x: 0.0 }
+WAXED_CHISELED_COPPER:                  { m: WAXED_CHISELED_COPPER,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_COPPER_BULB:                      { m: WAXED_COPPER_BULB,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_COPPER_DOOR:                      { m: WAXED_COPPER_DOOR,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_COPPER_GRATE:                     { m: WAXED_COPPER_GRATE,                     s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_COPPER_TRAPDOOR:                  { m: WAXED_COPPER_TRAPDOOR,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_EXPOSED_CHISELED_COPPER:          { m: WAXED_EXPOSED_CHISELED_COPPER,          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_EXPOSED_COPPER_BULB:              { m: WAXED_EXPOSED_COPPER_BULB,              s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_EXPOSED_COPPER_DOOR:              { m: WAXED_EXPOSED_COPPER_DOOR,              s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_EXPOSED_COPPER_GRATE:             { m: WAXED_EXPOSED_COPPER_GRATE,             s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_EXPOSED_COPPER_TRAPDOOR:          { m: WAXED_EXPOSED_COPPER_TRAPDOOR,          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_OXIDIZED_CHISELED_COPPER:         { m: WAXED_OXIDIZED_CHISELED_COPPER,         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_OXIDIZED_COPPER_BULB:             { m: WAXED_OXIDIZED_COPPER_BULB,             s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_OXIDIZED_COPPER_DOOR:             { m: WAXED_OXIDIZED_COPPER_DOOR,             s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_OXIDIZED_COPPER_GRATE:            { m: WAXED_OXIDIZED_COPPER_GRATE,            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_OXIDIZED_COPPER_TRAPDOOR:         { m: WAXED_OXIDIZED_COPPER_TRAPDOOR,         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_WEATHERED_CHISELED_COPPER:        { m: WAXED_WEATHERED_CHISELED_COPPER,        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_WEATHERED_COPPER_BULB:            { m: WAXED_WEATHERED_COPPER_BULB,            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_WEATHERED_COPPER_DOOR:            { m: WAXED_WEATHERED_COPPER_DOOR,            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_WEATHERED_COPPER_GRATE:           { m: WAXED_WEATHERED_COPPER_GRATE,           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_WEATHERED_COPPER_TRAPDOOR:        { m: WAXED_WEATHERED_COPPER_TRAPDOOR,        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WEATHERED_CHISELED_COPPER:              { m: WEATHERED_CHISELED_COPPER,              s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WEATHERED_COPPER_BULB:                  { m: WEATHERED_COPPER_BULB,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WEATHERED_COPPER_DOOR:                  { m: WEATHERED_COPPER_DOOR,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WEATHERED_COPPER_GRATE:                 { m: WEATHERED_COPPER_GRATE,                 s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WEATHERED_COPPER_TRAPDOOR:              { m: WEATHERED_COPPER_TRAPDOOR,              s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WIND_CHARGE:                            { m: WIND_CHARGE,                            s: false, d: false, r: false, e: 0.0, x: 0.0 }
+WOLF_ARMOR:                             { m: WOLF_ARMOR,                             s: false, d: false, r: false, e: 0.0, x: 0.0 }
+
+# older stuff
 ACACIA_BOAT:                            { m: ACACIA_BOAT,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
 ACACIA_BUTTON:                          { m: ACACIA_BUTTON,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
 ACACIA_CHEST_BOAT:                      { m: ACACIA_CHEST_BOAT,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
@@ -502,7 +583,6 @@ GRANITE:                                { m: GRANITE,                           
 GRANITE_SLAB:                           { m: GRANITE_SLAB,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
 GRANITE_STAIRS:                         { m: GRANITE_STAIRS,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
 GRANITE_WALL:                           { m: GRANITE_WALL,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
-GRASS:                                  { m: GRASS,                                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
 GRASS_BLOCK:                            { m: GRASS_BLOCK,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
 GRAVEL:                                 { m: GRAVEL,                                 s: true, d: true, r: true, e: 0.0, x: 0.0 }
 GRAY_BANNER:                            { m: GRAY_BANNER,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
@@ -1000,7 +1080,6 @@ SCULK_CATALYST:                         { m: SCULK_CATALYST,                    
 SCULK_SENSOR:                           { m: SCULK_SENSOR,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
 SCULK_SHRIEKER:                         { m: SCULK_SHRIEKER,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
 SCULK_VEIN:                             { m: SCULK_VEIN,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
-SCUTE:                                  { m: SCUTE,                                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
 SEAGRASS:                               { m: SEAGRASS,                               s: true, d: true, r: true, e: 0.0, x: 0.0 }
 SEA_LANTERN:                            { m: SEA_LANTERN,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
 SEA_PICKLE:                             { m: SEA_PICKLE,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }

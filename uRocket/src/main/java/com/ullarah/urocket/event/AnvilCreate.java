@@ -64,7 +64,7 @@ public class AnvilCreate implements Listener {
                                     boosterTenMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 
                                     boosterTen.setItemMeta(boosterTenMeta);
-                                    boosterTen.addUnsafeEnchantment(Enchantment.LUCK, 1);
+                                    boosterTen.addUnsafeEnchantment(Enchantment.LUCK_OF_THE_SEA, 1);
 
                                     if (event.getRawSlot() == 2)
                                         if (itemOne.getAmount() == 1 && itemTwo.getAmount() == 1) {

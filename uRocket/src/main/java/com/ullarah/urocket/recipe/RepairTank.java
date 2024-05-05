@@ -26,7 +26,7 @@ public class RepairTank implements NewRecipe {
 
         tank.setItemMeta(tankMeta);
 
-        tank.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        tank.addUnsafeEnchantment(Enchantment.LUCK_OF_THE_SEA, 1);
 
         return tank;
 

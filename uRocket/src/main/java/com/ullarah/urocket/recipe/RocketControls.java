@@ -26,7 +26,7 @@ public class RocketControls implements NewRecipe {
         controlMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         control.setItemMeta(controlMeta);
 
-        control.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        control.addUnsafeEnchantment(Enchantment.LUCK_OF_THE_SEA, 1);
 
         return control;
 

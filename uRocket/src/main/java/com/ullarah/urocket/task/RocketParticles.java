@@ -61,7 +61,7 @@ public class RocketParticles {
         double speed = variant.getParticleSpeed();
 
         Particle.DustOptions data = null;
-        if (particle == Particle.REDSTONE) {
+        if (particle == Particle.DUST) {
             data = new Particle.DustOptions(Color.RED, 1);
         }
 
@@ -90,7 +90,7 @@ public class RocketParticles {
                 break;
 
             case RUNNER:
-                particle = Particle.SMOKE_LARGE;
+                particle = Particle.SMOKE;
                 speed = 0;
                 amount = 5;
                 break;

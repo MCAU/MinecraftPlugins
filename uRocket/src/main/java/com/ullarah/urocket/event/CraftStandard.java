@@ -143,7 +143,7 @@ public class CraftStandard implements Listener {
                 bootMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 
                 boots.setItemMeta(bootMeta);
-                boots.addEnchantment(Enchantment.PROTECTION_FALL, 4);
+                boots.addEnchantment(Enchantment.FEATHER_FALLING, 4);
 
                 event.getInventory().setResult((bootType == 8 || bootType == 16 || bootType == 24) && isBoosterX ? null : boots);
 

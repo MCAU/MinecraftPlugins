@@ -26,7 +26,7 @@ public class RocketFlyZone implements NewRecipe {
         zoneMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         zone.setItemMeta(zoneMeta);
 
-        zone.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        zone.addUnsafeEnchantment(Enchantment.LUCK_OF_THE_SEA, 1);
 
         return zone;
 

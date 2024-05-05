@@ -108,7 +108,7 @@ public class NotePlaying {
                             speed = variant.getParticleSpeed();
                         }
 
-                        player.getWorld().spawnParticle(Particle.SMOKE_LARGE, x, y, z, amount, oX, oY, oZ, speed);
+                        player.getWorld().spawnParticle(Particle.SMOKE, x, y, z, amount, oX, oY, oZ, speed);
 
                     }
 

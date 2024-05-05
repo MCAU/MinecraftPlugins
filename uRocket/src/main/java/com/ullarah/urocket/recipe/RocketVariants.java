@@ -44,7 +44,7 @@ public class RocketVariants implements NewRecipe {
         variantMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         variant.setItemMeta(variantMeta);
 
-        variant.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        variant.addUnsafeEnchantment(Enchantment.LUCK_OF_THE_SEA, 1);
 
         return variant;
 

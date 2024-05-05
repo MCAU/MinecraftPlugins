@@ -358,13 +358,13 @@ public class MagicFunctions {
         switch (hoeType) {
             default:
             case 0:
-                particle = Particle.CRIT_MAGIC;
+                particle = Particle.CRIT;
                 break;
             case 1:
-                particle = Particle.SPELL_WITCH;
+                particle = Particle.WITCH;
                 break;
             case 2:
-                particle = Particle.VILLAGER_ANGRY;
+                particle = Particle.ANGRY_VILLAGER;
                 break;
             case 3:
                 particle = Particle.DRAGON_BREATH;
