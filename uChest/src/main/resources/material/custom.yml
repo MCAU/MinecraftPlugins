@@ -820,10 +820,13 @@ MUSIC_DISC_5:                           { m: MUSIC_DISC_5,                      
 MUSIC_DISC_BLOCKS:                      { m: MUSIC_DISC_BLOCKS,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
 MUSIC_DISC_CAT:                         { m: MUSIC_DISC_CAT,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
 MUSIC_DISC_CHIRP:                       { m: MUSIC_DISC_CHIRP,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MUSIC_DISC_CREATOR:                     { m: MUSIC_DISC_CREATOR,                     s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MUSIC_DISC_CREATOR_MUSIC_BOX:           { m: MUSIC_DISC_CREATOR_MUSIC_BOX,           s: true, d: true, r: true, e: 0.0, x: 0.0 }
 MUSIC_DISC_FAR:                         { m: MUSIC_DISC_FAR,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
 MUSIC_DISC_MALL:                        { m: MUSIC_DISC_MALL,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
 MUSIC_DISC_MELLOHI:                     { m: MUSIC_DISC_MELLOHI,                     s: true, d: true, r: true, e: 0.0, x: 0.0 }
 MUSIC_DISC_OTHERSIDE:                   { m: MUSIC_DISC_OTHERSIDE,                   s: false, d: false, r: false, e: 0.0, x: 0.0 }
+MUSIC_DISC_PRECIPICE:                   { m: MUSIC_DISC_PRECIPICE,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
 MUSIC_DISC_PIGSTEP:                     { m: MUSIC_DISC_PIGSTEP,                     s: false, d: false, r: false, e: 0.0, x: 0.0 }
 MUSIC_DISC_RELIC:                       { m: MUSIC_DISC_RELIC,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
 MUSIC_DISC_STAL:                        { m: MUSIC_DISC_STAL,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }

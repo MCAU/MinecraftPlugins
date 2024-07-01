@@ -7,7 +7,7 @@
 
     <name>uWild</name>
     <description>Weird and Wild Changes</description>
-    <version>0.2.11</version>
+    <version>0.2.12</version>
 
     <parent>
         <groupId>com.ullarah</groupId>

@@ -28,7 +28,7 @@ public class RocketVariant {
     public enum Variant {
 
         ORIGINAL(
-                ChatColor.YELLOW + "Original", new Material[]{Material.FIRE, Material.FIRE, Material.FIRE},
+                ChatColor.YELLOW + "Original", new Material[]{Material.FIRE_CHARGE, Material.FIRE_CHARGE, Material.FIRE_CHARGE},
                 Particle.FLAME, 0, 5, null,
                 Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 0.8f, 0.35f, new Vector(0, 1.25, 0),
                 Material.COAL, Material.COAL_BLOCK
