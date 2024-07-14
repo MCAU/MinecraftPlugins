@@ -13,7 +13,7 @@ ARMADILLO_SPAWN_EGG:                    { m: ARMADILLO_SPAWN_EGG,               
 BOGGED_SPAWN_EGG:                       { m: BOGGED_SPAWN_EGG,                       s: false, d: false, r: false, e: 0.0, x: 0.0 }
 BOLT_ARMOR_TRIM_SMITHING_TEMPLATE:      { m: BOLT_ARMOR_TRIM_SMITHING_TEMPLATE,      s: false, d: false, r: false, e: 0.0, x: 0.0 }
 BREEZE_ROD:                             { m: BREEZE_ROD,                             s: false, d: false, r: false, e: 0.0, x: 0.0 }
-BREEZE_SPAWN_EGG:                       { m: BREEZE_SPAWN_EGG,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
+BREEZE_SPAWN_EGG:                       { m: BREEZE_SPAWN_EGG,                       s: false, d: false, r: false, e: 0.0, x: 0.0 }
 CHISELED_COPPER:                        { m: CHISELED_COPPER,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
 CHISELED_TUFF:                          { m: CHISELED_TUFF,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
 CHISELED_TUFF_BRICKS:                   { m: CHISELED_TUFF_BRICKS,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
