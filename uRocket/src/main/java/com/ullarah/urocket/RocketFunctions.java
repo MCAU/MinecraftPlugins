@@ -490,6 +490,9 @@ public class RocketFunctions {
             case 5:
                 return fastRepair ? 10 : 1;
 
+            case 10:
+                return fastRepair ? 5 : 1;
+
         }
 
         return 0;
