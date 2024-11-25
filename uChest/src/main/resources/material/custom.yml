@@ -7,6 +7,50 @@
 
 # EXAMPLE: { m: MATERIALNAME, s: true, d: true, r: true, e: 0.5, x: 0.5 }
 
+# 1.21.3 additions
+BLACK_BUNDLE:                           { m: BLACK_BUNDLE,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+BLUE_BUNDLE:                            { m: BLUE_BUNDLE,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+BORDURE_INDENTED_BANNER_PATTERN:        { m: BORDURE_INDENTED_BANNER_PATTERN,        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+BROWN_BUNDLE:                           { m: BROWN_BUNDLE,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+CREAKING_HEART:                         { m: CREAKING_HEART,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+CREAKING_SPAWN_EGG:                     { m: CREAKING_SPAWN_EGG,                     s: false, d: false, r: false, e: 0.0, x: 0.0 }
+CYAN_BUNDLE:                            { m: CYAN_BUNDLE,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+FIELD_MASONED_BANNER_PATTERN:           { m: FIELD_MASONED_BANNER_PATTERN,           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+GRAY_BUNDLE:                            { m: GRAY_BUNDLE,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+GREEN_BUNDLE:                           { m: GREEN_BUNDLE,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+LIGHT_BLUE_BUNDLE:                      { m: LIGHT_BLUE_BUNDLE,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+LIGHT_GRAY_BUNDLE:                      { m: LIGHT_GRAY_BUNDLE,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+LIME_BUNDLE:                            { m: LIME_BUNDLE,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MAGENTA_BUNDLE:                         { m: MAGENTA_BUNDLE,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+ORANGE_BUNDLE:                          { m: ORANGE_BUNDLE,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_HANGING_MOSS:                      { m: PALE_HANGING_MOSS,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_MOSS_BLOCK:                        { m: PALE_MOSS_BLOCK,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_MOSS_CARPET:                       { m: PALE_MOSS_CARPET,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_BOAT:                          { m: PALE_OAK_BOAT,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_BUTTON:                        { m: PALE_OAK_BUTTON,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_CHEST_BOAT:                    { m: PALE_OAK_CHEST_BOAT,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_DOOR:                          { m: PALE_OAK_DOOR,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_FENCE:                         { m: PALE_OAK_FENCE,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_FENCE_GATE:                    { m: PALE_OAK_FENCE_GATE,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_HANGING_SIGN:                  { m: PALE_OAK_HANGING_SIGN,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_LEAVES:                        { m: PALE_OAK_LEAVES,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_LOG:                           { m: PALE_OAK_LOG,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_PLANKS:                        { m: PALE_OAK_PLANKS,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_PRESSURE_PLATE:                { m: PALE_OAK_PRESSURE_PLATE,                s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_SAPLING:                       { m: PALE_OAK_SAPLING,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_SIGN:                          { m: PALE_OAK_SIGN,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_SLAB:                          { m: PALE_OAK_SLAB,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_STAIRS:                        { m: PALE_OAK_STAIRS,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_TRAPDOOR:                      { m: PALE_OAK_TRAPDOOR,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_WOOD:                          { m: PALE_OAK_WOOD,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PINK_BUNDLE:                            { m: PINK_BUNDLE,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PURPLE_BUNDLE:                          { m: PURPLE_BUNDLE,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+RED_BUNDLE:                             { m: RED_BUNDLE,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
+STRIPPED_PALE_OAK_LOG:                  { m: STRIPPED_PALE_OAK_LOG,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+STRIPPED_PALE_OAK_WOOD:                 { m: STRIPPED_PALE_OAK_WOOD,                 s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WHITE_BUNDLE:                           { m: WHITE_BUNDLE,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+YELLOW_BUNDLE:                          { m: YELLOW_BUNDLE,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+
 # 1.20.6 additions
 ARMADILLO_SCUTE:                        { m: ARMADILLO_SCUTE,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
 ARMADILLO_SPAWN_EGG:                    { m: ARMADILLO_SPAWN_EGG,                    s: false, d: false, r: false, e: 0.0, x: 0.0 }
