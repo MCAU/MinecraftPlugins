@@ -7,6 +7,18 @@
 
 # EXAMPLE: { m: MATERIALNAME, s: true, d: true, r: true, e: 0.5, x: 0.5 }
 
+# 1.21.4 additions
+CHISELED_RESIN_BRICKS:                  { m: CHISELED_RESIN_BRICKS,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+CLOSED_EYEBLOSSOM:                      { m: CLOSED_EYEBLOSSOM,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+OPEN_EYEBLOSSOM:                        { m: OPEN_EYEBLOSSOM,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+RESIN_BLOCK:                            { m: RESIN_BLOCK,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+RESIN_BRICK:                            { m: RESIN_BRICK,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+RESIN_BRICKS:                           { m: RESIN_BRICKS,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+RESIN_BRICK_SLAB:                       { m: RESIN_BRICK_SLAB,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
+RESIN_BRICK_STAIRS:                     { m: RESIN_BRICK_STAIRS,                     s: true, d: true, r: true, e: 0.0, x: 0.0 }
+RESIN_BRICK_WALL:                       { m: RESIN_BRICK_WALL,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
+RESIN_CLUMP:                            { m: RESIN_CLUMP,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+
 # 1.21.3 additions
 BLACK_BUNDLE:                           { m: BLACK_BUNDLE,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
 BLUE_BUNDLE:                            { m: BLUE_BUNDLE,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
@@ -23,31 +35,31 @@ LIGHT_GRAY_BUNDLE:                      { m: LIGHT_GRAY_BUNDLE,                 
 LIME_BUNDLE:                            { m: LIME_BUNDLE,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
 MAGENTA_BUNDLE:                         { m: MAGENTA_BUNDLE,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
 ORANGE_BUNDLE:                          { m: ORANGE_BUNDLE,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
-PALE_HANGING_MOSS:                      { m: PALE_HANGING_MOSS,                      s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_MOSS_BLOCK:                        { m: PALE_MOSS_BLOCK,                        s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_MOSS_CARPET:                       { m: PALE_MOSS_CARPET,                       s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_BOAT:                          { m: PALE_OAK_BOAT,                          s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_BUTTON:                        { m: PALE_OAK_BUTTON,                        s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_CHEST_BOAT:                    { m: PALE_OAK_CHEST_BOAT,                    s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_DOOR:                          { m: PALE_OAK_DOOR,                          s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_FENCE:                         { m: PALE_OAK_FENCE,                         s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_FENCE_GATE:                    { m: PALE_OAK_FENCE_GATE,                    s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_HANGING_SIGN:                  { m: PALE_OAK_HANGING_SIGN,                  s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_LEAVES:                        { m: PALE_OAK_LEAVES,                        s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_LOG:                           { m: PALE_OAK_LOG,                           s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_PLANKS:                        { m: PALE_OAK_PLANKS,                        s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_PRESSURE_PLATE:                { m: PALE_OAK_PRESSURE_PLATE,                s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_SAPLING:                       { m: PALE_OAK_SAPLING,                       s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_SIGN:                          { m: PALE_OAK_SIGN,                          s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_SLAB:                          { m: PALE_OAK_SLAB,                          s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_STAIRS:                        { m: PALE_OAK_STAIRS,                        s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_TRAPDOOR:                      { m: PALE_OAK_TRAPDOOR,                      s: false, d: false, r: false, e: 0.0, x: 0.0 }
-PALE_OAK_WOOD:                          { m: PALE_OAK_WOOD,                          s: false, d: false, r: false, e: 0.0, x: 0.0 }
+PALE_HANGING_MOSS:                      { m: PALE_HANGING_MOSS,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_MOSS_BLOCK:                        { m: PALE_MOSS_BLOCK,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_MOSS_CARPET:                       { m: PALE_MOSS_CARPET,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_BOAT:                          { m: PALE_OAK_BOAT,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_BUTTON:                        { m: PALE_OAK_BUTTON,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_CHEST_BOAT:                    { m: PALE_OAK_CHEST_BOAT,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_DOOR:                          { m: PALE_OAK_DOOR,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_FENCE:                         { m: PALE_OAK_FENCE,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_FENCE_GATE:                    { m: PALE_OAK_FENCE_GATE,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_HANGING_SIGN:                  { m: PALE_OAK_HANGING_SIGN,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_LEAVES:                        { m: PALE_OAK_LEAVES,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_LOG:                           { m: PALE_OAK_LOG,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_PLANKS:                        { m: PALE_OAK_PLANKS,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_PRESSURE_PLATE:                { m: PALE_OAK_PRESSURE_PLATE,                s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_SAPLING:                       { m: PALE_OAK_SAPLING,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_SIGN:                          { m: PALE_OAK_SIGN,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_SLAB:                          { m: PALE_OAK_SLAB,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_STAIRS:                        { m: PALE_OAK_STAIRS,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_TRAPDOOR:                      { m: PALE_OAK_TRAPDOOR,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_WOOD:                          { m: PALE_OAK_WOOD,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
 PINK_BUNDLE:                            { m: PINK_BUNDLE,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
 PURPLE_BUNDLE:                          { m: PURPLE_BUNDLE,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
 RED_BUNDLE:                             { m: RED_BUNDLE,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
-STRIPPED_PALE_OAK_LOG:                  { m: STRIPPED_PALE_OAK_LOG,                  s: false, d: false, r: false, e: 0.0, x: 0.0 }
-STRIPPED_PALE_OAK_WOOD:                 { m: STRIPPED_PALE_OAK_WOOD,                 s: false, d: false, r: false, e: 0.0, x: 0.0 }
+STRIPPED_PALE_OAK_LOG:                  { m: STRIPPED_PALE_OAK_LOG,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+STRIPPED_PALE_OAK_WOOD:                 { m: STRIPPED_PALE_OAK_WOOD,                 s: true, d: true, r: true, e: 0.0, x: 0.0 }
 WHITE_BUNDLE:                           { m: WHITE_BUNDLE,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
 YELLOW_BUNDLE:                          { m: YELLOW_BUNDLE,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
 

@@ -53,7 +53,9 @@ public class Stairs extends ScrollBlock {
                 Material.SPRUCE_STAIRS, Material.STONE_BRICK_STAIRS, Material.STONE_STAIRS,
                 Material.WARPED_STAIRS, Material.WAXED_CUT_COPPER_STAIRS, Material.WAXED_EXPOSED_CUT_COPPER_STAIRS,
                 Material.WAXED_OXIDIZED_CUT_COPPER_STAIRS, Material.WAXED_WEATHERED_CUT_COPPER_STAIRS, Material.WEATHERED_CUT_COPPER_STAIRS,
-                Material.BAMBOO_STAIRS, Material.BAMBOO_MOSAIC_STAIRS, Material.CHERRY_STAIRS);
+                Material.BAMBOO_STAIRS, Material.BAMBOO_MOSAIC_STAIRS, Material.CHERRY_STAIRS,
+                Material.PALE_OAK_STAIRS, Material.RESIN_BRICK_STAIRS, Material.POLISHED_TUFF_STAIRS,
+                Material.TUFF_BRICK_STAIRS, Material.TUFF_STAIRS);
     }
 
 }

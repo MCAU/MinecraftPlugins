@@ -24,7 +24,11 @@ public class Trapdoor extends BaseBlock {
                 Material.ACACIA_TRAPDOOR, Material.BIRCH_TRAPDOOR, Material.DARK_OAK_TRAPDOOR,
                 Material.JUNGLE_TRAPDOOR, Material.MANGROVE_TRAPDOOR, Material.OAK_TRAPDOOR,
 	       	    Material.SPRUCE_TRAPDOOR, Material.IRON_TRAPDOOR, Material.CRIMSON_TRAPDOOR,
-	       	    Material.WARPED_TRAPDOOR, Material.BAMBOO_TRAPDOOR, Material.CHERRY_TRAPDOOR);
+	       	    Material.WARPED_TRAPDOOR, Material.BAMBOO_TRAPDOOR, Material.CHERRY_TRAPDOOR,
+                Material.PALE_OAK_TRAPDOOR, Material.COPPER_TRAPDOOR, Material.EXPOSED_COPPER_TRAPDOOR,
+                Material.OXIDIZED_COPPER_TRAPDOOR, Material.WAXED_COPPER_TRAPDOOR, Material.WAXED_EXPOSED_COPPER_TRAPDOOR,
+                Material.WAXED_OXIDIZED_COPPER_TRAPDOOR, Material.WAXED_WEATHERED_COPPER_TRAPDOOR,
+                Material.WEATHERED_COPPER_TRAPDOOR);
     }
 
 }

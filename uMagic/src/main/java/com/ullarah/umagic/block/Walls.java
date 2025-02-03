@@ -53,10 +53,12 @@ public class Walls extends ScrollBlock {
                 Material.COBBLED_DEEPSLATE_WALL, Material.COBBLESTONE_WALL, Material.DEEPSLATE_BRICK_WALL,
                 Material.DEEPSLATE_TILE_WALL, Material.DIORITE_WALL, Material.END_STONE_BRICK_WALL,
                 Material.GRANITE_WALL, Material.MOSSY_COBBLESTONE_WALL, Material.MOSSY_STONE_BRICK_WALL,
-		Material.MUD_BRICK_WALL,
+		        Material.MUD_BRICK_WALL,
                 Material.NETHER_BRICK_WALL, Material.POLISHED_BLACKSTONE_WALL, Material.POLISHED_BLACKSTONE_BRICK_WALL,
                 Material.POLISHED_DEEPSLATE_WALL, Material.PRISMARINE_WALL, Material.RED_NETHER_BRICK_WALL,
-                Material.RED_SANDSTONE_WALL, Material.SANDSTONE_WALL, Material.STONE_BRICK_WALL
+                Material.RED_SANDSTONE_WALL, Material.SANDSTONE_WALL, Material.STONE_BRICK_WALL,
+                Material.RESIN_BRICK_WALL
+
         );
     }
 }

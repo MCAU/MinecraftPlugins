@@ -7,7 +7,7 @@
 
     <name>uChest</name>
     <description>Mixed Chests</description>
-    <version>1.9.6</version>
+    <version>1.9.7</version>
 
     <parent>
         <groupId>com.ullarah</groupId>

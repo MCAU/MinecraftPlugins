@@ -7,7 +7,7 @@
 
     <name>uLottery</name>
     <description>Death Lottery</description>
-    <version>0.7.22</version>
+    <version>0.7.23</version>
 
     <parent>
         <groupId>com.ullarah</groupId>

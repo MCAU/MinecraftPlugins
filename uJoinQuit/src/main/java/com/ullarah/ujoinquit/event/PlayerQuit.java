@@ -22,7 +22,7 @@ public class PlayerQuit implements Listener {
         if (player.hasPermission("jq.silentquit")) {
             event.setQuitMessage("");
         }
-        else if (JoinQuitInit.playerQuitMessage.containsKey(playerUUID) && !event.getQuitMessage().isEmpty()) {
+        else if (JoinQuitInit.playerQuitMessage.containsKey(playerUUID) && !event.getQuitMessage().isEmpty() && event.getQuitMessage() != null) {
 
             JoinQuitFunctions joinQuitFunctions = new JoinQuitFunctions();
             String message = joinQuitFunctions.replacePlayerString(player,
