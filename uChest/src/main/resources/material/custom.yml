@@ -7,6 +7,19 @@
 
 # EXAMPLE: { m: MATERIALNAME, s: true, d: true, r: true, e: 0.5, x: 0.5 }
 
+# 1.21.5 additions
+BLUE_EGG:                               { m: BLUE_EGG,                               s: true, d: true, r: true, e: 0.0, x: 0.0 }
+BROWN_EGG:                              { m: BROWN_EGG,                              s: true, d: true, r: true, e: 0.0, x: 0.0 }
+BUSH:                                   { m: BUSH,                                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
+CACTUS_FLOWER:                          { m: CACTUS_FLOWER,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+FIREFLY_BUSH:                           { m: FIREFLY_BUSH,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+LEAF_LITTER:                            { m: LEAF_LITTER,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+SHORT_DRY_GRASS:                        { m: SHORT_DRY_GRASS,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+TALL_DRY_GRASS:                         { m: TALL_DRY_GRASS,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+TEST_BLOCK:                             { m: TEST_BLOCK,                             s: false, d: false, r: false, e: 0.0, x: 0.0 }
+TEST_INSTANCE_BLOCK:                    { m: TEST_INSTANCE_BLOCK,                    s: false, d: false, r: false, e: 0.0, x: 0.0 }
+WILDFLOWERS:                            { m: WILDFLOWERS,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+
 # 1.21.4 additions
 CHISELED_RESIN_BRICKS:                  { m: CHISELED_RESIN_BRICKS,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
 CLOSED_EYEBLOSSOM:                      { m: CLOSED_EYEBLOSSOM,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }

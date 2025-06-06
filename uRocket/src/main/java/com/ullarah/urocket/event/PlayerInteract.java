@@ -160,7 +160,6 @@ public class PlayerInteract implements Listener {
             event.setCancelled(true);
             return;
         }
-
         RocketFunctions rocketFunctions = new RocketFunctions();
         Player player = rp.getPlayer();
         String rocketLore = inHand.getItemMeta().getLore().get(0);

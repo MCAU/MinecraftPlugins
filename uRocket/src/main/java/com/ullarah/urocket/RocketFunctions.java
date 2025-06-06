@@ -149,7 +149,6 @@ public class RocketFunctions {
             disableRocketBoots(player, false);
             return;
         }
-
         RocketPlayer rp = RocketInit.getPlayer(player);
 
         ItemMeta rocketMeta = boots.getItemMeta();
@@ -241,19 +240,14 @@ public class RocketFunctions {
             disableRocketBoots(player, false);
             return;
         }
+        if (gamemodeCheck.check(player, GameMode.SURVIVAL, GameMode.ADVENTURE)) {
+            commonString.messageSend(RocketInit.getPlugin(), player, true, rocketMessage);
+            if (!isRunnerVariant)
+                player.setAllowFlight(true);
 
-        if (player.getInventory().getBoots() == null)
-            if (gamemodeCheck.check(player, GameMode.SURVIVAL, GameMode.ADVENTURE)) {
-
-                commonString.messageSend(RocketInit.getPlugin(), player, true, rocketMessage);
-                if (!isRunnerVariant)
-                    player.setAllowFlight(true);
-
-                power = getBootPowerLevel(boots);
-                rp.setBootData(new BootData(power, variant, enhancement));
-
-            }
-
+            power = getBootPowerLevel(boots);
+            rp.setBootData(new BootData(power, variant, enhancement));
+        }
     }
 
     public File getFuelFile(Player player) {
