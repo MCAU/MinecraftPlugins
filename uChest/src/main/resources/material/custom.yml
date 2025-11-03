@@ -7,6 +7,92 @@
 
 # EXAMPLE: { m: MATERIALNAME, s: true, d: true, r: true, e: 0.5, x: 0.5 }
 
+# 1.21.10 additions
+COPPER_CHEST:                           { m: COPPER_CHEST,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_CHESTPLATE:                      { m: COPPER_CHESTPLATE,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_GOLEM_SPAWN_EGG:                 { m: COPPER_GOLEM_SPAWN_EGG,                 s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_GOLEM_STATUE:                    { m: COPPER_GOLEM_STATUE,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_HELMET:                          { m: COPPER_HELMET,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_HOE:                             { m: COPPER_HOE,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_HORSE_ARMOR:                     { m: COPPER_HORSE_ARMOR,                     s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_LANTERN:                         { m: COPPER_LANTERN,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_LEGGINGS:                        { m: COPPER_LEGGINGS,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_NUGGET:                          { m: COPPER_NUGGET,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_PICKAXE:                         { m: COPPER_PICKAXE,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_SHOVEL:                          { m: COPPER_SHOVEL,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_SWORD:                           { m: COPPER_SWORD,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_TORCH:                           { m: COPPER_TORCH,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+CRIMSON_SHELF:                          { m: CRIMSON_SHELF,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+CYAN_HARNESS:                           { m: CYAN_HARNESS,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+DARK_OAK_SHELF:                         { m: DARK_OAK_SHELF,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+DRIED_GHAST:                            { m: DRIED_GHAST,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+EXPOSED_COPPER_BARS:                    { m: EXPOSED_COPPER_BARS,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+EXPOSED_COPPER_CHAIN:                   { m: EXPOSED_COPPER_CHAIN,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
+EXPOSED_COPPER_CHEST:                   { m: EXPOSED_COPPER_CHEST,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
+EXPOSED_COPPER_GOLEM_STATUE:            { m: EXPOSED_COPPER_GOLEM_STATUE,            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+EXPOSED_COPPER_LANTERN:                 { m: EXPOSED_COPPER_LANTERN,                 s: true, d: true, r: true, e: 0.0, x: 0.0 }
+EXPOSED_LIGHTNING_ROD:                  { m: EXPOSED_LIGHTNING_ROD,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+GRAY_HARNESS:                           { m: GRAY_HARNESS,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+GREEN_HARNESS:                          { m: GREEN_HARNESS,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+HAPPY_GHAST_SPAWN_EGG:                  { m: HAPPY_GHAST_SPAWN_EGG,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+IRON_CHAIN:                             { m: IRON_CHAIN,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
+JUNGLE_SHELF:                           { m: JUNGLE_SHELF,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+LIGHT_BLUE_HARNESS:                     { m: LIGHT_BLUE_HARNESS,                     s: true, d: true, r: true, e: 0.0, x: 0.0 }
+LIGHT_GRAY_HARNESS:                     { m: LIGHT_GRAY_HARNESS,                     s: true, d: true, r: true, e: 0.0, x: 0.0 }
+LIME_HARNESS:                           { m: LIME_HARNESS,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MAGENTA_HARNESS:                        { m: MAGENTA_HARNESS,                        s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MANGROVE_SHELF:                         { m: MANGROVE_SHELF,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MUSIC_DISC_LAVA_CHICKEN:                { m: MUSIC_DISC_LAVA_CHICKEN,                s: true, d: true, r: true, e: 0.0, x: 0.0 }
+MUSIC_DISC_TEARS:                       { m: MUSIC_DISC_TEARS,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
+OAK_SHELF:                              { m: OAK_SHELF,                              s: true, d: true, r: true, e: 0.0, x: 0.0 }
+ORANGE_HARNESS:                         { m: ORANGE_HARNESS,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+OXIDIZED_COPPER_BARS:                   { m: OXIDIZED_COPPER_BARS,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
+OXIDIZED_COPPER_CHAIN:                  { m: OXIDIZED_COPPER_CHAIN,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+OXIDIZED_COPPER_CHEST:                  { m: OXIDIZED_COPPER_CHEST,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+OXIDIZED_COPPER_GOLEM_STATUE:           { m: OXIDIZED_COPPER_GOLEM_STATUE,           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+OXIDIZED_COPPER_LANTERN:                { m: OXIDIZED_COPPER_LANTERN,                s: true, d: true, r: true, e: 0.0, x: 0.0 }
+OXIDIZED_LIGHTNING_ROD:                 { m: OXIDIZED_LIGHTNING_ROD,                 s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PALE_OAK_SHELF:                         { m: PALE_OAK_SHELF,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PINK_HARNESS:                           { m: PINK_HARNESS,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+PURPLE_HARNESS:                         { m: PURPLE_HARNESS,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+RED_HARNESS:                            { m: RED_HARNESS,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+SPRUCE_SHELF:                           { m: SPRUCE_SHELF,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WARPED_SHELF:                           { m: WARPED_SHELF,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_COPPER_BARS:                      { m: WAXED_COPPER_BARS,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_COPPER_CHAIN:                     { m: WAXED_COPPER_CHAIN,                     s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_COPPER_CHEST:                     { m: WAXED_COPPER_CHEST,                     s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_COPPER_GOLEM_STATUE:              { m: WAXED_COPPER_GOLEM_STATUE,              s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_COPPER_LANTERN:                   { m: WAXED_COPPER_LANTERN,                   s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_EXPOSED_COPPER_BARS:              { m: WAXED_EXPOSED_COPPER_BARS,              s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_EXPOSED_COPPER_CHAIN:             { m: WAXED_EXPOSED_COPPER_CHAIN,             s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_EXPOSED_COPPER_CHEST:             { m: WAXED_EXPOSED_COPPER_CHEST,             s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_EXPOSED_COPPER_GOLEM_STATUE:      { m: WAXED_EXPOSED_COPPER_GOLEM_STATUE,      s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_EXPOSED_COPPER_LANTERN:           { m: WAXED_EXPOSED_COPPER_LANTERN,           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_EXPOSED_LIGHTNING_ROD:            { m: WAXED_EXPOSED_LIGHTNING_ROD,            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_LIGHTNING_ROD:                    { m: WAXED_LIGHTNING_ROD,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_OXIDIZED_COPPER_BARS:             { m: WAXED_OXIDIZED_COPPER_BARS,             s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_OXIDIZED_COPPER_CHAIN:            { m: WAXED_OXIDIZED_COPPER_CHAIN,            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_OXIDIZED_COPPER_CHEST:            { m: WAXED_OXIDIZED_COPPER_CHEST,            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_OXIDIZED_COPPER_GOLEM_STATUE:     { m: WAXED_OXIDIZED_COPPER_GOLEM_STATUE,     s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_OXIDIZED_COPPER_LANTERN:          { m: WAXED_OXIDIZED_COPPER_LANTERN,          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_OXIDIZED_LIGHTNING_ROD:           { m: WAXED_OXIDIZED_LIGHTNING_ROD,           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_WEATHERED_COPPER_BARS:            { m: WAXED_WEATHERED_COPPER_BARS,            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_WEATHERED_COPPER_CHAIN:           { m: WAXED_WEATHERED_COPPER_CHAIN,           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_WEATHERED_COPPER_CHEST:           { m: WAXED_WEATHERED_COPPER_CHEST,           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_WEATHERED_COPPER_GOLEM_STATUE:    { m: WAXED_WEATHERED_COPPER_GOLEM_STATUE,    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_WEATHERED_COPPER_LANTERN:         { m: WAXED_WEATHERED_COPPER_LANTERN,         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WAXED_WEATHERED_LIGHTNING_ROD:          { m: WAXED_WEATHERED_LIGHTNING_ROD,          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WEATHERED_COPPER_BARS:                  { m: WEATHERED_COPPER_BARS,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WEATHERED_COPPER_CHAIN:                 { m: WEATHERED_COPPER_CHAIN,                 s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WEATHERED_COPPER_CHEST:                 { m: WEATHERED_COPPER_CHEST,                 s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WEATHERED_COPPER_GOLEM_STATUE:          { m: WEATHERED_COPPER_GOLEM_STATUE,          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WEATHERED_COPPER_LANTERN:               { m: WEATHERED_COPPER_LANTERN,               s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WEATHERED_LIGHTNING_ROD:                { m: WEATHERED_LIGHTNING_ROD,                s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WHITE_HARNESS:                          { m: WHITE_HARNESS,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+YELLOW_HARNESS:                         { m: YELLOW_HARNESS,                         s: true, d: true, r: true, e: 0.0, x: 0.0 }
+
+
+
 # 1.21.5 additions
 BLUE_EGG:                               { m: BLUE_EGG,                               s: true, d: true, r: true, e: 0.0, x: 0.0 }
 BROWN_EGG:                              { m: BROWN_EGG,                              s: true, d: true, r: true, e: 0.0, x: 0.0 }
