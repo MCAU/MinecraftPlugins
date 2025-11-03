@@ -5,7 +5,7 @@ import com.ullarah.uchest.data.MaterialData;
 import com.ullarah.uchest.function.PluginRegisters;
 import com.ullarah.uchest.init.ChestLanguage;
 import net.milkbowl.vault.economy.Economy;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;

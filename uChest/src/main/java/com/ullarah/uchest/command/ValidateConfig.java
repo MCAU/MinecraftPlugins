@@ -2,7 +2,7 @@ package com.ullarah.uchest.command;
 
 import com.ullarah.uchest.ChestInit;
 import com.ullarah.uchest.function.CommonString;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;

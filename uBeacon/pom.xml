@@ -7,7 +7,7 @@
 
     <name>uBeacon</name>
     <description>Mixed Beacons</description>
-    <version>1.0.11</version>
+    <version>1.0.12</version>
 
     <parent>
         <groupId>com.ullarah</groupId>

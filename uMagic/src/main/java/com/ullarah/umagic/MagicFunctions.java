@@ -17,7 +17,7 @@ import com.ullarah.umagic.recipe.MagicHoeCosmic;
 import com.ullarah.umagic.recipe.MagicHoeNormal;
 import com.ullarah.umagic.recipe.MagicHoeSuper;
 import com.ullarah.umagic.recipe.MagicHoeUber;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;

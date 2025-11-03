@@ -8,7 +8,7 @@ import com.ullarah.urocket.init.RocketEnhancement;
 import com.ullarah.urocket.init.RocketVariant;
 import com.ullarah.urocket.recipe.*;
 import net.milkbowl.vault.economy.Economy;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
