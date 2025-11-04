@@ -8,6 +8,17 @@
 # EXAMPLE: { m: MATERIALNAME, s: true, d: true, r: true, e: 0.5, x: 0.5 }
 
 # 1.21.10 additions
+ACACIA_SHELF:                           { m: ACACIA_SHELF,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+BAMBOO_SHELF:                           { m: BAMBOO_SHELF,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+BIRCH_SHELF:                            { m: BIRCH_SHELF,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+BLACK_HARNESS:                          { m: BLACK_HARNESS,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+BLUE_HARNESS:                           { m: BLUE_HARNESS,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+BROWN_HARNESS:                          { m: BROWN_HARNESS,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+CHERRY_SHELF:                           { m: CHERRY_SHELF,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_AXE:                             { m: COPPER_AXE,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_BARS:                            { m: COPPER_BARS,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_BOOTS:                           { m: COPPER_BOOTS,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_CHAIN:                           { m: COPPER_CHAIN,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
 COPPER_CHEST:                           { m: COPPER_CHEST,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
 COPPER_CHESTPLATE:                      { m: COPPER_CHESTPLATE,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
 COPPER_GOLEM_SPAWN_EGG:                 { m: COPPER_GOLEM_SPAWN_EGG,                 s: true, d: true, r: true, e: 0.0, x: 0.0 }
