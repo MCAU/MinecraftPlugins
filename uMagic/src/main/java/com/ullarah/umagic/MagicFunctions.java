@@ -371,7 +371,9 @@ public class MagicFunctions {
                 break;
         }
 
-        block.getWorld().spawnParticle(particle, bX, bY, bZ, 30);
+        // 1.21.10 - temp disable, seems bugged - something wants a float, despite the method not taking one
+        // spawnParticle(Particle particle, double x, double y, double z, int count)
+        // block.getWorld().spawnParticle(particle, bX, bY, bZ, 30);
         block.getWorld().playSound(block.getLocation(), Sound.ENTITY_SHULKER_TELEPORT, 0.5f, 0.5f);
 
     }
