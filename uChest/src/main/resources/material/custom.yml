@@ -21,7 +21,7 @@ COPPER_BOOTS:                           { m: COPPER_BOOTS,                      
 COPPER_CHAIN:                           { m: COPPER_CHAIN,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
 COPPER_CHEST:                           { m: COPPER_CHEST,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
 COPPER_CHESTPLATE:                      { m: COPPER_CHESTPLATE,                      s: true, d: true, r: true, e: 0.0, x: 0.0 }
-COPPER_GOLEM_SPAWN_EGG:                 { m: COPPER_GOLEM_SPAWN_EGG,                 s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_GOLEM_SPAWN_EGG:                 { m: COPPER_GOLEM_SPAWN_EGG,                 s: false, d: false, r: false, e: 0.0, x: 0.0 }
 COPPER_GOLEM_STATUE:                    { m: COPPER_GOLEM_STATUE,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
 COPPER_HELMET:                          { m: COPPER_HELMET,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
 COPPER_HOE:                             { m: COPPER_HOE,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
@@ -45,7 +45,7 @@ EXPOSED_COPPER_LANTERN:                 { m: EXPOSED_COPPER_LANTERN,            
 EXPOSED_LIGHTNING_ROD:                  { m: EXPOSED_LIGHTNING_ROD,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
 GRAY_HARNESS:                           { m: GRAY_HARNESS,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
 GREEN_HARNESS:                          { m: GREEN_HARNESS,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
-HAPPY_GHAST_SPAWN_EGG:                  { m: HAPPY_GHAST_SPAWN_EGG,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+HAPPY_GHAST_SPAWN_EGG:                  { m: HAPPY_GHAST_SPAWN_EGG,                  s: false, d: false, r: false, e: 0.0, x: 0.0 }
 IRON_CHAIN:                             { m: IRON_CHAIN,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
 JUNGLE_SHELF:                           { m: JUNGLE_SHELF,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
 LIGHT_BLUE_HARNESS:                     { m: LIGHT_BLUE_HARNESS,                     s: true, d: true, r: true, e: 0.0, x: 0.0 }
