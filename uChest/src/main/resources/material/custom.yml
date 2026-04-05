@@ -7,6 +7,28 @@
 
 # EXAMPLE: { m: MATERIALNAME, s: true, d: true, r: true, e: 0.5, x: 0.5 }
 
+# 26.1 additions
+GOLDEN_DANDELION:                       { m: GOLDEN_DANDELION,                       s: true, d: true, r: true, e: 0.0, x: 0.0 }
+
+# 1.21.11 additions
+CAMEL_HUSK_SPAWN_EGG:                   { m: CAMEL_HUSK_SPAWN_EGG,                   s: false, d: false, r: false, e: 0.0, x: 0.0 }
+COPPER_NAUTILUS_ARMOR:                  { m: COPPER_NAUTILUS_ARMOR,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+COPPER_SPEAR:                           { m: COPPER_SPEAR,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+DIAMOND_NAUTILUS_ARMOR:                 { m: DIAMOND_NAUTILUS_ARMOR,                 s: true, d: true, r: true, e: 0.0, x: 0.0 }
+DIAMOND_SPEAR:                          { m: DIAMOND_SPEAR,                          s: true, d: true, r: true, e: 0.0, x: 0.0 }
+GOLDEN_NAUTILUS_ARMOR:                  { m: GOLDEN_NAUTILUS_ARMOR,                  s: true, d: true, r: true, e: 0.0, x: 0.0 }
+GOLDEN_SPEAR:                           { m: GOLDEN_SPEAR,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+IRON_NAUTILUS_ARMOR:                    { m: IRON_NAUTILUS_ARMOR,                    s: true, d: true, r: true, e: 0.0, x: 0.0 }
+IRON_SPEAR:                             { m: IRON_SPEAR,                             s: true, d: true, r: true, e: 0.0, x: 0.0 }
+NAUTILUS_SPAWN_EGG:                     { m: NAUTILUS_SPAWN_EGG,                     s: false, d: false, r: false, e: 0.0, x: 0.0 }
+NETHERITE_HORSE_ARMOR:                  { m: NETHERITE_HORSE_ARMOR,                  s: false, d: false, r: false, e: 0.0, x: 0.0 }
+NETHERITE_NAUTILUS_ARMOR:               { m: NETHERITE_NAUTILUS_ARMOR,               s: false, d: false, r: false, e: 0.0, x: 0.0 }
+NETHERITE_SPEAR:                        { m: NETHERITE_SPEAR,                        s: false, d: false, r: false, e: 0.0, x: 0.0 }
+PARCHED_SPAWN_EGG:                      { m: PARCHED_SPAWN_EGG,                      s: false, d: false, r: false, e: 0.0, x: 0.0 }
+STONE_SPEAR:                            { m: STONE_SPEAR,                            s: true, d: true, r: true, e: 0.0, x: 0.0 }
+WOODEN_SPEAR:                           { m: WOODEN_SPEAR,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
+ZOMBIE_NAUTILUS_SPAWN_EGG:              { m: ZOMBIE_NAUTILUS_SPAWN_EGG,              s: false, d: false, r: false, e: 0.0, x: 0.0 }
+
 # 1.21.10 additions
 ACACIA_SHELF:                           { m: ACACIA_SHELF,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
 BAMBOO_SHELF:                           { m: BAMBOO_SHELF,                           s: true, d: true, r: true, e: 0.0, x: 0.0 }
