@@ -12,9 +12,7 @@ public class PermissionCheck {
      * @return whether or not the player has the permission(s)
      */
     public boolean check(Player player, String permission) {
-
         return player.hasPermission(permission);
-
     }
 
     /**
@@ -25,11 +23,9 @@ public class PermissionCheck {
      * @return whether or not the player has the permission(s)
      */
     public boolean check(Player player, String... permissions) {
-
-        boolean isValid = false;
-        for (String permission : permissions) isValid = player.hasPermission(permission);
-        return isValid;
-
+        for (String permission : permissions) {
+            if (!player.hasPermission(permission)) return false;
+        }
+        return true;
     }
-
 }
