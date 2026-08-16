@@ -7,47 +7,33 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class MessageClick implements Listener {
-
     @EventHandler
     public void playerClickMessage(InventoryClickEvent event) {
-
         if (event.getClickedInventory() == null) return;
 
         Player player = (Player) event.getWhoClicked();
         String inventoryTitle = event.getView().getTitle();
 
-        if (inventoryTitle.matches(".*(Join|Quit) Message")
-                && new PermissionCheck().check(player, "jq.access", "jq.join", "jq.quit")) {
-
-            if (event.getClickedInventory() == null) return;
-
-            if (event.getRawSlot() >= 0 && event.getRawSlot() < 54) {
-
-                Material clickedItem = event.getCurrentItem().getType();
-
-                if (clickedItem != Material.AIR) {
-
-                    JoinQuitFunctions joinQuitFunctions = new JoinQuitFunctions();
-
-                    if (inventoryTitle.matches(".*Join Message"))
-                        joinQuitFunctions.setMessage(player, JoinQuitFunctions.Message.JOIN, event.getRawSlot());
-
-                    if (inventoryTitle.matches(".*Quit Message"))
-                        joinQuitFunctions.setMessage(player, JoinQuitFunctions.Message.QUIT, event.getRawSlot());
-
-                    event.getCursor().setType(Material.AIR);
-                    player.closeInventory();
-
-                }
-
-            }
+        if (inventoryTitle.matches(".*(Join|Quit) Message")) {
+            JoinQuitFunctions.Message type = inventoryTitle.matches(".*Join Message")
+                    ? JoinQuitFunctions.Message.JOIN
+                    : JoinQuitFunctions.Message.QUIT;
 
             event.setCancelled(true);
 
+            if (!new PermissionCheck().check(player, "jq.access", "jq." + type.getKey())) return;
+
+            if (event.getRawSlot() >= 0 && event.getRawSlot() < JoinQuitFunctions.MESSAGE_GUI_SIZE) {
+                ItemStack clickedItem = event.getCurrentItem();
+                if (clickedItem != null && clickedItem.getType() != Material.AIR) {
+                    new JoinQuitFunctions().setMessage(player, type, event.getRawSlot());
+                    event.getCursor().setType(Material.AIR);
+                    player.closeInventory();
+                }
+            }
         }
-
     }
-
 }

@@ -3,6 +3,7 @@ package com.ullarah.ujoinquit.event;
 import com.ullarah.ujoinquit.JoinQuitFunctions;
 import com.ullarah.ujoinquit.JoinQuitInit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -18,22 +19,26 @@ public class PlayerJoin implements Listener {
 
         Player player = event.getPlayer();
         UUID playerUUID = player.getUniqueId();
+        String joinMessage = event.getJoinMessage();
 
         if (player.hasPermission("jq.silentjoin")) {
             event.setJoinMessage("");
-        } else if (JoinQuitInit.playerJoinMessage.containsKey(playerUUID) && !event.getJoinMessage().isEmpty()) {
-            
+        } else if (JoinQuitInit.playerJoinMessage.containsKey(playerUUID)
+                && joinMessage != null && !joinMessage.isEmpty()) {
+
             JoinQuitFunctions joinQuitFunctions = new JoinQuitFunctions();
-            String message = joinQuitFunctions.replacePlayerString(player,
-                    joinQuitFunctions.getMessage(player, JoinQuitFunctions.Message.JOIN));
-            event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', JoinQuitInit.joinChar + message));
-            JoinQuitInit.lastPlayer = player.getPlayerListName();
-            
+            String selected = joinQuitFunctions.getMessage(player, JoinQuitFunctions.Message.JOIN);
+
+            if (selected != null) {
+                String message = joinQuitFunctions.replacePlayerString(player, selected);
+                event.setJoinMessage(ChatColor.translateAlternateColorCodes('&', JoinQuitInit.joinChar + message));
+                JoinQuitInit.lastPlayer = player.getPlayerListName();
+            }
         }
 
-        if (JoinQuitInit.playerJoinLocation.containsKey(playerUUID))
-            player.teleport(JoinQuitInit.playerJoinLocation.get(playerUUID));
+        Location joinLocation = JoinQuitInit.playerJoinLocation.get(playerUUID);
+        if (joinLocation == null) return;
 
+        player.teleport(joinLocation);
     }
-
 }

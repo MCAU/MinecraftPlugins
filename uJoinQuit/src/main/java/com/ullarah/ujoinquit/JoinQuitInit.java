@@ -27,7 +27,7 @@ public class JoinQuitInit extends JavaPlugin {
     private static File playerConfigFile;
     private static YamlConfiguration playerConfig;
 
-    static Plugin getPlugin() {
+    public static Plugin getPlugin() {
         return plugin;
     }
     private static void setPlugin(Plugin plugin) {
@@ -63,8 +63,8 @@ public class JoinQuitInit extends JavaPlugin {
         setPlayerConfigFile(joinQuitFunctions.updatePlayerConfigFile());
         setPlayerConfig(YamlConfiguration.loadConfiguration(getPlayerConfigFile()));
 
-        joinChar = getConfig().getString("joinChar");
-        quitChar = getConfig().getString("quitChar");
+        joinChar = getConfig().getString("joinChar", "");
+        quitChar = getConfig().getString("quitChar", "");
 
         joinQuitFunctions.updatePlayerMessageIndex();
 

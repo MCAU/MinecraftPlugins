@@ -25,83 +25,88 @@ import java.util.logging.Level;
 
 public class JoinQuitFunctions {
 
-    private CommonString commonString = new CommonString();
+    public static final int MESSAGE_GUI_SIZE = 54;
+    public static final String EXTRA_GUI_TITLE = "" + ChatColor.DARK_GREEN + ChatColor.BOLD + "Extra Options";
+
+    private final CommonString commonString = new CommonString();
+
+    public static String messageGuiTitle(Message type) {
+        return "" + ChatColor.DARK_AQUA + ChatColor.BOLD + type.getDisplayName() + " Message";
+    }
 
     void listMessages(Player player, Message type) {
 
-        String typeString = type.toString().substring(0, 1) + type.toString().substring(1).toLowerCase();
+        String typeString = type.getDisplayName();
         Inventory chestGUI = JoinQuitInit.getPlugin().getServer().createInventory(
-                null, 54, "" + ChatColor.DARK_AQUA + ChatColor.BOLD + typeString + " Message");
+                null, MESSAGE_GUI_SIZE, messageGuiTitle(type));
 
         int selected = getMessageIndex(player, type);
+        int count = Math.min(type.getList().size(), MESSAGE_GUI_SIZE);
 
-        for (int i = 0; i < type.getList().size(); i++) {
-
-            if (i == 54) continue;
-
+        for (int i = 0; i < count; i++) {
             String message = replacePlayerString(player, type.getList().get(i));
             String messageArray = ChatColor.translateAlternateColorCodes('&', ChatColor.WHITE + message);
 
-            ItemStack paperItem = message.substring(0, 1).equals("&")
-                    ? translateChatToPane(ChatColor.getByChar(message.substring(1, 2)))
+            ItemStack paperItem = message.length() >= 2 && message.charAt(0) == '&'
+                    ? translateChatToPane(ChatColor.getByChar(message.charAt(1)))
                     : new ItemStack(Material.GLASS_PANE, 1);
 
             // Apply meta
             ItemMeta paperMeta = paperItem.getItemMeta();
-            paperMeta.setDisplayName(messageArray);
-            paperMeta.setLore(Collections.singletonList("" + ChatColor.YELLOW + ChatColor.ITALIC
-                    + "Click to set " + typeString + " Message"));
-            if (i == selected) {
-                paperMeta.addEnchant(Enchantment.VANISHING_CURSE, 1, true);
-                paperMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+            if (paperMeta != null) {
+                paperMeta.setDisplayName(messageArray);
+                paperMeta.setLore(Collections.singletonList("" + ChatColor.YELLOW + ChatColor.ITALIC
+                        + "Click to set " + typeString + " Message"));
+                if (i == selected) {
+                    paperMeta.addEnchant(Enchantment.VANISHING_CURSE, 1, true);
+                    paperMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+                }
+                paperItem.setItemMeta(paperMeta);
             }
-            paperItem.setItemMeta(paperMeta);
 
-            chestGUI.addItem(paperItem);
+            chestGUI.setItem(i, paperItem);
         }
 
         player.openInventory(chestGUI);
     }
 
     public String replacePlayerString(Player player, String message) {
+        String playerName = player.getPlayerListName();
 
-        if (JoinQuitInit.lastPlayer.equals(player.getPlayerListName())) JoinQuitInit.lastPlayer = "nobody";
+        if (JoinQuitInit.lastPlayer.equals(playerName)) JoinQuitInit.lastPlayer = "nobody";
 
-        if (message.contains("{player}"))
-            message = message.replaceAll("\\{player\\}", player.getPlayerListName());
-
-        if (message.contains("{l_player}"))
-            message = message.replaceAll("\\{l_player\\}", player.getPlayerListName().toLowerCase());
-
-        if (message.contains("{u_player}"))
-            message = message.replaceAll("\\{u_player\\}", player.getPlayerListName().toUpperCase());
-
-        if (message.contains("{p_player}"))
-            message = message.replaceAll("\\{p_player\\}", JoinQuitInit.lastPlayer);
+        message = message.replace("{player}", playerName);
+        message = message.replace("{l_player}", playerName.toLowerCase());
+        message = message.replace("{u_player}", playerName.toUpperCase());
+        message = message.replace("{p_player}", JoinQuitInit.lastPlayer);
 
         if (message.contains("{r_player}")) {
-            String playerName = "nobody";
-            Collection onlinePlayers = Bukkit.getOnlinePlayers();
-            if (onlinePlayers.size() > 1) {
-                Player randomPlayer = (Player) onlinePlayers.toArray()[new Random().nextInt(onlinePlayers.size() - 1)];
-                playerName = randomPlayer.getPlayerListName();
+            List<Player> otherPlayers = new ArrayList<>();
+
+            for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+                if (!onlinePlayer.getUniqueId().equals(player.getUniqueId())) otherPlayers.add(onlinePlayer);
             }
-            message = message.replaceAll("\\{r_player\\}", playerName);
+
+            String randomName = otherPlayers.isEmpty() ? "nobody"
+                    : otherPlayers.get(new Random().nextInt(otherPlayers.size())).getPlayerListName();
+            message = message.replace("{r_player}", randomName);
         }
-
         return message;
-
     }
 
     void updateMessageHashMap() {
+        for (Message type : Message.values()) {
+            type.getList().clear();
+            type.getList().addAll(JoinQuitInit.getPlugin().getConfig().getStringList(type.getType()));
 
-        for (Message type : Message.values())
-            for (String message : JoinQuitInit.getPlugin().getConfig().getStringList(type.getType()))
-                type.getList().add(message);
+            if (type.getList().size() > MESSAGE_GUI_SIZE) {
+                JoinQuitInit.getPlugin().getLogger().log(Level.WARNING, "Only the first " + MESSAGE_GUI_SIZE
+                        + " " + type.getType() + " are selectable in the menu.");
+            }
+        }
 
         JoinQuitInit.getPlugin().getLogger().log(Level.INFO,
                 "Joins: " + JoinQuitInit.joinMessages.size() + " | " + "Quits: " + JoinQuitInit.quitMessages.size());
-
     }
 
     File updatePlayerConfigFile() {
@@ -114,7 +119,7 @@ public class JoinQuitFunctions {
 
         } catch (IOException e) {
 
-            e.printStackTrace();
+            JoinQuitInit.getPlugin().getLogger().log(Level.SEVERE, "Could not create player.yml", e);
 
         }
 
@@ -143,22 +148,23 @@ public class JoinQuitFunctions {
     }
 
     private int getMessageIndex(Player player, Message type) {
-        String path = player.getUniqueId().toString() + "." + type.toString().toLowerCase();
+        String path = player.getUniqueId().toString() + "." + type.getKey();
         return JoinQuitInit.getPlayerConfig().getInt(path, -1);
     }
 
     public String getMessage(Player player, Message type) {
-        return type.getList().get(getMessageIndex(player, type));
+        int index = getMessageIndex(player, type);
+        List<String> messages = type.getList();
+        return index >= 0 && index < messages.size() ? messages.get(index) : null;
     }
 
-    public void setMessage(Player player, Message type, Integer index) {
-
+    public void setMessage(Player player, Message type, int index) {
         try {
 
             UUID playerUUID = player.getUniqueId();
             YamlConfiguration config = JoinQuitInit.getPlayerConfig();
 
-            config.set(playerUUID.toString() + "." + type.toString().toLowerCase(), index);
+            config.set(playerUUID.toString() + "." + type.getKey(), index);
             config.save(JoinQuitInit.getPlayerConfigFile());
 
             switch (type) {
@@ -173,13 +179,13 @@ public class JoinQuitFunctions {
 
             }
 
-            String messageType = type.toString().substring(0, 1) + type.toString().substring(1).toLowerCase();
-            commonString.messageSend(JoinQuitInit.getPlugin(), player, true, messageType + " message changed!");
+            commonString.messageSend(JoinQuitInit.getPlugin(), player, true,
+                    type.getDisplayName() + " message changed!");
 
         } catch (IOException e) {
 
             commonString.messageSend(JoinQuitInit.getPlugin(), player, true, ChatColor.RED + "Error saving changes!");
-            e.printStackTrace();
+            JoinQuitInit.getPlugin().getLogger().log(Level.SEVERE, "Could not save player.yml", e);
 
         }
 
@@ -202,34 +208,28 @@ public class JoinQuitFunctions {
         } catch (IOException e) {
 
             commonString.messageSend(JoinQuitInit.getPlugin(), player, true, ChatColor.RED + "Error saving changes!");
-            e.printStackTrace();
+            JoinQuitInit.getPlugin().getLogger().log(Level.SEVERE, "Could not save player.yml", e);
 
         }
 
     }
 
     void showExtra(Player player) {
-
-        Inventory options = Bukkit.createInventory(null, InventoryType.HOPPER,
-                "" + ChatColor.DARK_GREEN + ChatColor.BOLD + "Extra Options");
+        Inventory options = Bukkit.createInventory(null, InventoryType.HOPPER, EXTRA_GUI_TITLE);
 
         ItemStack locationItem = new ItemStack(Material.COMPASS, 1);
         ItemMeta locationItemMeta = locationItem.getItemMeta();
 
         locationItemMeta.setDisplayName(ChatColor.WHITE + "Set Join Location");
         locationItemMeta.setLore(Arrays.asList(
-                        ChatColor.YELLOW + "Set your current location as",
-                        ChatColor.YELLOW + "your join location.")
+                ChatColor.YELLOW + "Set your current location as",
+                ChatColor.YELLOW + "your join location.")
         );
 
         locationItem.setItemMeta(locationItemMeta);
 
-        options.addItem(
-                locationItem
-        );
-
+        options.addItem(locationItem);
         player.openInventory(options);
-
     }
 
     void clearMessage(Player player) {
@@ -252,17 +252,16 @@ public class JoinQuitFunctions {
 
             commonString.messageSend(JoinQuitInit.getPlugin(), player, true,
                     ChatColor.RED + "Error saving changes!");
-            e.printStackTrace();
+            JoinQuitInit.getPlugin().getLogger().log(Level.SEVERE, "Could not save player.yml", e);
 
         }
 
     }
 
     void displayHelp(Player player) {
-
         commonString.messageSend(JoinQuitInit.getPlugin(), player, true, "Custom Join and Quit Messages");
 
-        TextComponent allOptions = new TextComponent(new CommonString().pluginPrefix(
+        TextComponent allOptions = new TextComponent(commonString.pluginPrefix(
                 JoinQuitInit.getPlugin()) + "Click an option: ");
 
         TextComponent joinOption = new TextComponent(
@@ -308,8 +307,9 @@ public class JoinQuitFunctions {
     }
 
     private ItemStack translateChatToPane(ChatColor chatColor) {
-
         Material pane;
+
+        if (chatColor == null) return new ItemStack(Material.GLASS_PANE, 1);
 
         switch (chatColor) {
 
@@ -378,24 +378,25 @@ public class JoinQuitFunctions {
             default:
                 pane = Material.WHITE_STAINED_GLASS_PANE;
                 break;
-
         }
 
         return new ItemStack(pane, 1);
-
     }
 
     public enum Message {
-
-        JOIN(JoinQuitInit.joinMessages, "joinMessages"),
-        QUIT(JoinQuitInit.quitMessages, "quitMessages");
+        JOIN(JoinQuitInit.joinMessages, "joinMessages", "join", "Join"),
+        QUIT(JoinQuitInit.quitMessages, "quitMessages", "quit", "Quit");
 
         private final List<String> list;
         private final String type;
+        private final String key;
+        private final String displayName;
 
-        Message(List<String> getList, String getType) {
+        Message(List<String> getList, String getType, String getKey, String getDisplayName) {
             this.list = getList;
             this.type = getType;
+            this.key = getKey;
+            this.displayName = getDisplayName;
         }
 
         public List<String> getList() {
@@ -404,6 +405,14 @@ public class JoinQuitFunctions {
 
         public String getType() {
             return type;
+        }
+
+        public String getKey() {
+            return key;
+        }
+
+        public String getDisplayName() {
+            return displayName;
         }
 
     }
